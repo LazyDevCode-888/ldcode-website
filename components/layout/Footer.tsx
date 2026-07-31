@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import companyData from '@/data/company.json'
-import { Mail, Phone, MapPin, Share2, Globe, MessageSquare, Code2 } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Footer() {
@@ -36,17 +36,21 @@ export default function Footer() {
               {t(companyData.description)}
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <a href={companyData.socials.github} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors" title="GitHub">
-                <Code2 className="w-4 h-4" />
+              {/* TikTok */}
+              <a href={companyData.socials.tiktok} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors flex items-center justify-center w-9 h-9" title="TikTok">
+                <img src="https://cdn.simpleicons.org/tiktok/a1a1aa" alt="TikTok" className="w-4 h-4 object-contain" />
               </a>
-              <a href={companyData.socials.linkedin} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors" title="LinkedIn">
-                <Share2 className="w-4 h-4" />
+              {/* Instagram */}
+              <a href={companyData.socials.instagram} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors flex items-center justify-center w-9 h-9" title="Instagram">
+                <img src="https://cdn.simpleicons.org/instagram/a1a1aa" alt="Instagram" className="w-4 h-4 object-contain" />
               </a>
-              <a href={companyData.socials.facebook} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors" title="Facebook">
-                <Globe className="w-4 h-4" />
+              {/* Facebook */}
+              <a href={companyData.socials.facebook} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors flex items-center justify-center w-9 h-9" title="Facebook">
+                <img src="https://cdn.simpleicons.org/facebook/a1a1aa" alt="Facebook" className="w-4 h-4 object-contain" />
               </a>
-              <a href={companyData.socials.twitter} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors" title="Twitter">
-                <MessageSquare className="w-4 h-4" />
+              {/* YouTube */}
+              <a href={companyData.socials.youtube} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors flex items-center justify-center w-9 h-9" title="YouTube">
+                <img src="https://cdn.simpleicons.org/youtube/a1a1aa" alt="YouTube" className="w-4 h-4 object-contain" />
               </a>
             </div>
           </div>

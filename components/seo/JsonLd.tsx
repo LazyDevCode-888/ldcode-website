@@ -22,10 +22,10 @@ export default function JsonLd() {
       email: companyData.contact.email,
     },
     sameAs: [
-      companyData.socials.github,
+      companyData.socials.tiktok,
+      companyData.socials.instagram,
       companyData.socials.facebook,
-      companyData.socials.linkedin,
-      companyData.socials.twitter,
+      companyData.socials.youtube,
     ],
   }
 

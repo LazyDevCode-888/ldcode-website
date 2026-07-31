@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import companyData from '@/data/company.json'
 import faqsData from '@/data/faqs.json'
 import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Clock } from 'lucide-react'
@@ -13,8 +13,8 @@ export default function ContactPage() {
     email: '',
     phone: '',
     company: '',
-    service: 'Web Development',
-    budget: '฿50k - ฿100k',
+    service: 'Landing Page',
+    budget: '< ฿5k',
     message: '',
   })
 
@@ -22,6 +22,18 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const [isServiceOpen, setIsServiceOpen] = useState(false)
+  const [isBudgetOpen, setIsBudgetOpen] = useState(false)
+
+  useEffect(() => {
+    const handleGlobalClick = () => {
+      setIsServiceOpen(false)
+      setIsBudgetOpen(false)
+    }
+    window.addEventListener('click', handleGlobalClick)
+    return () => window.removeEventListener('click', handleGlobalClick)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -221,31 +233,104 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold uppercase text-zinc-300">{t('ประเภทงานบริการ', 'Target Service')}</label>
-                    <select
-                      value={formData.service}
-                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:border-emerald-400 transition-colors"
-                    >
-                      <option value="Landing Page">Landing Page Development</option>
-                      <option value="Corporate Web">Corporate Website Development</option>
-                      <option value="Web App">Full-Stack Web Application</option>
-                      <option value="Student Project">Student Project Support</option>
-                      <option value="WordPress Optimize">WordPress Customization</option>
-                    </select>
+                    <div className="relative">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setIsServiceOpen(!isServiceOpen)
+                          setIsBudgetOpen(false)
+                        }}
+                        className={`w-full flex items-center justify-between bg-zinc-950 border rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none transition-colors text-left cursor-pointer ${
+                          isServiceOpen ? 'border-emerald-400 ring-1 ring-emerald-400/30' : 'border-zinc-800 hover:border-zinc-700'
+                        }`}
+                      >
+                        <span>
+                          {formData.service === 'Landing Page' && 'Landing Page Development'}
+                          {formData.service === 'Corporate Web' && 'Corporate Website Development'}
+                          {formData.service === 'Web App' && 'Full-Stack Web Application'}
+                          {formData.service === 'Student Project' && 'Student Project Support'}
+                          {formData.service === 'WordPress Optimize' && 'WordPress Customization'}
+                        </span>
+                        <ChevronDown className={`w-4 h-4 text-zinc-400 transition-transform ${isServiceOpen ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      {isServiceOpen && (
+                        <div className="absolute z-50 mt-2 w-full glass-card bg-zinc-950/95 border border-emerald-500/20 rounded-xl overflow-hidden shadow-2xl py-1">
+                          {[
+                            { value: 'Landing Page', label: 'Landing Page Development' },
+                            { value: 'Corporate Web', label: 'Corporate Website Development' },
+                            { value: 'Web App', label: 'Full-Stack Web Application' },
+                            { value: 'Student Project', label: 'Student Project Support' },
+                            { value: 'WordPress Optimize', label: 'WordPress Customization' },
+                          ].map((opt) => (
+                            <button
+                              key={opt.value}
+                              type="button"
+                              onClick={() => {
+                                setFormData({ ...formData, service: opt.value })
+                                setIsServiceOpen(false)
+                              }}
+                              className={`w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-emerald-950/40 hover:text-emerald-400 ${
+                                formData.service === opt.value ? 'bg-emerald-950/20 text-emerald-400 font-semibold' : 'text-zinc-300'
+                              }`}
+                            >
+                              {opt.label}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold uppercase text-zinc-300">{t('งบประมาณประมาณการ', 'Estimated Budget')}</label>
-                    <select
-                      value={formData.budget}
-                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none focus:border-emerald-400 transition-colors"
-                    >
-                      <option value="< ฿5k">{t('น้อยกว่า ฿5,000', 'Less than ฿5,000')}</option>
-                      <option value="฿5k - ฿15k">฿5,000 - ฿15,000</option>
-                      <option value="฿15k - ฿50k">฿15,000 - ฿50,000</option>
-                      <option value="> ฿50k">{t('มากกว่า ฿50,000', 'More than ฿50,000')}</option>
-                    </select>
+                    <div className="relative">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setIsBudgetOpen(!isBudgetOpen)
+                          setIsServiceOpen(false)
+                        }}
+                        className={`w-full flex items-center justify-between bg-zinc-950 border rounded-xl px-4 py-3 text-sm text-zinc-100 focus:outline-none transition-colors text-left cursor-pointer ${
+                          isBudgetOpen ? 'border-emerald-400 ring-1 ring-emerald-400/30' : 'border-zinc-800 hover:border-zinc-700'
+                        }`}
+                      >
+                        <span>
+                          {formData.budget === '< ฿5k' && t('น้อยกว่า ฿5,000', 'Less than ฿5,000')}
+                          {formData.budget === '฿5k - ฿15k' && '฿5,000 - ฿15,000'}
+                          {formData.budget === '฿15k - ฿50k' && '฿15,000 - ฿50,000'}
+                          {formData.budget === '> ฿50k' && t('มากกว่า ฿50,000', 'More than ฿50,000')}
+                        </span>
+                        <ChevronDown className={`w-4 h-4 text-zinc-400 transition-transform ${isBudgetOpen ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      {isBudgetOpen && (
+                        <div className="absolute z-50 mt-2 w-full glass-card bg-zinc-950/95 border border-emerald-500/20 rounded-xl overflow-hidden shadow-2xl py-1">
+                          {[
+                            { value: '< ฿5k', label: t('น้อยกว่า ฿5,000', 'Less than ฿5,000') },
+                            { value: '฿5k - ฿15k', label: '฿5,000 - ฿15,000' },
+                            { value: '฿15k - ฿50k', label: '฿15,000 - ฿50,000' },
+                            { value: '> ฿50k', label: t('มากกว่า ฿50,000', 'More than ฿50,000') },
+                          ].map((opt) => (
+                            <button
+                              key={opt.value}
+                              type="button"
+                              onClick={() => {
+                                setFormData({ ...formData, budget: opt.value })
+                                setIsBudgetOpen(false)
+                              }}
+                              className={`w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-emerald-950/40 hover:text-emerald-400 ${
+                                formData.budget === opt.value ? 'bg-emerald-950/20 text-emerald-400 font-semibold' : 'text-zinc-300'
+                              }`}
+                            >
+                              {opt.label}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 

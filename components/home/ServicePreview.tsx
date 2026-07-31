@@ -4,6 +4,7 @@ import Link from 'next/link'
 import servicesData from '@/data/services.json'
 import { Globe, Building2, Database, GraduationCap, Settings, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
+import { motion } from 'framer-motion'
 
 const iconMap: Record<string, React.ReactNode> = {
   Globe: <Globe className="w-8 h-8 text-emerald-400" />,
@@ -16,9 +17,28 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function ServicePreview() {
   const { t } = useLanguage()
 
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring' as const,
+        stiffness: 80,
+        damping: 15,
+      },
+    },
+  }
+
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center space-y-4 mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center space-y-4 mb-16"
+      >
         <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
           {t('บริการของเรา', 'Our Services')}
         </h2>
@@ -32,12 +52,27 @@ export default function ServicePreview() {
             'Custom web designs, modern layouts, responsive viewports, and zero-downtime deployment at friendly prices.'
           )}
         </p>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {servicesData.map((service) => (
-          <div
+          <motion.div
             key={service.id}
+            variants={cardVariants}
             className="group relative glass-card p-8 rounded-3xl border border-emerald-500/20 glow-emerald-hover flex flex-col justify-between"
           >
             <div>
@@ -81,9 +116,9 @@ export default function ServicePreview() {
               <span>{t('ดูรายละเอียดเพิ่มเติม', 'View Details')}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
