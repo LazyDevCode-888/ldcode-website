@@ -1,67 +1,188 @@
 {
-  "billingCycles": ["Monthly", "Annually"],
-  "discountAnnually": "Save 20%",
+  "discountAnnually": {
+    "th": "ลด 20%",
+    "en": "Save 20%"
+  },
   "plans": [
     {
-      "id": "starter",
-      "name": "Starter Launch",
-      "badge": "Standard Business",
-      "monthlyPrice": 39000,
-      "annualPrice": 31200,
-      "description": "เหมาะสำหรับธุรกิจเริ่มต้น สตาร์ทอัพ หรือ SMEs ที่ต้องการเว็บไซต์องค์กรดีไซน์เรียบหรู รองรับ Mobile & SEO 100%",
+      "id": "landing-page",
+      "name": "Landing Page",
+      "badge": {
+        "th": "เริ่มต้นธุรกิจ",
+        "en": "Startup Launch"
+      },
+      "priceNum": 1500,
+      "description": {
+        "th": "เว็บไซต์หน้าเดียว แนะนำธุรกิจ โปรโมทสินค้า หรือบริการ ดีไซน์ทันสมัย โหลดเร็ว",
+        "en": "Single page landing page, promoting products or introducing your company. Fast and responsive."
+      },
       "popular": false,
       "features": [
-        "Up to 5 Custom Pages (Home, About, Services, Contact, etc.)",
-        "Responsive Modern UI (Tailwind CSS & Animations)",
-        "Next.js SSR & Search Engine Optimization (SEO)",
-        "Fast Contact Form with Email Notification",
-        "SSL Certificate & Basic Security Setup",
-        "1-Month Maintenance & Tech Support"
+        {
+          "th": "เว็บไซต์หน้าเดียวพร้อมใช้งาน",
+          "en": "Complete ready-to-use landing page"
+        },
+        {
+          "th": "Responsive Design รองรับทุกหน้าจอ",
+          "en": "Responsive Design for all device views"
+        },
+        {
+          "th": "ปุ่มเชื่อมต่อ Social Media",
+          "en": "Social media links integration"
+        },
+        {
+          "th": "ฟอร์มติดต่อ (ตามขอบเขต)",
+          "en": "Contact form (basic scope)"
+        },
+        {
+          "th": "Deploy บนระบบ Cloud ฟรี",
+          "en": "Free cloud deployment setup"
+        }
       ]
     },
     {
-      "id": "professional",
-      "name": "Professional Web Platform",
-      "badge": "Most Popular",
-      "monthlyPrice": 89000,
-      "annualPrice": 71200,
-      "description": "โซลูชันสำหรับธุรกิจที่เติบโต ต้องการเว็บแอปพลิเคชัน custom ฟีเจอร์ขั้นสูง ระบบสมาชิก Headless CMS และแดชบอร์ด",
+      "id": "corporate-website",
+      "name": "Corporate Website",
+      "badge": {
+        "th": "สร้างความน่าเชื่อถือ",
+        "en": "Business Authority"
+      },
+      "priceNum": 4000,
+      "description": {
+        "th": "เว็บไซต์แนะนำบริษัท 3–5 หน้า เช่น หน้าแรก, เกี่ยวกับเรา, บริการ, ติดต่อเรา",
+        "en": "Company profile website of 3-5 pages (Home, About Us, Services, Contact)."
+      },
+      "popular": false,
+      "features": [
+        {
+          "th": "เว็บไซต์บริษัท 3-5 หน้า",
+          "en": "Bilingual company website (3-5 pages)"
+        },
+        {
+          "th": "Responsive Design ทุกอุปกรณ์",
+          "en": "Responsive Design on all device types"
+        },
+        {
+          "th": "ฟอร์มติดต่อ & Google Maps",
+          "en": "Contact Form & Google Maps API"
+        },
+        {
+          "th": "โครงสร้างเป็นระเบียบต่อยอดง่าย",
+          "en": "Extensible codebase and clean structure"
+        },
+        {
+          "th": "Deploy บนระบบ Cloud ฟรี",
+          "en": "Free cloud deployment setup"
+        }
+      ]
+    },
+    {
+      "id": "web-application",
+      "name": "Web Application",
+      "badge": {
+        "th": "คุ้มค่าสำหรับธุรกิจ",
+        "en": "Enterprise Scale"
+      },
+      "priceNum": 15000,
+      "description": {
+        "th": "ระบบหน้าบ้านและหลังบ้าน (Admin Dashboard) จัดการข้อมูลและขั้นตอนทำงานของธุรกิจ",
+        "en": "Full-stack web systems (Frontend + Admin Dashboard) to automate business processes."
+      },
       "popular": true,
       "features": [
-        "Up to 15 Custom Pages & Dynamic Sub-routes",
-        "Headless CMS Integration (Sanity / Strapi)",
-        "Custom Database & RESTful / GraphQL API",
-        "User Authentication & Role-Based Access Control",
-        "GSAP & Framer Motion Advanced Interactive Effects",
-        "Lenis Smooth Scroll & Custom UI Components",
-        "Full Analytics Dashboard & Conversion Tracking",
-        "3-Month Dedicated Maintenance & SLA Support"
+        {
+          "th": "มีทั้งระบบหน้าบ้าน & หลังบ้าน",
+          "en": "Includes Frontend & Admin Panel"
+        },
+        {
+          "th": "ระบบจัดการฐานข้อมูล (Management)",
+          "en": "Secure database design & CRUD logic"
+        },
+        {
+          "th": "ระบบเข้าสู่ระบบ (Secure Login)",
+          "en": "Secure login gateway authentication"
+        },
+        {
+          "th": "รองรับการเชื่อมต่อ API / บริการภายนอก",
+          "en": "Integrates third-party APIs (SMS, Payments)"
+        },
+        {
+          "th": "คู่มือใช้งานและการบำรุงรักษา",
+          "en": "Orientations manual & code walkthroughs"
+        }
       ]
     },
     {
-      "id": "enterprise",
-      "name": "Enterprise Custom System",
-      "badge": "Custom Architecture",
-      "monthlyPrice": 189000,
-      "annualPrice": 151200,
-      "description": "สำหรับองค์กรขนาดใหญ่หรือแพลตฟอร์มการเงิน/อีคอมเมิร์ซที่ต้องการ Microservices, Multi-region Cloud, AI & 24/7 Support",
+      "id": "student-project",
+      "name": "Student Project",
+      "badge": {
+        "th": "สำหรับนักศึกษา",
+        "en": "Student Special"
+      },
+      "priceNum": 2500,
+      "description": {
+        "th": "โปรเจกต์รายวิชา โปรเจกต์จบ ระบบส่งอาจารย์ โค้ดสะอาดศึกษาต่อยอดง่าย",
+        "en": "Coursework and graduation prototypes. Clean code structured for easy study and panel presentation."
+      },
       "popular": false,
       "features": [
-        "Unlimited Custom Pages & Microservice Micro-frontends",
-        "Custom Go / Node.js High-Performance Microservices",
-        "AWS / GCP Managed Cloud Infrastructure + Auto Scaling",
-        "AI & LLM Integration (RAG, Chatbot, Smart Analytics)",
-        "Mobile App Support (React Native / iOS & Android)",
-        "Zero-Downtime CI/CD Automated Pipelines",
-        "PCI-DSS / HIPAA Security Standard Compliance",
-        "Dedicated Team & 24/7 Emergency Support SLA"
+        {
+          "th": "ระบบหน้าบ้าน & หลังบ้านพร้อมเสนอ",
+          "en": "Frontend and Admin dashboard ready"
+        },
+        {
+          "th": "โค้ดเป็นระเบียบ ตอบคำถามอาจารย์ง่าย",
+          "en": "Clean coding helping presentation panel review"
+        },
+        {
+          "th": "ฟังก์ชัน CRUD และฐานข้อมูลพื้นฐาน",
+          "en": "Basic database tables & CRUD logic"
+        },
+        {
+          "th": "คำแนะนำและการสอนติดตั้งระบบ",
+          "en": "ReadMe deployment guides support"
+        },
+        {
+          "th": "ส่งมอบ Source Code ทั้งหมด",
+          "en": "Full project source code handover"
+        }
+      ]
+    },
+    {
+      "id": "wordpress-customization",
+      "name": "WordPress Edit",
+      "badge": {
+        "th": "ปรับแต่งจากเว็บเดิม",
+        "en": "Optimizations"
+      },
+      "priceNum": 1000,
+      "description": {
+        "th": "แก้ไข ปรับแต่ง Layout เพิ่มหน้า ติดตั้ง Theme/Plugin หรือแก้ไขปัญหาการใช้งาน",
+        "en": "Optimize page layouts, adjust themes/CSS, configure plugins, or debug existing errors."
+      },
+      "popular": false,
+      "features": [
+        {
+          "th": "แก้ไขปรับปรุงเว็บเดิม ไม่ต้องทำใหม่",
+          "en": "Refactor current pages directly without new setups"
+        },
+        {
+          "th": "ปรับแต่ง Layout/Theme ให้สวยงาม",
+          "en": "Update styling and visual structures"
+        },
+        {
+          "th": "แก้ไขบั๊กและ Error ของ WordPress",
+          "en": "Fix PHP syntax errors or javascript bugs"
+        },
+        {
+          "th": "เพิ่มความเร็ว & จัดการ Responsive",
+          "en": "PageSpeed optimizations and responsive view fixes"
+        },
+        {
+          "th": "สำรองข้อมูลก่อนเริ่มงาน 100%",
+          "en": "100% database & files backup guarantee"
+        }
       ]
     }
-  ],
-  "addons": [
-    { "id": "seo-boost", "name": "Advanced Technical SEO Boost", "price": 15000 },
-    { "id": "ai-bot", "name": "Custom AI Customer Support Bot", "price": 35000 },
-    { "id": "mobile-app", "name": "Companion Mobile App Build", "price": 75000 },
-    { "id": "maintenance", "name": "Annual Maintenance & Server SLA", "price": 25000 }
   ]
 }

@@ -1,22 +1,52 @@
 [
   {
-    "q": "LDCode ใช้เวลาพัฒนานานเท่าใดในแต่ละโครงการ?",
-    "a": "ระยะเวลาพัฒนาขึ้นอยู่กับขอบเขตงาน เช่น เว็บไซต์องค์กรมาตรฐาน (Starter Launch) ใช้เวลาประมาณ 2-4 สัปดาห์ ขณะที่ระบบ Web Platform หรือ Microservices ขนาดใหญ่ใช้เวลาประมาณ 6-12 สัปดาห์"
+    "q": {
+      "th": "ใช้เวลาพัฒนานานเท่าใดในแต่ละโครงการ?",
+      "en": "How long does development take for each project?"
+    },
+    "a": {
+      "th": "ระยะเวลาพัฒนาขึ้นอยู่กับขอบเขตงาน เช่น เว็บไซต์หน้าเดียวใช้เวลา 3-7 วัน เว็บไซต์องค์กร 1-3 สัปดาห์ และระบบเว็บแอปพลิเคชัน 4-8 สัปดาห์",
+      "en": "Development duration depends on the scope: Landing Pages take 3-7 days, Corporate websites take 1-3 weeks, and custom Web Applications take 4-8 weeks."
+    }
   },
   {
-    "q": "เว็บไซต์ที่พัฒนาขึ้นจะรองรับ SEO และความเร็วอย่างไร?",
-    "a": "เราพัฒนาด้วย Next.js App Router (SSR/SSG) ร่วมกับ Tailwind CSS และการปรับแต่ง Core Web Vitals ทำให้เว็บไซต์ติดดัชนี Google ได้ง่ายและโหลดไวในระดับมิลลิวินาที"
+    "q": {
+      "th": "เว็บไซต์ที่พัฒนาขึ้นจะรองรับ SEO และความเร็วอย่างไร?",
+      "en": "How do you optimize for SEO and speed?"
+    },
+    "a": {
+      "th": "เราพัฒนาด้วย Next.js App Router (SSR) ร่วมกับ Tailwind CSS และการปรับแต่ง Core Web Vitals ทำให้เว็บไซต์โหลดเร็ว และติดดัชนี Google ได้ง่าย",
+      "en": "We develop using Next.js App Router (SSR) and Tailwind CSS, fully optimizing Core Web Vitals to achieve lightning-fast load times and high search engine indexing."
+    }
   },
   {
-    "q": "หลังส่งมอบงาน ลูกค้าจะได้รับ Source Code และสิทธิ์อะไรบ้าง?",
-    "a": "ลูกค้าจะได้รับสิทธิ์ใน Source Code 100% (Full Ownership) พร้อมสิทธิ์การเข้าถึงเซิร์ฟเวอร์ Repository และเอกสารประกอบการใช้งานระบบครบถ้วน"
+    "q": {
+      "th": "หลังส่งมอบงาน ลูกค้าจะได้รับ Source Code หรือไม่?",
+      "en": "Will we receive the full source code after handoff?"
+    },
+    "a": {
+      "th": "ลูกค้าจะได้รับสิทธิ์ใน Source Code ทั้งหมด 100% (Full Ownership) พร้อมโครงสร้างโค้ดที่เป็นระเบียบเรียบร้อย สามารถนำไปแก้ไขหรือต่อยอดในอนาคตได้ทันที",
+      "en": "Yes, clients receive 100% full source code ownership. The code is clean and structured, allowing for easy updates or future expansions."
+    }
   },
   {
-    "q": "มีบริการดูแล Maintenance หลังส่งมอบโครงการหรือไม่?",
-    "a": "เรามีบริการการรับประกันซอฟต์แวร์และการดูแลรักษา (SLA Support) ตั้งแต่ 1 เดือนถึง 1 ปีเต็มขึ้นอยู่กับแพ็กเกจ พร้อมบริการอัปเดตความปลอดภัย 24/7"
+    "q": {
+      "th": "มีบริการดูแลรักษา (Maintenance) หลังส่งมอบโครงการหรือไม่?",
+      "en": "Do you provide maintenance support after launch?"
+    },
+    "a": {
+      "th": "มีบริการดูแลรักษาและรับประกันบั๊กเบื้องหลังหลังส่งมอบงาน เพื่อคอยช่วยเหลือและให้คำปรึกษาในการใช้งานระบบให้ราบรื่นที่สุด",
+      "en": "Yes, we provide software warranty and basic support after handoff to assist and guide you in maintaining smooth website operations."
+    }
   },
   {
-    "q": "หากมีระบบเดิมอยู่แล้ว สามารถเชื่อมต่อ API หรือย้ายมา LDCode ได้หรือไม่?",
-    "a": "ทีมงานของเราเชี่ยวชาญการ Migrate ระบบเดิม (Legacy Migration) และการเชื่อมต่อ API ไม่ว่าจะเป็น REST, GraphQL, SAP, Salesforce หรือ Database เดิมโดยไร้ Downtime"
+    "q": {
+      "th": "สามารถเริ่มพัฒนาเว็บไซต์จากแบบ Figma หรือ Adobe XD ได้หรือไม่?",
+      "en": "Can you develop from Figma or Adobe XD designs?"
+    },
+    "a": {
+      "th": "ได้ครับ หากมีแบบเว็บไซต์จาก Figma, Adobe XD, PSD, หรือเว็บไซต์ตัวอย่างที่ต้องการ สามารถส่งมาให้วิเคราะห์เพื่อพัฒนาตามแบบจริงได้เลย",
+      "en": "Absolutely. If you have UI wireframes or prototypes from Figma, Adobe XD, PSD, or reference links, we can develop the exact system based on your assets."
+    }
   }
 ]

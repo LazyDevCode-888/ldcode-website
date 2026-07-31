@@ -4,22 +4,24 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ArrowUpRight, Code2 } from 'lucide-react'
-
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Tech Stack', href: '/tech-stack' },
-  { name: 'Contact', href: '/contact' },
-]
+import { Menu, X, ArrowUpRight, Globe } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const { language, setLanguage, t } = useLanguage()
+
+  const localizedLinks = [
+    { name: t('หน้าแรก', 'Home'), href: '/' },
+    { name: t('เกี่ยวกับเรา', 'About'), href: '/about' },
+    { name: t('บริการ', 'Services'), href: '/services' },
+    { name: t('ผลงาน', 'Portfolio'), href: '/portfolio' },
+    { name: t('ราคา', 'Pricing'), href: '/pricing' },
+    { name: t('เทคโนโลยี', 'Tech Stack'), href: '/tech-stack' },
+    { name: t('ติดต่อเรา', 'Contact'), href: '/contact' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +57,7 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-1 glass-card px-4 py-1.5 rounded-full border border-emerald-500/20">
-            {navLinks.map((link) => {
+            {localizedLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
               return (
                 <Link
@@ -73,25 +75,71 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Action CTA Button */}
+          {/* Action CTA Button & Language Switcher */}
           <div className="hidden md:flex items-center gap-3">
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1 glass-card p-1 rounded-full border border-emerald-500/20 text-xs font-bold shadow-md shadow-emerald-500/5">
+              <button
+                onClick={() => setLanguage('th')}
+                className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+                  language === 'th'
+                    ? 'bg-emerald-400 text-black shadow-sm'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                TH
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+                  language === 'en'
+                    ? 'bg-emerald-400 text-black shadow-sm'
+                    : 'text-zinc-400 hover:text-zinc-200'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
             <Link
               href="/contact"
               className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium text-black bg-gradient-to-r from-emerald-400 to-emerald-300 hover:from-emerald-300 hover:to-emerald-400 transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-400/40 hover:scale-[1.02]"
             >
-              <span>Estimate Project</span>
+              <span>{t('ประเมินราคาโครงการ', 'Estimate Project')}</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl text-zinc-300 hover:text-emerald-400 hover:bg-zinc-900 border border-zinc-800"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Navigation Control */}
+          <div className="flex md:hidden items-center gap-2">
+            {/* Mobile Language Switcher */}
+            <div className="flex items-center gap-1 glass-card p-0.5 rounded-full border border-emerald-500/20 text-[10px] font-bold">
+              <button
+                onClick={() => setLanguage('th')}
+                className={`px-2 py-0.5 rounded-full transition-all ${
+                  language === 'th' ? 'bg-emerald-400 text-black' : 'text-zinc-400'
+                }`}
+              >
+                TH
+              </button>
+              <button
+                onClick={() => setLanguage('en')}
+                className={`px-2 py-0.5 rounded-full transition-all ${
+                  language === 'en' ? 'bg-emerald-400 text-black' : 'text-zinc-400'
+                }`}
+              >
+                EN
+              </button>
+            </div>
+
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-xl text-zinc-300 hover:text-emerald-400 hover:bg-zinc-900 border border-zinc-800"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -99,7 +147,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden glass-nav border-b border-emerald-500/20 px-4 pt-4 pb-6 mt-2 animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col gap-2">
-            {navLinks.map((link) => {
+            {localizedLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))
               return (
                 <Link
@@ -122,7 +170,7 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-base font-semibold text-black bg-emerald-400 shadow-lg shadow-emerald-500/30"
               >
-                <span>Estimate Project</span>
+                <span>{t('ประเมินราคาโครงการ', 'Estimate Project')}</span>
                 <ArrowUpRight className="w-5 h-5" />
               </Link>
             </div>

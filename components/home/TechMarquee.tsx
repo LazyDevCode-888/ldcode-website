@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import techData from '@/data/tech-stack.json'
 import { ArrowUpRight } from 'lucide-react'
@@ -27,12 +26,11 @@ export default function TechMarquee() {
               key={`${tech.name}-${idx}`}
               className="flex items-center gap-3 glass-card px-5 py-3 rounded-2xl border border-emerald-500/20 hover:border-emerald-400/60 transition-all shrink-0 group"
             >
-              <div className="relative w-8 h-8 rounded-lg overflow-hidden shrink-0">
-                <Image
+              <div className="w-8 h-8 rounded-lg overflow-hidden shrink-0 flex items-center justify-center">
+                <img
                   src={tech.icon}
                   alt={tech.name}
-                  fill
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-contain p-0.5 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <span className="text-sm font-bold text-zinc-200 group-hover:text-emerald-400 transition-colors">

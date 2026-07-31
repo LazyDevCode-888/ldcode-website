@@ -1,92 +1,912 @@
 [
   {
-    "id": "web-development",
-    "title": "Custom Web Architecture",
-    "subtitle": "เว็บแอปพลิเคชันและเว็บไซต์องค์กรระดับ High-Performance",
+    "id": "landing-page",
+    "title": {
+      "th": "รับทำเว็บไซต์หน้าเดียว (Landing Page)",
+      "en": "Landing Page Development"
+    },
+    "subtitle": {
+      "th": "ดีไซน์ทันสมัย พร้อม Deploy เว็บไซต์",
+      "en": "Modern Design, Ready to Deploy"
+    },
     "icon": "Globe",
-    "summary": "ออกแบบและพัฒนาด้วย Next.js, React, TypeScript และ SSR เพื่อความเร็วระดับมิลลิวินาที รองรับ SEO 100% และ UX/UI ระดับโลก",
+    "summary": {
+      "th": "เพื่อแนะนำธุรกิจ โปรโมทสินค้า บริการ หรือสร้างความน่าเชื่อถือให้กับแบรนด์ พร้อมพัฒนาเว็บไซต์ที่ออกแบบทันสมัย ใช้งานง่าย รองรับทุกอุปกรณ์ และพร้อมนำไปใช้งานจริง",
+      "en": "Promote products, services, or build brand authority. We build fast, modern, responsive landing pages tailored to your brand."
+    },
+    "price": {
+      "th": "เริ่มต้น 1,500 บาท",
+      "en": "Starting at ฿1,500"
+    },
+    "priceNum": 1500,
     "features": [
-      "Next.js App Router & Server Side Rendering (SSR)",
-      "Tailwind CSS & Responsive Mobile-First Design",
-      "Headless CMS (Sanity, Strapi) & Custom Admin Panel",
-      "SEO Optimization & Core Web Vitals 95+"
+      {
+        "th": "ออกแบบเว็บไซต์ให้ดูทันสมัยและเหมาะกับธุรกิจ",
+        "en": "Modern design tailored to your business profile"
+      },
+      {
+        "th": "Responsive Design รองรับการใช้งานบนมือถือ แท็บเล็ต และคอมพิวเตอร์",
+        "en": "Responsive layout supporting mobile, tablet, and desktop"
+      },
+      {
+        "th": "เว็บไซต์โหลดเร็ว ใช้งานง่าย และเป็นมิตรต่อผู้ใช้งาน",
+        "en": "Ultra-fast loading speed and user-friendly experience"
+      },
+      {
+        "th": "โครงสร้างเว็บไซต์เป็นระเบียบ สามารถพัฒนาต่อยอดได้ในอนาคต",
+        "en": "Clean code structure allowing future expansions"
+      },
+      {
+        "th": "แยก Component เป็นส่วน ๆ เพื่อให้ง่ายต่อการดูแลและแก้ไข",
+        "en": "Modular component structure for easy maintenance"
+      }
     ],
-    "deliverables": ["Full Source Code", "CI/CD Pipeline", "Production Deployment", "1-Year Tech Support"],
+    "deliverables": [
+      {
+        "th": "เว็บไซต์หน้าเดียวพร้อมใช้งาน",
+        "en": "Ready-to-use landing page"
+      },
+      {
+        "th": "Responsive Design รองรับทุกอุปกรณ์",
+        "en": "Responsive design for all device types"
+      },
+      {
+        "th": "Source Code ทั้งหมด",
+        "en": "Full source code delivery"
+      },
+      {
+        "th": "โครงสร้างโค้ดที่เป็นระเบียบ",
+        "en": "Clean and well-organized codebase"
+      },
+      {
+        "th": "Component แยกเป็นส่วน ๆ",
+        "en": "Modular component-based architecture"
+      },
+      {
+        "th": "ปุ่มเชื่อมต่อ Social Media",
+        "en": "Social media integrations"
+      },
+      {
+        "th": "ฟอร์มติดต่อ (ตามขอบเขตของงาน)",
+        "en": "Contact form (within defined scope)"
+      },
+      {
+        "th": "Deploy เว็บไซต์บนบริการฟรีที่รองรับ (Vercel / Netlify)",
+        "en": "Free deployment on Vercel / Netlify"
+      },
+      {
+        "th": "คำแนะนำในการนำเว็บไซต์ไปใช้งาน",
+        "en": "Usage guidelines and hand-off documentation"
+      }
+    ],
+    "suitableFor": [
+      {
+        "th": "เว็บไซต์แนะนำบริษัท",
+        "en": "Corporate intros"
+      },
+      {
+        "th": "Landing Page",
+        "en": "Landing Pages"
+      },
+      {
+        "th": "โปรโมทสินค้าและบริการ",
+        "en": "Product promotions"
+      },
+      {
+        "th": "Portfolio",
+        "en": "Online Portfolios"
+      },
+      {
+        "th": "Resume Online",
+        "en": "Digital Resumes"
+      },
+      {
+        "th": "ร้านอาหาร & คาเฟ่",
+        "en": "Restaurants & Cafes"
+      },
+      {
+        "th": "คลินิก & โรงแรม & ฟิตเนส",
+        "en": "Clinics & Hotels"
+      },
+      {
+        "th": "เว็บไซต์เปิดตัวสินค้า / ประชาสัมพันธ์",
+        "en": "Product launches & PR"
+      },
+      {
+        "th": "เว็บไซต์กิจกรรม (Event) / ส่วนตัว",
+        "en": "Event & Personal webs"
+      }
+    ],
+    "steps": [
+      {
+        "th": "พูดคุยรายละเอียด: สอบถามรายละเอียดเกี่ยวกับธุรกิจ รูปแบบเว็บไซต์ และความต้องการของลูกค้า",
+        "en": "Discuss Details: Consultation on business profile, web layouts, and core goals"
+      },
+      {
+        "th": "ประเมินราคา: สรุปรายละเอียดของงาน พร้อมประเมินราคาและระยะเวลาดำเนินงานก่อนเริ่มพัฒนา",
+        "en": "Quote Estimation: Finalize work scope, timeline, and starting budget"
+      },
+      {
+        "th": "พัฒนาเว็บไซต์: ดำเนินการพัฒนาเว็บไซต์ พร้อมอัปเดตความคืบหน้าของงานเป็นระยะ",
+        "en": "Web Development: Code the website and provide regular milestone updates"
+      },
+      {
+        "th": "ตรวจสอบและปรับแก้: ลูกค้าสามารถตรวจสอบเว็บไซต์ และแจ้งแก้ไขตามขอบเขตที่ตกลงร่วมกัน",
+        "en": "Review & Refine: Client inspects the staging site and requests revisions"
+      },
+      {
+        "th": "ส่งมอบงาน: ส่งมอบเว็บไซต์ พร้อม Source Code และไฟล์ที่เกี่ยวข้อง",
+        "en": "Project Handoff: Deliver codebase, source files, and deploy live"
+      }
+    ],
+    "notIncluded": [
+      {
+        "th": "ค่า Domain",
+        "en": "Custom Domain fees"
+      },
+      {
+        "th": "ค่า Hosting หรือ Server",
+        "en": "Hosting or server lease cost"
+      },
+      {
+        "th": "ระบบหลังบ้าน",
+        "en": "Backend admin panels"
+      },
+      {
+        "th": "ระบบสมาชิก / ระบบฐานข้อมูล",
+        "en": "User registration or databases"
+      },
+      {
+        "th": "ฟังก์ชันเฉพาะทางที่ไม่ได้อยู่ในขอบเขตงาน",
+        "en": "Custom programmatic features out of scope"
+      },
+      {
+        "th": "การจัดทำเนื้อหา รูปภาพ หรือโลโก้ (หากลูกค้ายังไม่มี)",
+        "en": "Content writing, stock images, or logo designs"
+      }
+    ],
+    "prepNeeded": [
+      {
+        "th": "รายละเอียดของธุรกิจหรือบริการ",
+        "en": "Business description and text content"
+      },
+      {
+        "th": "โลโก้ (ถ้ามี)",
+        "en": "Logo files (if available)"
+      },
+      {
+        "th": "รูปภาพที่ต้องการใช้งาน",
+        "en": "Images and media assets to display"
+      },
+      {
+        "th": "ข้อมูลสำหรับแสดงบนเว็บไซต์",
+        "en": "Contact information, address, and maps"
+      },
+      {
+        "th": "สีหรือรูปแบบที่ต้องการ",
+        "en": "Preferred color schemes and layout styles"
+      },
+      {
+        "th": "ตัวอย่างเว็บไซต์ที่ชื่นชอบ (ถ้ามี)",
+        "en": "Reference websites or design inspirations"
+      }
+    ],
+    "deployment": {
+      "th": "เว็บไซต์ประเภท Landing Page หรือเว็บไซต์ที่ไม่มีระบบหลังบ้าน สามารถ Deploy บนบริการฟรี เช่น Vercel หรือ Netlify ได้ หากลูกค้ามี Domain อยู่แล้ว สามารถช่วยเชื่อมต่อเว็บไซต์เข้ากับ Domain ได้ หากต้องการใช้งาน Hosting แบบเสียค่าใช้จ่าย หรือบริการอื่น ๆ สามารถปรึกษาเพื่อเลือกแนวทางที่เหมาะสมกับงบประมาณได้",
+      "en": "Static pages without complex backends can be deployed for free on Vercel or Netlify. If you have an existing domain, we can map it. We also consult on paid hosting plans matching your budget."
+    },
     "popular": true
   },
   {
-    "id": "mobile-development",
-    "title": "Cross-Platform Mobile Apps",
-    "subtitle": "แอปพลิเคชันมือถือ iOS & Android ด้วย React Native / Flutter",
-    "icon": "Smartphone",
-    "summary": "สร้างสรรค์โมบายแอปที่ตอบสนองลื่นไหล มีระบบ Push Notifications, Offline Storage, Payment Gateway และ Biometric Auth",
+    "id": "corporate-website",
+    "title": {
+      "th": "รับทำเว็บไซต์บริษัท / องค์กร (Corporate Website)",
+      "en": "Corporate Website Development"
+    },
+    "subtitle": {
+      "th": "3–5 หน้า ดีไซน์พรีเมียม พร้อม Deploy",
+      "en": "3-5 Pages, Premium Design & Ready to Deploy"
+    },
+    "icon": "Building2",
+    "summary": {
+      "th": "เว็บไซต์แนะนำบริษัท/บริการเพื่อสร้างภาพลักษณ์และความน่าเชื่อถือให้กับองค์กร ออกแบบโครงสร้างให้รองรับการขยายตัวและการทำ SEO ในอนาคต",
+      "en": "Company profile and service pages to build online credibility. Optimized layout structured for scale and technical SEO."
+    },
+    "price": {
+      "th": "เริ่มต้น 4,000 บาท",
+      "en": "Starting at ฿4,000"
+    },
+    "priceNum": 4000,
     "features": [
-      "React Native / Flutter Native Engine",
-      "iOS App Store & Android Play Store Deployment",
-      "Push Notification & Real-time WebSockets",
-      "Biometric Authentication & Secure Storage"
+      {
+        "th": "ออกแบบเว็บไซต์ให้เหมาะกับภาพลักษณ์ของธุรกิจ",
+        "en": "Professional visual identity matching your industry standard"
+      },
+      {
+        "th": "ดีไซน์ทันสมัย ใช้งานง่าย โหลดเร็ว",
+        "en": "Modern UX layouts, loading fast and optimized for core web vitals"
+      },
+      {
+        "th": "รองรับมือถือ แท็บเล็ต และคอมพิวเตอร์ (Responsive Design)",
+        "en": "Responsive interface rendering across mobile, tablet, and desktop"
+      },
+      {
+        "th": "โครงสร้างเว็บไซต์เป็นระเบียบ สามารถต่อยอดได้ในอนาคต",
+        "en": "Clean and extensible codebase designed for scalability"
+      },
+      {
+        "th": "แยก Component เป็นส่วน ๆ เพื่อการบำรุงรักษาที่สะดวก",
+        "en": "Modular components library for comfortable edits later"
+      }
     ],
-    "deliverables": ["iOS & Android Build", "App Store Publishing", "API Documentation", "Source Code"],
+    "deliverables": [
+      {
+        "th": "เว็บไซต์บริษัทพร้อมใช้งาน 3-5 หน้า (เช่น Home, About, Services, Portfolio, Contact)",
+        "en": "Bilingual company website of 3-5 pages (Home, About, Services, etc.)"
+      },
+      {
+        "th": "Responsive Design รองรับทุกอุปกรณ์",
+        "en": "Responsive layouts for all devices"
+      },
+      {
+        "th": "Source Code ทั้งหมด",
+        "en": "Full source code package"
+      },
+      {
+        "th": "โครงสร้างโค้ดที่เป็นระเบียบ",
+        "en": "Organized files structure"
+      },
+      {
+        "th": "Component แยกเป็นส่วน ๆ",
+        "en": "Component-driven layout elements"
+      },
+      {
+        "th": "ฟอร์มติดต่อ & Google Maps (หากต้องการ)",
+        "en": "Contact form & Google Maps API setup (as requested)"
+      },
+      {
+        "th": "ปุ่มเชื่อมต่อ Social Media",
+        "en": "Social media channel linkages"
+      },
+      {
+        "th": "Deploy เว็บไซต์บนบริการฟรีที่รองรับ (Vercel / Netlify)",
+        "en": "Free cloud publishing on Vercel / Netlify"
+      },
+      {
+        "th": "คำแนะนำในการนำเว็บไซต์ไปใช้งาน",
+        "en": "Training on site usage and code orientation"
+      }
+    ],
+    "suitableFor": [
+      {
+        "th": "บริษัท & องค์กร & สมาคม & มูลนิธิ",
+        "en": "Corporates, Organizations & Foundations"
+      },
+      {
+        "th": "ธุรกิจ SME & Startup & โรงงาน",
+        "en": "SMEs, Startups & Factories"
+      },
+      {
+        "th": "ร้านค้า & คาเฟ่ & คลินิก & โรงแรม",
+        "en": "Retail shops, Hotels & Clinics"
+      },
+      {
+        "th": "โรงเรียน & มหาวิทยาลัย",
+        "en": "Schools & Universities"
+      },
+      {
+        "th": "หน่วยงานภาครัฐ & หน่วยงานเอกชน",
+        "en": "Government & Private entities"
+      }
+    ],
+    "steps": [
+      {
+        "th": "พูดคุยรายละเอียด: สอบถามข้อมูลเกี่ยวกับธุรกิจ จำนวนหน้าเว็บไซต์ รูปแบบการออกแบบ และความต้องการของลูกค้า",
+        "en": "Information Gathering: Consult on company background, page hierarchy, and visual style"
+      },
+      {
+        "th": "ประเมินราคา: สรุปรายละเอียดของงาน พร้อมประเมินราคาและระยะเวลาดำเนินงานก่อนเริ่มพัฒนา",
+        "en": "Proposal & Estimate: Finalize page list, features cost, and execution duration"
+      },
+      {
+        "th": "พัฒนาเว็บไซต์: ดำเนินการพัฒนาเว็บไซต์ พร้อมอัปเดตความคืบหน้าของงานเป็นระยะ",
+        "en": "Development: Build interactive layouts, optimize assets, and program functionalities"
+      },
+      {
+        "th": "ตรวจสอบและปรับแก้: ลูกค้าสามารถตรวจสอบเว็บไซต์ และแจ้งแก้ไขตามขอบเขตที่ตกลงร่วมกัน",
+        "en": "Testing & Revisions: Client audits pages on staging and reports layout fixes"
+      },
+      {
+        "th": "ส่งมอบงาน: ส่งมอบเว็บไซต์ พร้อม Source Code และไฟล์ที่เกี่ยวข้อง",
+        "en": "Handoff: Deliver code, connect domain, and push live"
+      }
+    ],
+    "notIncluded": [
+      {
+        "th": "ค่า Domain",
+        "en": "Custom domain fees"
+      },
+      {
+        "th": "ค่า Hosting หรือ Server",
+        "en": "Web hosting server fees"
+      },
+      {
+        "th": "ระบบหลังบ้าน / ระบบสมาชิก / ระบบฐานข้อมูล",
+        "en": "Bespoke admin portals, databases, or client accounts"
+      },
+      {
+        "th": "ระบบร้านค้าออนไลน์ / ระบบจอง / ระบบชำระเงิน",
+        "en": "E-commerce baskets, booking calendar bookings, or payment gateways"
+      },
+      {
+        "th": "การจัดทำโลโก้ / การจัดทำรูปภาพหรือเนื้อหาของเว็บไซต์",
+        "en": "Logo assets creation, copywriting services, or custom graphics"
+      },
+      {
+        "th": "ฟังก์ชันเฉพาะทางที่ไม่ได้อยู่ในขอบเขตงาน",
+        "en": "Custom APIs integrations not in scope"
+      }
+    ],
+    "prepNeeded": [
+      {
+        "th": "ข้อมูลเกี่ยวกับบริษัทหรือองค์กร",
+        "en": "Company background history and descriptions"
+      },
+      {
+        "th": "โลโก้บริษัท",
+        "en": "Logo files vector formats"
+      },
+      {
+        "th": "รูปภาพที่ต้องการใช้งาน",
+        "en": "Team, office, and services pictures"
+      },
+      {
+        "th": "รายละเอียดสินค้าและบริการ",
+        "en": "Information on products and services catalog"
+      },
+      {
+        "th": "ข้อมูลการติดต่อ & Social Media",
+        "en": "HQ address, phone numbers, lines, emails"
+      },
+      {
+        "th": "Google Maps (ถ้ามี)",
+        "en": "Google Maps location links"
+      },
+      {
+        "th": "ตัวอย่างเว็บไซต์ที่ชื่นชอบ (ถ้ามี)",
+        "en": "Web inspiration links"
+      }
+    ],
+    "deployment": {
+      "th": "เว็บไซต์ประเภทบริษัทที่ไม่มีระบบหลังบ้าน สามารถ Deploy บนบริการฟรี เช่น Vercel หรือ Netlify ได้ หากลูกค้ามี Domain อยู่แล้ว สามารถช่วยเชื่อมต่อเว็บไซต์เข้ากับ Domain ได้ หากต้องการใช้งาน Hosting แบบเสียค่าใช้จ่าย หรือบริการอื่น ๆ สามารถปรึกษาเพื่อเลือกแนวทางที่เหมาะสมกับงบประมาณได้",
+      "en": "Frontend static company webs can publish on free hosts like Vercel. We map custom domains. We also offer guidance on standard paid hosting options."
+    },
     "popular": false
   },
   {
-    "id": "cloud-devops",
-    "title": "Cloud Infrastructure & DevOps",
-    "subtitle": "ระบบ Cloud Scaling, Docker, Kubernetes & AWS Automation",
-    "icon": "Cloud",
-    "summary": "วางโครงสร้างพื้นฐานระบบ Cloud Server ปลอดภัย รองรับ Auto-scaling ทราฟฟิกสูง พร้อมระบบ CI/CD และ Monitoring 24/7",
+    "id": "web-application",
+    "title": {
+      "th": "รับพัฒนา Web Application ระบบหน้าบ้านและหลังบ้าน",
+      "en": "Full-Stack Web Application"
+    },
+    "subtitle": {
+      "th": "สำหรับบริษัทและองค์กร ออกแบบตามความต้องการ",
+      "en": "Custom Backend and Frontend Systems for Businesses"
+    },
+    "icon": "Database",
+    "summary": {
+      "th": "ระบบเว็บแอปพลิเคชันจัดการข้อมูลสำหรับธุรกิจ พร้อม Admin Dashboard ระบบจองคิว จัดการสินค้า คลังสินค้า สมาชิก และรายงานวิเคราะห์ข้อมูล",
+      "en": "Custom web apps with databases and user authentication. Includes Admin Dashboard dashboards for inventory, client management, booking portals, and custom reporting."
+    },
+    "price": {
+      "th": "เริ่มต้น 15,000 บาท",
+      "en": "Starting at ฿15,000"
+    },
+    "priceNum": 15000,
     "features": [
-      "AWS / GCP / Vercel Managed Infrastructure",
-      "Docker Containerization & Kubernetes Cluster",
-      "Zero-Downtime CI/CD Deployment Pipelines",
-      "Serverless Architecture & Database Replication"
+      {
+        "th": "พัฒนาระบบตามความต้องการและขั้นตอนของธุรกิจ",
+        "en": "Application built according to your custom business processes"
+      },
+      {
+        "th": "ระบบหน้าบ้าน (Frontend) และระบบหลังบ้าน (Admin Dashboard) จัดการข้อมูล",
+        "en": "Dual architecture: Frontend client application and Admin Dashboard"
+      },
+      {
+        "th": "รองรับการใช้งานบนมือถือ แท็บเล็ต และคอมพิวเตอร์",
+        "en": "Responsive interface optimizing for mobile, tablet, and desktop layout"
+      },
+      {
+        "th": "โครงสร้างระบบเป็นระเบียบ สามารถต่อยอดและเพิ่มฟีเจอร์ได้ง่าย",
+        "en": "Extensible codebase and database schema ready for secondary feature versions"
+      },
+      {
+        "th": "แยก Component เป็นส่วน ๆ เพื่อความง่ายต่อการบำรุงรักษา",
+        "en": "Well-modularized files and components for standard debug routines"
+      }
     ],
-    "deliverables": ["Terraform Scripts", "Infrastructure Diagram", "Monitoring Dashboard", "Security Audit"],
+    "deliverables": [
+      {
+        "th": "ระบบพร้อมใช้งาน (Frontend + Admin Dashboard)",
+        "en": "Functional production system (Frontend & Admin Panel)"
+      },
+      {
+        "th": "Responsive Design",
+        "en": "Responsive layout design"
+      },
+      {
+        "th": "Source Code ทั้งหมด",
+        "en": "Full project source code handover"
+      },
+      {
+        "th": "โครงสร้างโค้ดที่เป็นระเบียบ & แยก Component เป็นส่วน ๆ",
+        "en": "Organized codebase structure & modular components"
+      },
+      {
+        "th": "ระบบจัดการข้อมูลตามขอบเขตงาน",
+        "en": "Custom database tables management interface"
+      },
+      {
+        "th": "ระบบเข้าสู่ระบบ (Login / JWT Auth)",
+        "en": "Authentication & security gateways (JWT/Sessions)"
+      },
+      {
+        "th": "เชื่อมต่อ API (ตามขอบเขตงาน)",
+        "en": "Custom API integrations as requested"
+      },
+      {
+        "th": "คู่มือการใช้งานเบื้องต้น (สำหรับบางโปรเจกต์)",
+        "en": "User manual guides (for custom dashboard scopes)"
+      },
+      {
+        "th": "คำแนะนำในการดูแลและใช้งานระบบ",
+        "en": "System administrator training checklist"
+      }
+    ],
+    "suitableFor": [
+      {
+        "th": "บริษัท & องค์กร & หน่วยงานรัฐ/เอกชน",
+        "en": "Corporates, Organizations & Public bodies"
+      },
+      {
+        "th": "ธุรกิจ SME & Startup & โรงงาน",
+        "en": "SMEs, Startups & Manufacturing plants"
+      },
+      {
+        "th": "โรงเรียน & มหาวิทยาลัย",
+        "en": "Schools & Universities"
+      },
+      {
+        "th": "คลินิก & โรงพยาบาล & ร้านค้า",
+        "en": "Clinics, Hospitals & Stores"
+      },
+      {
+        "th": "ธุรกิจที่ต้องการระบบเฉพาะทาง (CRM, ERP, HRM)",
+        "en": "Businesses requiring custom software (CRM, ERM, HRM)"
+      }
+    ],
+    "steps": [
+      {
+        "th": "พูดคุยรายละเอียด: วิเคราะห์รูปแบบธุรกิจ ขั้นตอนการทำงาน และฟังก์ชันที่ต้องการ เพื่อกำหนดขอบเขตของระบบ",
+        "en": "Requirements Engineering: Analyze workflow processes, entities relationship models, and API scope"
+      },
+      {
+        "th": "ประเมินราคา: สรุปรายละเอียดของระบบ พร้อมประเมินราคาและระยะเวลาดำเนินงานก่อนเริ่มพัฒนา",
+        "en": "System Quotation: Draft scope checklist, tech dependencies budget, and timeline milestones"
+      },
+      {
+        "th": "พัฒนาระบบ: ดำเนินการพัฒนาระบบ พร้อมอัปเดตความคืบหน้าของงานเป็นระยะ",
+        "en": "Coding Phase: Develop API database layers, integrate interfaces, and connect dashboards"
+      },
+      {
+        "th": "ตรวจสอบและปรับแก้: ลูกค้าสามารถทดสอบการทำงานของระบบ และแจ้งปรับแก้ตามขอบเขตที่ตกลงร่วมกัน",
+        "en": "UAT Testing: Client runs user acceptance tests on staging and reviews functionalities"
+      },
+      {
+        "th": "ส่งมอบงาน: ส่งมอบระบบ พร้อม Source Code และไฟล์ที่เกี่ยวข้อง รวมถึงแนะนำการใช้งานเบื้องต้น",
+        "en": "System Handover: Provide code files, run migration scripts on server, and outline guide maps"
+      }
+    ],
+    "notIncluded": [
+      {
+        "th": "ค่า Domain",
+        "en": "Domain registration fee"
+      },
+      {
+        "th": "ค่า Hosting / ค่า Server",
+        "en": "Cloud hosting or server fees"
+      },
+      {
+        "th": "ค่า Database / ค่า Cloud Service",
+        "en": "Database clusters or AWS/GCP services invoices"
+      },
+      {
+        "th": "ค่าบริการ API จากผู้ให้บริการภายนอก",
+        "en": "Third-party APIs subscriptions (SMS, Payment, Maps)"
+      },
+      {
+        "th": "ระบบที่รองรับผู้ใช้งานจำนวนมากเป็นพิเศษ",
+        "en": "Architecture for extreme loads (e.g. concurrent millions)"
+      },
+      {
+        "th": "การนำเข้าข้อมูลจำนวนมาก",
+        "en": "Large scale database legacy import services"
+      },
+      {
+        "th": "ฟังก์ชันเพิ่มเติมที่ไม่ได้อยู่ในขอบเขตงาน",
+        "en": "Out of scope features requests"
+      }
+    ],
+    "prepNeeded": [
+      {
+        "th": "รายละเอียดของธุรกิจ & ขั้นตอนการทำงานของระบบ",
+        "en": "Workflow documentation and business rules"
+      },
+      {
+        "th": "รายการฟังก์ชันที่ต้องการ",
+        "en": "Feature requirements list"
+      },
+      {
+        "th": "ตัวอย่างระบบที่ต้องการ (ถ้ามี)",
+        "en": "Reference systems (if any)"
+      },
+      {
+        "th": "โลโก้บริษัท & รูปภาพหรือข้อมูลที่ใช้ในระบบ",
+        "en": "Visual assets and baseline database seed data"
+      },
+      {
+        "th": "ตัวอย่างเอกสารหรือแบบฟอร์มที่เกี่ยวข้อง (ถ้ามี)",
+        "en": "Sample document layouts or report formats"
+      }
+    ],
+    "deployment": {
+      "th": "สำหรับระบบที่มีเฉพาะหน้าบ้าน สามารถ Deploy บนบริการฟรีที่รองรับได้ สำหรับระบบที่มีหน้าบ้าน หลังบ้าน และฐานข้อมูล จำเป็นต้องมี Domain, Server และ Database สำหรับใช้งานจริง หากลูกค้ามี Server หรือ Hosting อยู่แล้ว สามารถช่วยติดตั้งและเชื่อมต่อระบบให้ตามขอบเขตของงาน",
+      "en": "Front-only apps can deploy on Vercel. Database-backed full-stack apps require a domain, database cluster, and cloud instances. We configure these details on your target servers."
+    },
     "popular": true
   },
   {
-    "id": "ai-solutions",
-    "title": "AI & Smart Automation",
-    "subtitle": "โซลูชัน AI, LLM Integration & Workflow Automation",
-    "icon": "Cpu",
-    "summary": "เชื่อมต่อ AI โมเดลระดับโลก เช่น OpenAI, Claude, Custom RAG Systems เพื่อเพิ่มประสิทธิภาพกระบวนการทำงานในองค์กร",
+    "id": "student-project",
+    "title": {
+      "th": "รับทำระบบสำหรับนักศึกษา โปรเจกต์จบ ระบบส่งอาจารย์",
+      "en": "Student Senior Project Support"
+    },
+    "subtitle": {
+      "th": "พร้อมหน้าบ้านหลังบ้าน โค้ดสะอาดศึกษาต่อยอดง่าย",
+      "en": "Complete CRUD Web Systems with Explained Codebase"
+    },
+    "icon": "GraduationCap",
+    "summary": {
+      "th": "ช่วยพัฒนาระบบสำหรับวิชาเรียน หรือโปรเจกต์จบ (Senior Project) ตามหัวข้อและฟังก์ชันที่คุณกำหนด พร้อมแนะนำและสอนติดตั้งระบบเบื้องต้น",
+      "en": "Development of course projects or senior graduation systems according to your topic. We write clean code to help you study and explain it confidently to professors."
+    },
+    "price": {
+      "th": "เริ่มต้น 2,500 บาท",
+      "en": "Starting at ฿2,500"
+    },
+    "priceNum": 2500,
     "features": [
-      "Custom RAG (Retrieval-Augmented Generation)",
-      "OpenAI / Anthropic API Integration",
-      "Automated Business Process Agents",
-      "Data Analytics & Custom Machine Learning Models"
+      {
+        "th": "พัฒนาตามหัวข้อและความต้องการของโปรเจกต์",
+        "en": "System developed according to your specific project assignment guidelines"
+      },
+      {
+        "th": "มีทั้งระบบหน้าบ้าน (Frontend) และระบบหลังบ้าน (Admin Dashboard)",
+        "en": "Includes interactive client view and administrator admin panels"
+      },
+      {
+        "th": "รองรับการใช้งานบนมือถือ แท็บเล็ต และคอมพิวเตอร์",
+        "en": "Responsive interface optimizing for screens, tablets, and phones"
+      },
+      {
+        "th": "โครงสร้างโค้ดเป็นระเบียบ อ่านง่าย สามารถนำไปศึกษาต่อและตอบคำถามอาจารย์ได้",
+        "en": "Readable codebase helping you explain the logic during project presentation panels"
+      },
+      {
+        "th": "แยก Component เป็นส่วน ๆ เพื่อให้ง่ายต่อการแก้ไข",
+        "en": "Modular structure allowing you to adapt or modify lines easily"
+      }
     ],
-    "deliverables": ["Custom AI Pipeline", "RAG Database Setup", "Staff Training", "API Endpoint"],
+    "deliverables": [
+      {
+        "th": "ระบบพร้อมใช้งาน (Frontend + Admin Dashboard)",
+        "en": "Functional system codebase (Frontend + Admin)"
+      },
+      {
+        "th": "Responsive Design",
+        "en": "Responsive layouts setup"
+      },
+      {
+        "th": "Source Code ทั้งหมด",
+        "en": "Full project source code package"
+      },
+      {
+        "th": "โครงสร้างโค้ดที่เป็นระเบียบ",
+        "en": "Clean file structure layout"
+      },
+      {
+        "th": "Component แยกเป็นส่วน ๆ",
+        "en": "Component-based architecture"
+      },
+      {
+        "th": "ระบบจัดการข้อมูลและฟังก์ชันที่ตกลงกัน",
+        "en": "Core features and CRUD handlers as agreed"
+      },
+      {
+        "th": "ระบบเข้าสู่ระบบ (ตามขอบเขตงาน)",
+        "en": "Authentication logic (according to scope)"
+      },
+      {
+        "th": "คู่มือการติดตั้งหรือใช้งานเบื้องต้น (สำหรับบางโปรเจกต์)",
+        "en": "ReadMe deployment guides"
+      },
+      {
+        "th": "คำแนะนำในการนำระบบไปพัฒนาต่อ",
+        "en": "Brief coaching checklist to study components code"
+      }
+    ],
+    "suitableFor": [
+      {
+        "th": "โปรเจกต์รายวิชา",
+        "en": "Coursework projects"
+      },
+      {
+        "th": "โปรเจกต์จบ / Senior Project",
+        "en": "Senior Projects & Graduation systems"
+      },
+      {
+        "th": "ระบบส่งอาจารย์",
+        "en": "Professor review targets"
+      },
+      {
+        "th": "ระบบสำหรับนำเสนอผลงาน",
+        "en": "Presentation prototypes"
+      },
+      {
+        "th": "ระบบสำหรับการแข่งขัน",
+        "en": "Contest submissions"
+      },
+      {
+        "th": "ระบบฝึกงาน",
+        "en": "Internship projects"
+      },
+      {
+        "th": "ระบบที่ต้องการนำ Source Code ไปศึกษาต่อ",
+        "en": "Codebase studies"
+      },
+      {
+        "th": "ระบบต้นแบบ (Prototype)",
+        "en": "MVP prototypes"
+      }
+    ],
+    "steps": [
+      {
+        "th": "พูดคุยรายละเอียด: แจ้งหัวข้อโปรเจกต์ ขอบเขตงาน และฟังก์ชันที่ต้องการ",
+        "en": "Details Gathering: Describe your assignment details, topics list, and required features"
+      },
+      {
+        "th": "ประเมินราคา: ประเมินราคาและระยะเวลาดำเนินงานตามรายละเอียดของระบบ",
+        "en": "Project Pricing: Estimate cost depending on backend scope, forms, and pages"
+      },
+      {
+        "th": "พัฒนาระบบ: ดำเนินการพัฒนาระบบ พร้อมอัปเดตความคืบหน้าของงานเป็นระยะ",
+        "en": "System Development: Code frontend pages, DB configurations, and route handlers"
+      },
+      {
+        "th": "ตรวจสอบและปรับแก้: ลูกค้าสามารถทดสอบระบบ และแจ้งปรับแก้ตามขอบเขตที่ตกลงร่วมกัน",
+        "en": "Code Review: Test functionalities in our staging site and feedback on fixes"
+      },
+      {
+        "th": "ส่งมอบงาน: ส่งมอบระบบ พร้อม Source Code และไฟล์ที่เกี่ยวข้อง",
+        "en": "System Handoff: Deliver full source files zip and provide walkthrough summaries"
+      }
+    ],
+    "notIncluded": [
+      {
+        "th": "ค่า Domain / Hosting / Server / Database / Cloud Service",
+        "en": "Domain, server leases, database clusters, or external API costs"
+      },
+      {
+        "th": "การจัดทำรายงาน หรือวิทยานิพนธ์",
+        "en": "Writing senior reports, documentation files, or theses"
+      },
+      {
+        "th": "การจัดทำเอกสารวิจัย",
+        "en": "Preparing scientific research papers"
+      },
+      {
+        "th": "การรับทำข้อสอบหรือการบ้านแทน",
+        "en": "Doing test exams or regular homework assignments instead"
+      },
+      {
+        "th": "ฟังก์ชันเพิ่มเติมที่ไม่ได้อยู่ในขอบเขตงาน",
+        "en": "Features not outlined in the initial scope layout"
+      }
+    ],
+    "prepNeeded": [
+      {
+        "th": "หัวข้อโปรเจกต์ & รายละเอียดที่อาจารย์กำหนด",
+        "en": "Project topic and description sheet from professors"
+      },
+      {
+        "th": "รายการฟังก์ชันที่ต้องการ",
+        "en": "List of requested user functionalities"
+      },
+      {
+        "th": "ตัวอย่างระบบ (ถ้ามี)",
+        "en": "Reference systems links"
+      },
+      {
+        "th": "แบบหน้าจอ (ถ้ามี)",
+        "en": "Interface wireframes (if available)"
+      },
+      {
+        "th": "โลโก้หรือรูปภาพที่ต้องการใช้",
+        "en": "Images and graphics to display"
+      }
+    ],
+    "deployment": {
+      "th": "หากเป็นระบบที่ไม่มีฐานข้อมูลหรือสามารถใช้งานบนบริการฟรีได้ สามารถช่วย Deploy ให้ได้ หากระบบมีฐานข้อมูลหรือจำเป็นต้องใช้งานบน Server จริง ลูกค้าจะต้องมี Domain, Server และ Database สำหรับใช้งาน ซึ่งสามารถปรึกษาเพื่อเลือกบริการที่เหมาะสมได้",
+      "en": "Static student apps can publish on free hosting. Database-backed projects require cloud servers. We can guide you on registering affordable student configurations."
+    },
     "popular": false
   },
   {
-    "id": "ui-ux-design",
-    "title": "UI/UX & Product Design",
-    "subtitle": "ออกแบบประสบการณ์ผู้ใช้ที่เรียบหรู น่าหลงใหล และใช้งานง่าย",
-    "icon": "Palette",
-    "summary": "ทำ Research, Wireframing, Figma Interactive Prototypes และ Design System ครบวงจรที่เปลี่ยนผู้เข้าชมเป็นลูกค้าจริง",
+    "id": "wordpress-customization",
+    "title": {
+      "th": "รับแก้ไข ปรับแต่ง และพัฒนาเว็บไซต์ WordPress",
+      "en": "WordPress Edits & Customization"
+    },
+    "subtitle": {
+      "th": "แก้ไขจากเว็บไซต์เดิม ต่อยอดการใช้งานโดยไม่ต้องเริ่มใหม่",
+      "en": "Optimize, fix, and expand your existing WordPress website"
+    },
+    "icon": "Settings",
+    "summary": {
+      "th": "รับแก้ไข ปรับแต่ง เพิ่มฟีเจอร์ หรือแก้ไขปัญหาต่าง ๆ ของ WordPress เช่น การปรับ Layout ติดตั้ง Plugin แก้ไข Responsive หรือแก้ปัญหา Error ต่าง ๆ",
+      "en": "Optimize layouts, theme styling, setup plugins, fix responsive layouts on mobile, improve PageSpeed scores, and debug PHP/database bugs on existing websites."
+    },
+    "price": {
+      "th": "เริ่มต้น 1,000 บาท",
+      "en": "Starting at ฿1,000"
+    },
+    "priceNum": 1000,
     "features": [
-      "User Research & Journey Mapping",
-      "Figma Design Systems & Components Library",
-      "Interactive Micro-animations & Prototypes",
-      "Usability Testing & Accessibility (WCAG 2.1)"
+      {
+        "th": "แก้ไขเว็บไซต์เดิมโดยไม่ต้องสร้างใหม่ ประหยัดงบประมาณ",
+        "en": "Refactor your current pages, saving money on full redesigns"
+      },
+      {
+        "th": "ปรับแต่ง Layout และ Theme ตามความต้องการของลูกค้า",
+        "en": "Adjust structures and themes exactly matching your layouts requirements"
+      },
+      {
+        "th": "รองรับการใช้งานบนมือถือ แท็บเล็ต และคอมพิวเตอร์",
+        "en": "Responsive improvements optimizing for smooth mobile/tablet view"
+      },
+      {
+        "th": "วิเคราะห์ปัญหาและแนะนำแนวทางแก้ไขอย่างเหมาะสม",
+        "en": "System diagnostic to fix performance issues correctly"
+      },
+      {
+        "th": "สำรองข้อมูลก่อนดำเนินการ (หากลูกค้าต้องการ)",
+        "en": "Full databases & files backups before editing lines to guarantee security"
+      }
     ],
-    "deliverables": ["Figma Source Files", "Design Tokens Export", "Design Guideline UI Kit", "Prototype Links"],
-    "popular": false
-  },
-  {
-    "id": "enterprise-software",
-    "title": "Enterprise Microservices",
-    "subtitle": "สถาปัตยกรรม Microservices & REST/GraphQL APIs",
-    "icon": "Server",
-    "summary": "สร้างแบ็กเอนด์ประสิทธิภาพสูงด้วย Node.js, Go, PostgreSQL, Redis ที่ทนทานต่อโหลดสูงและรองรับข้อมูลมหาศาล",
-    "features": [
-      "Go / Node.js High-Performance Microservices",
-      "PostgreSQL, Redis & MongoDB Database Cluster",
-      "GraphQL & OpenAPI (Swagger) Documentation",
-      "OAuth2, JWT & RBAC Enterprise Security"
+    "deliverables": [
+      {
+        "th": "เว็บไซต์ WordPress ที่ได้รับการแก้ไขหรือปรับแต่งเรียบร้อย",
+        "en": "Fully modified and refined WordPress website"
+      },
+      {
+        "th": "ปรับแต่ง Layout, Theme หรือเมนูของเว็บ",
+        "en": "Optimized layouts styles, navigation bars, and headers"
+      },
+      {
+        "th": "ติดตั้งและตั้งค่า Plugin / เพิ่มฟอร์มติดต่อ / เพิ่ม Google Maps",
+        "en": "Plugin setups (contact forms, maps API, SEO boosters)"
+      },
+      {
+        "th": "แก้ไข Responsive & ปรับความเร็วหน้าเว็บ",
+        "en": "Responsive optimizations & PageSpeed cache setup"
+      },
+      {
+        "th": "แก้ไขข้อผิดพลาด / บั๊กใน WordPress",
+        "en": "Debugging of console errors and PHP plugin crashes"
+      },
+      {
+        "th": "คำแนะนำในการดูแลและใช้งานเว็บไซต์",
+        "en": "Orientations on standard backups routines and updates safety"
+      },
+      {
+        "th": "สำรองข้อมูลก่อนเริ่มการแก้ไข (หากลูกค้าต้องการ)",
+        "en": "Site backup files archive (on request)"
+      }
     ],
-    "deliverables": ["API Service Codebase", "Postman Collection", "DB Migration Scripts", "Load Testing Report"],
+    "suitableFor": [
+      {
+        "th": "เว็บไซต์บริษัท / องค์กร / ร้านค้า",
+        "en": "Corporate, Organization & Shop websites"
+      },
+      {
+        "th": "เว็บไซต์โรงเรียน / โรงแรม / ร้านอาหาร",
+        "en": "School, Hotel & Restaurant webs"
+      },
+      {
+        "th": "เว็บไซต์ส่วนตัว / Portfolio ที่สร้างด้วย WordPress",
+        "en": "Personal blogs & Portfolios built on WordPress"
+      },
+      {
+        "th": "เว็บไซต์เดิมที่ต้องการปรับปรุงฟังก์ชันเพื่อความทันสมัย",
+        "en": "Old websites needing optimization updates to modern interfaces"
+      }
+    ],
+    "steps": [
+      {
+        "th": "พูดคุยรายละเอียด: แจ้งรายละเอียดสิ่งที่ต้องการ และช่องทางสำหรับเข้าตรวจสอบหน้างาน",
+        "en": "Details Auditing: Share dashboard credentials and describe errors or styling goals"
+      },
+      {
+        "th": "ประเมินราคา: ประเมินราคาและระยะเวลาการทำงานตามลักษณะปัญหาหรือความซับซ้อน",
+        "en": "Quotation: Finalize cost projection based on database size and coding duration"
+      },
+      {
+        "th": "สำรองข้อมูล & ทำงาน: ดำเนินการสำรองข้อมูล (Backup) และแก้ไขเว็บไซต์ตามขอบเขตงาน",
+        "en": "Backup & Work: Archive site contents and edit lines of theme/plugins code"
+      },
+      {
+        "th": "ตรวจสอบและปรับแก้: ลูกค้าเข้าตรวจสอบความถูกต้องเรียบร้อยและปรับแก้งานเพิ่มเติม",
+        "en": "Review: Audit layout rendering on devices and inspect core forms"
+      },
+      {
+        "th": "ส่งมอบงาน: ส่งคืนสิทธิ์เข้าใช้งาน ปล่อยระบบทำงานจริง และให้คำแนะนำการดูแล",
+        "en": "Project Closure: Hand back admin credentials and verify smooth server status"
+      }
+    ],
+    "notIncluded": [
+      {
+        "th": "ค่า Domain / Hosting หรือ Server ของเดิม",
+        "en": "Domain registration and hosting renewal bills"
+      },
+      {
+        "th": "ค่าลิขสิทธิ์ของ Theme หรือ Plugin เสียค่าใช้จ่ายเพิ่มเติม (ถ้ามี)",
+        "en": "Licensing fees for commercial premium themes or premium plugins"
+      },
+      {
+        "th": "การออกแบบโลโก้ใหม่",
+        "en": "Brand logo artwork design services"
+      },
+      {
+        "th": "การจัดทำรูปภาพหรือเนื้อหาทั้งหมด (ลูกค้าจัดเตรียมให้)",
+        "en": "Content writing and stock pictures sourcing"
+      },
+      {
+        "th": "ระบบหลังบ้านเฉพาะทางอื่น ๆ ที่ไม่อยู่ในขอบเขตงาน WordPress",
+        "en": "Custom standalone databases not in WordPress dashboard scope"
+      }
+    ],
+    "prepNeeded": [
+      {
+        "th": "ข้อมูลเข้าใช้งานระบบหลังบ้าน WordPress (Admin Access)",
+        "en": "WordPress Admin credentials (username and password)"
+      },
+      {
+        "th": "ข้อมูล Hosting หรือ DirectAdmin / cPanel / FTP (ถ้าจำเป็น)",
+        "en": "Hosting panel access or FTP logins (if server level debugging needed)"
+      },
+      {
+        "th": "รายละเอียดของฟีเจอร์ที่ต้องการเพิ่มเติมหรือข้อความรูปภาพที่ต้องการเปลี่ยน",
+        "en": "Brief sheet describing features text edits and layout targets"
+      },
+      {
+        "th": "ตัวอย่างหน้าตาหรือเว็บไซต์ที่ชื่นชอบ (ถ้ามี)",
+        "en": "Layout design reference examples"
+      }
+    ],
+    "deployment": {
+      "th": "จะทำการปรับแต่งที่เว็บไซต์เดิมของลูกค้าหรือระบบเดิม หากลูกค้าต้องการให้สร้าง Staging Site เพื่อทดสอบก่อนนำขึ้นจริง ก็สามารถจัดเตรียมได้ตามรายละเอียดการพูดคุย",
+      "en": "Edits are applied on your current website directly, or we can setup a copy (Staging Site) to verify code updates before pushing live."
+    },
     "popular": false
   }
 ]

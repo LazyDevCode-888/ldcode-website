@@ -2,15 +2,16 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
-import { ArrowRight, Code2, Sparkles, Terminal, ShieldCheck, Zap } from 'lucide-react'
+import { ArrowRight, Code2, Sparkles, } from 'lucide-react'
 import companyData from '@/data/company.json'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function HeroSection() {
   const titleRef = useRef<HTMLHeadingElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     if (titleRef.current) {
@@ -28,7 +29,7 @@ export default function HeroSection() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-10 left-10 w-72 h-72 bg-emerald-600/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-400/5 rounded-full blur-[120px] pointer-events-none" />
-
+      
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#141c1815_1px,transparent_1px),linear-gradient(to_bottom,#141c1815_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
 
@@ -41,14 +42,14 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-emerald-500/30 text-emerald-300 text-xs sm:text-sm font-medium shadow-lg shadow-emerald-950/40"
         >
           <Sparkles className="w-4 h-4 text-emerald-400 animate-pulse" />
-          <span>Next-Gen Enterprise Web & Mobile Architecture</span>
+          <span>{t('พัฒนาเว็บไซต์และระบบที่ทันสมัย ใช้งานง่าย โหลดเร็ว', 'Next-Gen Web & Mobile Architecture')}</span>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
         </motion.div>
 
         {/* Hero Title */}
         <h1 ref={titleRef} className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]">
-          Architecting High-Performance <br className="hidden sm:inline" />
-          <span className="text-ld">Digital Platforms</span> with{' '}
+          {t('พัฒนาเว็บไซต์ชิ้นเอกเพื่อ', 'Architecting High-Performance')} <br className="hidden sm:inline" />
+          <span className="text-ld">{t('ธุรกิจและเป้าหมายของคุณ', 'Digital Platforms')}</span> {t('ร่วมกับ', 'with')}{' '}
           <span className="text-code relative">
             LDCode
             <svg className="absolute -bottom-2 left-0 w-full h-3 text-emerald-400/40" viewBox="0 0 100 20" preserveAspectRatio="none">
@@ -59,7 +60,7 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="max-w-3xl mx-auto text-base sm:text-xl text-zinc-400 font-normal leading-relaxed">
-          {companyData.description}
+          {t(companyData.description)}
         </p>
 
         {/* CTA Buttons */}
@@ -68,7 +69,7 @@ export default function HeroSection() {
             href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base font-bold text-black bg-gradient-to-r from-emerald-400 via-emerald-300 to-emerald-400 hover:from-emerald-300 hover:to-emerald-400 transition-all duration-300 shadow-xl shadow-emerald-500/30 hover:shadow-emerald-400/50 hover:scale-[1.03]"
           >
-            <span>Start Your Project</span>
+            <span>{t('เริ่มโครงการของคุณ', 'Start Your Project')}</span>
             <ArrowRight className="w-5 h-5" />
           </Link>
           <Link
@@ -76,29 +77,11 @@ export default function HeroSection() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base font-semibold text-zinc-200 glass-card hover:bg-zinc-800/80 border border-emerald-500/30 hover:border-emerald-400/60 transition-all duration-300"
           >
             <Code2 className="w-5 h-5 text-emerald-400" />
-            <span>Explore Portfolio</span>
+            <span>{t('สำรวจผลงานล่าสุด', 'Explore Portfolio')}</span>
           </Link>
         </div>
 
-        {/* Stats Grid */}
-        <div className="pt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {companyData.stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-              className="glass-card p-4 sm:p-6 rounded-2xl border border-emerald-500/20 text-center glow-emerald-hover"
-            >
-              <div className="text-2xl sm:text-4xl font-extrabold text-code tracking-tight">
-                {stat.value}
-              </div>
-              <div className="text-xs sm:text-sm text-zinc-400 font-medium mt-1">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+
       </div>
     </section>
   )

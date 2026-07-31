@@ -2,55 +2,46 @@
   "categories": [
     {
       "id": "frontend",
-      "name": "Frontend & UI",
+      "name": {
+        "th": "ฝั่งหน้าบ้าน (Frontend & UI)",
+        "en": "Frontend & UI"
+      },
       "items": [
-        { "name": "Next.js", "icon": "/image/Next.js.png", "level": "Expert", "desc": "React Framework for Production, SSR, App Router" },
-        { "name": "React", "icon": "/image/React.png", "level": "Expert", "desc": "UI Component Library & Modern Hooks Architecture" },
-        { "name": "TypeScript", "icon": "/image/TypeScript.png", "level": "Expert", "desc": "Typed JavaScript for Safe Enterprise Codebases" },
-        { "name": "Tailwind CSS", "icon": "/image/Tailwind CSS.png", "level": "Expert", "desc": "Utility-First CSS Framework for Bespoke UI Design" },
-        { "name": "Vue.js", "icon": "/image/Vue.js.png", "level": "Proficient", "desc": "Progressive JavaScript Framework" },
-        { "name": "Angular", "icon": "/image/Angular.png", "level": "Proficient", "desc": "Cross-Platform Enterprise Framework" },
-        { "name": "HTML5", "icon": "/image/HTML5.png", "level": "Expert", "desc": "Semantic Web Standards & Accessibility" },
-        { "name": "CSS3", "icon": "/image/CSS3.png", "level": "Expert", "desc": "Modern Layouts, Flexbox, Grid & Animations" }
+        { "name": "Next.js", "icon": "https://cdn.simpleicons.org/nextdotjs/white", "level": "Expert", "desc": { "th": "เฟรมเวิร์ก React สำหรับการทำ SSR และการทำ SEO ระดับพรีเมียม", "en": "React Framework for Production, SSR, App Router" } },
+        { "name": "React", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", "level": "Expert", "desc": { "th": "ไลบรารีส่วนประกอบ UI & โครงสร้าง Hooks สมัยใหม่", "en": "UI Component Library & Modern Hooks Architecture" } },
+        { "name": "TypeScript", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg", "level": "Expert", "desc": { "th": "ภาษาจาวาสคริปต์แบบมีไทป์ เพื่อความปลอดภัยของโค้ด", "en": "Typed JavaScript for Safe Enterprise Codebases" } },
+        { "name": "Tailwind CSS", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", "level": "Expert", "desc": { "th": "เฟรมเวิร์ก CSS แบบ Utility-First สำหรับออกแบบ UI ตามบรีฟ", "en": "Utility-First CSS Framework for Bespoke UI Design" } },
+        { "name": "Bootstrap 5", "icon": "/image/Bootstrap.png", "level": "Expert", "desc": { "th": "เฟรมเวิร์ก CSS ยอดนิยมสำหรับการพัฒนาเว็บที่เน้นความเร็วและรองรับมือถือ", "en": "Highly popular CSS framework for rapid and responsive mobile-first web layouts." } },
+        { "name": "Vue.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg", "level": "Proficient", "desc": { "th": "จาวาสคริปต์เฟรมเวิร์กที่มีความยืดหยุ่นสูง", "en": "Progressive JavaScript Framework" } },
+        { "name": "Angular", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg", "level": "Proficient", "desc": { "th": "แพลตฟอร์มระดับองค์กรสำหรับการทำเว็บขนาดใหญ่", "en": "Cross-Platform Enterprise Framework" } },
+        { "name": "HTML5", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg", "level": "Expert", "desc": { "th": "โครงสร้างโค้ดมาตรฐานเว็บ Semantic Web & Accessibility", "en": "Semantic Web Standards & Accessibility" } },
+        { "name": "CSS3", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg", "level": "Expert", "desc": { "th": "เลย์เอาต์สมัยใหม่ Flexbox, Grid และระบบอนิเมชั่น", "en": "Modern Layouts, Flexbox, Grid & Animations" } }
       ]
     },
     {
       "id": "backend",
-      "name": "Backend & Runtime",
+      "name": {
+        "th": "ฝั่งหลังบ้าน (Backend & Runtime)",
+        "en": "Backend & Runtime"
+      },
       "items": [
-        { "name": "Node.js", "icon": "/image/Node.js.png", "level": "Expert", "desc": "Scalable Asynchronous JavaScript Runtime" },
-        { "name": "Go (Golang)", "icon": "/image/Go.png", "level": "Expert", "desc": "High-Performance Concurrency & Microservices" },
-        { "name": "Express.js", "icon": "/image/Express.png", "level": "Expert", "desc": "Minimalist Web Framework for Node.js" },
-        { "name": "Bun", "icon": "/image/Bun.png", "level": "Expert", "desc": "Ultra-fast All-in-One JavaScript Runtime & Package Manager" },
-        { "name": "ElysiaJS", "icon": "/image/elysia-logo-png_seeklogo-580325.png", "level": "Expert", "desc": "Ergonomic Web Framework for Bun with End-to-End Type Safety" }
+        { "name": "Node.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", "level": "Expert", "desc": { "th": "ระบบรันไทม์จาวาสคริปต์ฝั่งเซิร์ฟเวอร์แบบ Asynchronous", "en": "Scalable Asynchronous JavaScript Runtime" } },
+        { "name": "Go (Golang)", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg", "level": "Expert", "desc": { "th": "ภาษาสำหรับระบบ High-Performance Concurrency & Microservices", "en": "High-Performance Concurrency & Microservices" } },
+        { "name": "Express.js", "icon": "https://cdn.simpleicons.org/express/white", "level": "Expert", "desc": { "th": "เว็บเฟรมเวิร์กขนาดเล็กสำหรับประมวลผลบน Node.js", "en": "Minimalist Web Framework for Node.js" } },
+        { "name": "Bun", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg", "level": "Expert", "desc": { "th": "ระบบรันไทม์จาวาสคริปต์ยุคใหม่ความเร็วสูงแบบ All-in-One", "en": "Ultra-fast All-in-One JavaScript Runtime & Package Manager" } },
+        { "name": "ElysiaJS", "icon": "/image/elysia-logo-png_seeklogo-580325.png", "level": "Expert", "desc": { "th": "เว็บเฟรมเวิร์กประสิทธิภาพสูงบน Bun พร้อม Type Safety", "en": "Ergonomic Web Framework for Bun with End-to-End Type Safety" } }
       ]
     },
     {
       "id": "database",
-      "name": "Databases & Storage",
+      "name": {
+        "th": "ระบบฐานข้อมูล (Databases & Storage)",
+        "en": "Databases & Storage"
+      },
       "items": [
-        { "name": "PostgreSQL", "icon": "/image/PostgresSQL.png", "level": "Expert", "desc": "Advanced Open Source Relational Database" },
-        { "name": "MongoDB", "icon": "/image/MongoDB.png", "level": "Expert", "desc": "Flexible Document-Based NoSQL Database" },
-        { "name": "MySQL", "icon": "/image/MySQL.png", "level": "Expert", "desc": "Reliable Relational Database Management System" }
-      ]
-    },
-    {
-      "id": "devops-cloud",
-      "name": "DevOps & Cloud Infrastructure",
-      "items": [
-        { "name": "Docker", "icon": "/image/Docker.png", "level": "Expert", "desc": "Containerization Platform for Application Portability" },
-        { "name": "Vercel", "icon": "/image/Vercel.png", "level": "Expert", "desc": "Frontend Cloud & Serverless Deployment Platform" },
-        { "name": "Google Cloud", "icon": "/image/Google.png", "level": "Expert", "desc": "Global Scalable Cloud Infrastructure & AI APIs" },
-        { "name": "Netlify", "icon": "/image/Netlify.png", "level": "Proficient", "desc": "Automated Web Hosting & Serverless Functions" }
-      ]
-    },
-    {
-      "id": "tools-testing",
-      "name": "Tools & Workflow",
-      "items": [
-        { "name": "GitHub", "icon": "/image/GitHub.png", "level": "Expert", "desc": "Source Control, Actions CI/CD & Security Audits" },
-        { "name": "Postman", "icon": "/image/Postman.png", "level": "Expert", "desc": "API Platform for Building & Testing APIs" },
-        { "name": "VS Code", "icon": "/image/Visual Studio Code (VS Code).png", "level": "Expert", "desc": "Primary Development IDE & Debugging Environment" }
+        { "name": "PostgreSQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", "level": "Expert", "desc": { "th": "ระบบจัดการฐานข้อมูลเชิงสัมพันธ์แบบ Open Source ที่ทรงพลัง", "en": "Advanced Open Source Relational Database" } },
+        { "name": "MongoDB", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg", "level": "Expert", "desc": { "th": "ฐานข้อมูล NoSQL แบบเก็บเอกสารที่มีความยืดหยุ่นสูง", "en": "Flexible Document-Based NoSQL Database" } },
+        { "name": "MySQL", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", "level": "Expert", "desc": { "th": "ระบบจัดการฐานข้อมูลเชิงสัมพันธ์ที่ได้มาตรฐานและเสถียร", "en": "Reliable Relational Database Management System" } }
       ]
     }
   ]

@@ -5,20 +5,24 @@ import testimonialsData from '@/data/testimonials.json'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import { Star, Quote } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 
 export default function TestimonialSlider() {
+  const { t } = useLanguage()
+
   return (
     <section className="py-24 bg-[#050806] border-y border-emerald-950/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-            Client Endorsements
+            {t('เสียงตอบรับจากลูกค้า', 'Client Endorsements')}
           </h2>
           <p className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-            Trusted by <span className="text-code">Visionary Leaders</span>
+            {t('ความไว้วางใจจาก', 'Trusted by')}{' '}
+            <span className="text-code">{t('ผู้ประกอบการและธุรกิจ', 'Visionary Leaders')}</span>
           </p>
         </div>
 
@@ -48,7 +52,7 @@ export default function TestimonialSlider() {
                   </div>
 
                   <p className="text-sm sm:text-base text-zinc-300 leading-relaxed italic">
-                    "{item.content}"
+                    "{t(item.content)}"
                   </p>
                 </div>
 
@@ -56,13 +60,13 @@ export default function TestimonialSlider() {
                   <div className="relative w-12 h-12 rounded-full overflow-hidden border border-emerald-500/30 shrink-0">
                     <Image
                       src={item.avatar}
-                      alt={item.name}
+                      alt={t(item.name)}
                       fill
                       className="object-cover"
                     />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-zinc-100">{item.name}</h4>
+                    <h4 className="text-base font-bold text-zinc-100">{t(item.name)}</h4>
                     <p className="text-xs text-emerald-400">{item.role} • {item.company}</p>
                   </div>
                 </div>

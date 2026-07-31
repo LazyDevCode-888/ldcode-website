@@ -4,20 +4,39 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import projectsData from '@/data/projects.json'
-import { ArrowUpRight, Search, Sparkles } from 'lucide-react'
-
-const categories = ['All', 'Web', 'Mobile', 'AI', 'Cloud']
+import { ArrowUpRight, Search } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function PortfolioPage() {
+  const { t } = useLanguage()
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
 
+  const categories = [
+    { id: 'All', label: t('ทั้งหมด', 'All') },
+    { id: 'Web', label: t('เว็บแอป', 'Web') },
+    { id: 'Mobile', label: t('มือถือ', 'Mobile') },
+    { id: 'AI', label: 'AI' },
+    { id: 'Cloud', label: 'Cloud' },
+  ]
+
   const filteredProjects = projectsData.filter((project) => {
-    const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory
+    const categoryEn = project.category.en
+    const matchesCategory =
+      selectedCategory === 'All' ||
+      (selectedCategory === 'Web' && categoryEn.includes('Web')) ||
+      (selectedCategory === 'Mobile' && categoryEn.includes('Mobile')) ||
+      (selectedCategory === 'AI' && categoryEn.includes('AI')) ||
+      (selectedCategory === 'Cloud' && categoryEn.includes('Cloud'))
+
+    const title = project.title.toLowerCase()
+    const summary = t(project.summary).toLowerCase()
+    const tech = project.tech.join(' ').toLowerCase()
     const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.tech.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()))
+      title.includes(searchQuery.toLowerCase()) ||
+      summary.includes(searchQuery.toLowerCase()) ||
+      tech.includes(searchQuery.toLowerCase())
+
     return matchesCategory && matchesSearch
   })
 
@@ -29,10 +48,14 @@ export default function PortfolioPage() {
           Our Portfolio & Case Studies
         </h1>
         <p className="text-4xl sm:text-6xl font-extrabold tracking-tight">
-          Architected for <span className="text-code">Impact</span>
+          {t('ผลงานและกรณีศึกษา', 'Architected for')}{' '}
+          <span className="text-code">{t('ความสำเร็จ', 'Impact')}</span>
         </p>
         <p className="max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">
-          ชมผลงานการออกแบบและพัฒนาแพลตฟอร์มซอฟต์แวร์จริงจากลูกค้าธุรกิจชั้นนำ
+          {t(
+            'ชมตัวอย่างผลงานการดีไซน์ พัฒนาเว็บไซต์ และระบบเว็บแอปพลิเคชันจากประสบการณ์จริง',
+            'Explore our latest project handoffs, from bespoke responsive layout styles to complex cloud databases integration.'
+          )}
         </p>
       </div>
 
@@ -42,15 +65,15 @@ export default function PortfolioPage() {
         <div className="flex flex-wrap items-center gap-2">
           {categories.map((cat) => (
             <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                selectedCategory === cat
+                selectedCategory === cat.id
                   ? 'bg-emerald-400 text-black shadow-md shadow-emerald-400/40'
                   : 'text-zinc-400 hover:text-emerald-400 hover:bg-zinc-900'
               }`}
             >
-              {cat}
+              {cat.label}
             </button>
           ))}
         </div>
@@ -60,7 +83,7 @@ export default function PortfolioPage() {
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
           <input
             type="text"
-            placeholder="Search project or tech stack..."
+            placeholder={t('ค้นหาโครงการหรือ Stack...', 'Search project or tech stack...')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-zinc-950 border border-zinc-800 rounded-xl pl-10 pr-4 py-2 text-xs sm:text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-emerald-400 transition-colors"
@@ -86,7 +109,7 @@ export default function PortfolioPage() {
                 />
                 <div className="absolute top-4 right-4">
                   <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
-                    {project.category}
+                    {t(project.category)}
                   </span>
                 </div>
               </div>
@@ -100,17 +123,17 @@ export default function PortfolioPage() {
                   {project.title}
                 </h2>
                 <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
-                  {project.summary}
+                  {t(project.summary)}
                 </p>
 
                 {/* Tech tags */}
                 <div className="flex flex-wrap gap-1.5 pt-2">
-                  {project.tech.slice(0, 4).map((t) => (
+                  {project.tech.slice(0, 4).map((tCode) => (
                     <span
-                      key={t}
+                      key={tCode}
                       className="px-2 py-0.5 rounded text-[10px] font-medium bg-zinc-900 text-zinc-300 border border-zinc-800"
                     >
-                      {t}
+                      {tCode}
                     </span>
                   ))}
                 </div>
@@ -122,7 +145,7 @@ export default function PortfolioPage() {
                 href={`/portfolio/${project.id}`}
                 className="w-full inline-flex items-center justify-center gap-2 text-xs font-bold text-black bg-emerald-400 hover:bg-emerald-300 py-2.5 rounded-xl transition-colors shadow-md shadow-emerald-500/20"
               >
-                <span>Read Full Case Study</span>
+                <span>{t('อ่านกรณีศึกษาเพิ่มเติม', 'Read Full Case Study')}</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
@@ -132,7 +155,7 @@ export default function PortfolioPage() {
 
       {filteredProjects.length === 0 && (
         <div className="text-center py-20 text-zinc-500 space-y-2">
-          <p className="text-lg">No projects match your filter query.</p>
+          <p className="text-lg">{t('ไม่พบโครงการที่คุณต้องการค้นหา', 'No projects match your filter query.')}</p>
           <button
             onClick={() => {
               setSelectedCategory('All')
@@ -140,7 +163,7 @@ export default function PortfolioPage() {
             }}
             className="text-emerald-400 text-sm font-semibold hover:underline"
           >
-            Clear Filters
+            {t('ล้างการค้นหา', 'Clear Filters')}
           </button>
         </div>
       )}

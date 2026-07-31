@@ -5,12 +5,14 @@ import Image from 'next/image'
 import projectsData from '@/data/projects.json'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
+import { useLanguage } from '@/lib/LanguageContext'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { ArrowUpRight, Code } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 export default function ProjectShowcase() {
+  const { t } = useLanguage()
   const featuredProjects = projectsData.filter((p) => p.featured)
 
   return (
@@ -19,17 +21,17 @@ export default function ProjectShowcase() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="space-y-4">
             <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-              Selected Works
+              {t('ผลงานเด่น', 'Selected Works')}
             </h2>
             <p className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-              Featured <span className="text-code">Projects</span>
+              {t('โครงการที่น่าสนใจ', 'Featured')} <span className="text-code">{t('ของเรา', 'Projects')}</span>
             </p>
           </div>
           <Link
             href="/portfolio"
             className="inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
           >
-            <span>View All Projects</span>
+            <span>{t('ดูผลงานทั้งหมด', 'View All Projects')}</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
@@ -62,7 +64,7 @@ export default function ProjectShowcase() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#080c0a] via-transparent to-transparent opacity-80" />
                   <div className="absolute top-4 right-4">
                     <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
-                      {project.category}
+                      {t(project.category)}
                     </span>
                   </div>
                 </div>
@@ -77,17 +79,17 @@ export default function ProjectShowcase() {
                       {project.title}
                     </h3>
                     <p className="text-sm text-zinc-400 line-clamp-2">
-                      {project.summary}
+                      {t(project.summary)}
                     </p>
 
                     {/* Tech Badges */}
                     <div className="flex flex-wrap gap-2 pt-2">
-                      {project.tech.slice(0, 4).map((t) => (
+                      {project.tech.slice(0, 4).map((tCode) => (
                         <span
-                          key={t}
+                          key={tCode}
                           className="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-900 text-zinc-300 border border-zinc-800"
                         >
-                          {t}
+                          {tCode}
                         </span>
                       ))}
                     </div>
@@ -98,7 +100,7 @@ export default function ProjectShowcase() {
                       href={`/portfolio/${project.id}`}
                       className="inline-flex items-center gap-2 text-sm font-bold text-black bg-emerald-400 hover:bg-emerald-300 px-5 py-2.5 rounded-full transition-all shadow-md shadow-emerald-500/20"
                     >
-                      <span>Case Study</span>
+                      <span>{t('กรณีศึกษา', 'Case Study')}</span>
                       <ArrowUpRight className="w-4 h-4" />
                     </Link>
                   </div>

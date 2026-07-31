@@ -1,9 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import companyData from '@/data/company.json'
-import { Mail, Phone, MapPin, ArrowRight, Globe, Share2, MessageSquare, Code2 } from 'lucide-react'
+import { Mail, Phone, MapPin, Share2, Globe, MessageSquare, Code2 } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="relative bg-[#050806] border-t border-emerald-950/60 pt-16 pb-12 overflow-hidden">
       {/* Background Decorative Glow */}
@@ -28,7 +33,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-zinc-400 max-w-md leading-relaxed">
-              {companyData.description}
+              {t(companyData.description)}
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a href={companyData.socials.github} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-zinc-900 text-zinc-400 hover:text-emerald-400 hover:bg-emerald-950/50 border border-zinc-800 transition-colors" title="GitHub">
@@ -48,38 +53,37 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold text-zinc-200 uppercase tracking-wider mb-4">Quick Links</h3>
+            <h3 className="text-sm font-semibold text-zinc-200 uppercase tracking-wider mb-4">{t('ลิงก์เมนู', 'Quick Links')}</h3>
             <ul className="space-y-2.5 text-sm text-zinc-400">
-              <li><Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-emerald-400 transition-colors">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-emerald-400 transition-colors">Services</Link></li>
-              <li><Link href="/portfolio" className="hover:text-emerald-400 transition-colors">Portfolio Showcase</Link></li>
-              <li><Link href="/pricing" className="hover:text-emerald-400 transition-colors">Pricing Packages</Link></li>
-              <li><Link href="/tech-stack" className="hover:text-emerald-400 transition-colors">Tech Stack</Link></li>
-              <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">Contact Us</Link></li>
+              <li><Link href="/" className="hover:text-emerald-400 transition-colors">{t('หน้าแรก', 'Home')}</Link></li>
+              <li><Link href="/about" className="hover:text-emerald-400 transition-colors">{t('เกี่ยวกับเรา', 'About Us')}</Link></li>
+              <li><Link href="/services" className="hover:text-emerald-400 transition-colors">{t('ขอบเขตบริการ', 'Services')}</Link></li>
+              <li><Link href="/portfolio" className="hover:text-emerald-400 transition-colors">{t('ผลงานเด่น', 'Portfolio')}</Link></li>
+              <li><Link href="/pricing" className="hover:text-emerald-400 transition-colors">{t('ประเมินราคา', 'Pricing Plans')}</Link></li>
+              <li><Link href="/tech-stack" className="hover:text-emerald-400 transition-colors">{t('เทคโนโลยี', 'Tech Stack')}</Link></li>
+              <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">{t('ติดต่อเรา', 'Contact Us')}</Link></li>
             </ul>
           </div>
 
           {/* Services Column */}
           <div>
-            <h3 className="text-sm font-semibold text-zinc-200 uppercase tracking-wider mb-4">Core Services</h3>
+            <h3 className="text-sm font-semibold text-zinc-200 uppercase tracking-wider mb-4">{t('บริการรับทำเว็บ', 'Core Services')}</h3>
             <ul className="space-y-2.5 text-sm text-zinc-400">
-              <li><Link href="/services" className="hover:text-emerald-400 transition-colors">Next.js Web Dev</Link></li>
-              <li><Link href="/services" className="hover:text-emerald-400 transition-colors">Mobile App Development</Link></li>
-              <li><Link href="/services" className="hover:text-emerald-400 transition-colors">Cloud & DevOps Scaling</Link></li>
-              <li><Link href="/services" className="hover:text-emerald-400 transition-colors">AI & LLM Integration</Link></li>
-              <li><Link href="/services" className="hover:text-emerald-400 transition-colors">Enterprise Microservices</Link></li>
-              <li><Link href="/services" className="hover:text-emerald-400 transition-colors">UI/UX Product Design</Link></li>
+              <li><Link href="/services#landing-page" className="hover:text-emerald-400 transition-colors">{t('ทำ Landing Page', 'Landing Page')}</Link></li>
+              <li><Link href="/services#corporate-website" className="hover:text-emerald-400 transition-colors">{t('ทำเว็บแนะนำบริษัท', 'Corporate Website')}</Link></li>
+              <li><Link href="/services#web-application" className="hover:text-emerald-400 transition-colors">{t('ทำ Web Application', 'Web Applications')}</Link></li>
+              <li><Link href="/services#student-project" className="hover:text-emerald-400 transition-colors">{t('ทำโปรเจกต์นักศึกษา', 'Student Project')}</Link></li>
+              <li><Link href="/services#wordpress-customization" className="hover:text-emerald-400 transition-colors">{t('แก้ไข WordPress', 'WordPress Edits')}</Link></li>
             </ul>
           </div>
 
           {/* Contact Details */}
           <div>
-            <h3 className="text-sm font-semibold text-zinc-200 uppercase tracking-wider mb-4">Contact Info</h3>
+            <h3 className="text-sm font-semibold text-zinc-200 uppercase tracking-wider mb-4">{t('ข้อมูลติดต่อ', 'Contact Info')}</h3>
             <ul className="space-y-3 text-sm text-zinc-400">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>{companyData.contact.address}</span>
+                <span>{t(companyData.contact.address)}</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -97,9 +101,9 @@ export default function Footer() {
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <p>© {new Date().getFullYear()} {companyData.name} Co., Ltd. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-zinc-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-zinc-300 transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-zinc-300 transition-colors">Security Audit</a>
+            <a href="#" className="hover:text-zinc-300 transition-colors">{t('นโยบายความเป็นส่วนตัว', 'Privacy Policy')}</a>
+            <a href="#" className="hover:text-zinc-300 transition-colors">{t('เงื่อนไขการใช้บริการ', 'Terms of Service')}</a>
+            <a href="#" className="hover:text-zinc-300 transition-colors">{t('การตรวจสอบความปลอดภัย', 'Security Audit')}</a>
           </div>
         </div>
       </div>
