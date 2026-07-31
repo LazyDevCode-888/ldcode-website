@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import servicesData from '@/data/services.json'
 import { useLanguage } from '@/lib/LanguageContext'
+import { motion } from 'framer-motion'
 import {
   Globe,
   Building2,
@@ -33,7 +34,13 @@ export default function ServicesPage() {
   return (
     <div className="py-16 space-y-24">
       {/* Header */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center space-y-6">
+      <motion.section 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center space-y-6"
+      >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
           Our Capabilities & Scope
         </h1>
@@ -47,14 +54,18 @@ export default function ServicesPage() {
             'Consult with us before starting. We develop sites focused on User Experience (UX), performance, modular coding, and scalable architectures.'
           )}
         </p>
-      </section>
+      </motion.section>
 
       {/* Services Breakdown List */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
         {servicesData.map((service, index) => (
-          <div
+          <motion.div
             key={service.id}
             id={service.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className={`glass-card p-6 sm:p-10 lg:p-12 rounded-3xl border border-emerald-500/20 glow-emerald-hover flex flex-col lg:flex-row gap-10 items-stretch scroll-mt-24 ${
               index % 2 === 1 ? 'lg:bg-emerald-950/10' : ''
             }`}
@@ -207,12 +218,18 @@ export default function ServicesPage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </section>
 
       {/* Consult Banner */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <motion.section 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
         <div className="glass-card p-8 sm:p-12 rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/40 via-zinc-950 to-emerald-950/40 text-center space-y-6">
           <HelpCircle className="w-12 h-12 text-emerald-400 mx-auto" />
           <h2 className="text-2xl sm:text-3xl font-extrabold text-zinc-100">{t('พร้อมให้คำปรึกษาก่อนเริ่มงาน ฟรี!', 'Free Consultation Before Coding')}</h2>
@@ -232,7 +249,7 @@ export default function ServicesPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   )
 }

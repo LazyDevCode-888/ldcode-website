@@ -6,6 +6,7 @@ import Image from 'next/image'
 import projectsData from '@/data/projects.json'
 import { ArrowUpRight, Search } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function PortfolioPage() {
   const { t } = useLanguage()
@@ -43,7 +44,13 @@ export default function PortfolioPage() {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
       {/* Header */}
-      <div className="text-center space-y-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="text-center space-y-4"
+      >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
           Our Portfolio & Case Studies
         </h1>
@@ -57,7 +64,7 @@ export default function PortfolioPage() {
             'Explore our latest project handoffs, from bespoke responsive layout styles to complex cloud databases integration.'
           )}
         </p>
-      </div>
+      </motion.div>
 
       {/* Filter Tabs & Search Bar */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 glass-card p-4 rounded-2xl border border-emerald-500/20">
@@ -67,12 +74,19 @@ export default function PortfolioPage() {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+              className={`relative px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                 selectedCategory === cat.id
-                  ? 'bg-emerald-400 text-black shadow-md shadow-emerald-400/40'
-                  : 'text-zinc-400 hover:text-emerald-400 hover:bg-zinc-900'
+                  ? 'text-black font-bold'
+                  : 'text-zinc-400 hover:text-emerald-400'
               }`}
             >
+              {selectedCategory === cat.id && (
+                <motion.span
+                  layoutId="activePortfolioCategory"
+                  className="absolute inset-0 bg-emerald-400 rounded-xl -z-10 shadow-sm shadow-emerald-400/30"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
               {cat.label}
             </button>
           ))}
@@ -92,12 +106,21 @@ export default function PortfolioPage() {
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects.map((project) => (
-          <div
-            key={project.id}
-            className="group glass-card rounded-3xl overflow-hidden border border-emerald-500/20 glow-emerald-hover flex flex-col justify-between"
-          >
+      <motion.div 
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project) => (
+            <motion.div
+              layout
+              key={project.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.4 }}
+              className="group glass-card rounded-3xl overflow-hidden border border-emerald-500/20 glow-emerald-hover flex flex-col justify-between"
+            >
             <div>
               {/* Image */}
               <div className="relative h-60 w-full overflow-hidden">
@@ -149,9 +172,10 @@ export default function PortfolioPage() {
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+        </AnimatePresence>
+      </motion.div>
 
       {filteredProjects.length === 0 && (
         <div className="text-center py-20 text-zinc-500 space-y-2">

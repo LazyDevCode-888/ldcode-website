@@ -5,6 +5,7 @@ import Link from 'next/link'
 import pricingData from '@/data/pricing.json'
 import { Check, ArrowRight, Calculator, Info } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
+import { motion } from 'framer-motion'
 
 type ServiceType = 'landing-page' | 'corporate-website' | 'web-application' | 'student-project' | 'wordpress-customization'
 
@@ -95,7 +96,13 @@ export default function PricingPage() {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">
       {/* Header */}
-      <div className="text-center space-y-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="text-center space-y-4"
+      >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
           Budget-friendly Pricing Plans
         </h1>
@@ -112,14 +119,40 @@ export default function PricingPage() {
         <div className="pt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
           <span>{t('สัญญาการรับประกันดูแลระบบและการดูแลความปลอดภัยเบื้องต้นรวมในราคาทุกชิ้นงาน', 'Support warranty and security monitoring are standard inclusions in all work')}</span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Pricing Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-center">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-center"
+      >
         {pricingData.plans.map((plan) => {
           return (
-            <div
+            <motion.div
               key={plan.id}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: 'spring' as const,
+                    stiffness: 80,
+                    damping: 15,
+                  },
+                },
+              }}
               className={`glass-card p-8 rounded-3xl border flex flex-col justify-between relative transition-all duration-300 ${
                 plan.popular
                   ? 'border-emerald-400 bg-emerald-950/20 glow-emerald-box scale-[1.02] md:col-span-2 lg:col-span-1'
@@ -181,10 +214,10 @@ export default function PricingPage() {
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           )
         })}
-      </div>
+      </motion.div>
 
       {/* Interactive Custom Quote Calculator Widget */}
       <div className="glass-card p-6 sm:p-10 lg:p-12 rounded-3xl border border-emerald-500/30 bg-zinc-950/80 space-y-8">

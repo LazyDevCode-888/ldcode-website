@@ -5,6 +5,7 @@ import companyData from '@/data/company.json'
 import faqsData from '@/data/faqs.json'
 import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Clock } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
+import { motion } from 'framer-motion'
 
 export default function ContactPage() {
   const { t } = useLanguage()
@@ -74,7 +75,13 @@ export default function ContactPage() {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-24">
       {/* Header */}
-      <div className="text-center space-y-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="text-center space-y-4"
+      >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
           Get In Touch
         </h1>
@@ -88,11 +95,17 @@ export default function ContactPage() {
             'Send your project briefs to receive technical solutions advice and baseline budget estimates for free within 24 hours.'
           )}
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left Info & Channels */}
-        <div className="lg:col-span-5 space-y-8">
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="lg:col-span-5 space-y-8"
+        >
           <div className="glass-card p-8 rounded-3xl border border-emerald-500/20 glow-emerald-hover space-y-6">
             <h2 className="text-2xl font-bold text-zinc-100">{t('ช่องทางการติดต่อตรง', 'Direct Contact')}</h2>
             <p className="text-sm text-zinc-400">
@@ -152,10 +165,16 @@ export default function ContactPage() {
               </li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Contact Form */}
-        <div className="lg:col-span-7">
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="lg:col-span-7"
+        >
           <div className="glass-card p-8 sm:p-12 rounded-3xl border border-emerald-500/30 glow-emerald-box">
             {submitted ? (
               <div className="text-center py-12 space-y-4">
@@ -362,11 +381,17 @@ export default function ContactPage() {
               </form>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* FAQ Accordion */}
-      <div className="space-y-8 max-w-4xl mx-auto">
+      <motion.div 
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="space-y-8 max-w-4xl mx-auto"
+      >
         <div className="text-center space-y-3">
           <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
             Frequently Asked Questions
@@ -400,7 +425,7 @@ export default function ContactPage() {
             )
           })}
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

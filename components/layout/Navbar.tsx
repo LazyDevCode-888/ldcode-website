@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ArrowUpRight, Globe } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
+import { motion } from 'framer-motion'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -63,12 +64,19 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`relative px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? 'text-black bg-emerald-400 font-semibold shadow-sm shadow-emerald-400/50'
-                      : 'text-zinc-300 hover:text-emerald-400 hover:bg-emerald-950/30'
+                      ? 'text-black font-semibold'
+                      : 'text-zinc-300 hover:text-emerald-400'
                   }`}
                 >
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNavBackground"
+                      className="absolute inset-0 bg-emerald-400 rounded-full -z-10 shadow-sm shadow-emerald-400/50"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
                   {link.name}
                 </Link>
               )
@@ -81,22 +89,36 @@ export default function Navbar() {
             <div className="flex items-center gap-1 glass-card p-1 rounded-full border border-emerald-500/20 text-xs font-bold shadow-md shadow-emerald-500/5">
               <button
                 onClick={() => setLanguage('th')}
-                className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+                className={`relative px-2.5 py-1 rounded-full transition-all cursor-pointer ${
                   language === 'th'
-                    ? 'bg-emerald-400 text-black shadow-sm'
+                    ? 'text-black'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
+                {language === 'th' && (
+                  <motion.span
+                    layoutId="activeLangBackground"
+                    className="absolute inset-0 bg-emerald-400 rounded-full -z-10"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
                 TH
               </button>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+                className={`relative px-2.5 py-1 rounded-full transition-all cursor-pointer ${
                   language === 'en'
-                    ? 'bg-emerald-400 text-black shadow-sm'
+                    ? 'text-black'
                     : 'text-zinc-400 hover:text-zinc-200'
                 }`}
               >
+                {language === 'en' && (
+                  <motion.span
+                    layoutId="activeLangBackground"
+                    className="absolute inset-0 bg-emerald-400 rounded-full -z-10"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
                 EN
               </button>
             </div>
@@ -116,18 +138,32 @@ export default function Navbar() {
             <div className="flex items-center gap-1 glass-card p-0.5 rounded-full border border-emerald-500/20 text-[10px] font-bold">
               <button
                 onClick={() => setLanguage('th')}
-                className={`px-2 py-0.5 rounded-full transition-all ${
-                  language === 'th' ? 'bg-emerald-400 text-black' : 'text-zinc-400'
+                className={`relative px-2 py-0.5 rounded-full transition-all ${
+                  language === 'th' ? 'text-black' : 'text-zinc-400'
                 }`}
               >
+                {language === 'th' && (
+                  <motion.span
+                    layoutId="activeLangBackgroundMobile"
+                    className="absolute inset-0 bg-emerald-400 rounded-full -z-10"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
                 TH
               </button>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2 py-0.5 rounded-full transition-all ${
-                  language === 'en' ? 'bg-emerald-400 text-black' : 'text-zinc-400'
+                className={`relative px-2 py-0.5 rounded-full transition-all ${
+                  language === 'en' ? 'text-black' : 'text-zinc-400'
                 }`}
               >
+                {language === 'en' && (
+                  <motion.span
+                    layoutId="activeLangBackgroundMobile"
+                    className="absolute inset-0 bg-emerald-400 rounded-full -z-10"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
                 EN
               </button>
             </div>
