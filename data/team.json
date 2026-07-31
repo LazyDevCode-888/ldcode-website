@@ -1,0 +1,34 @@
+[
+  {
+    "id": "member-1",
+    "name": "Dr. Phuwadon V.",
+    "role": "CEO & Chief Software Architect",
+    "bio": "ผู้เชี่ยวชาญด้าน Distributed Systems และ Cloud Architecture กว่า 15 ปีในวงการซอฟต์แวร์ อดีต Tech Lead สตาร์ทอัพยูนิคอร์น",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop",
+    "social": { "github": "#", "linkedin": "#" }
+  },
+  {
+    "id": "member-2",
+    "name": "Thanakorn K.",
+    "role": "Head of Engineering",
+    "bio": "เชี่ยวชาญ Go, Rust และ Next.js มุ่งเน้นการสร้าง Microservices ที่เสถียร รองรับผู้ใช้งานนับล้านคนต่อวัน",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
+    "social": { "github": "#", "linkedin": "#" }
+  },
+  {
+    "id": "member-3",
+    "name": "Pitchaya S.",
+    "role": "Lead Product Designer (UI/UX)",
+    "bio": "นักออกแบบ UI/UX รางวัลระดับนานาชาติ หลงใหลใน Dark Aesthetics, Micro-animations และการส่งมอบประสบการณ์ผู้ใช้ระดับพรีเมียม",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    "social": { "dribbble": "#", "linkedin": "#" }
+  },
+  {
+    "id": "member-4",
+    "name": "Kornchat P.",
+    "role": "Lead DevOps & Cloud Engineer",
+    "bio": "ผู้เชี่ยวชาญ Kubernetes, Terraform และ AWS Infrastructure ที่มีประสบการณ์ส่งมอบระบบ Zero-downtime กว่า 80 โครงการ",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+    "social": { "github": "#", "linkedin": "#" }
+  }
+]

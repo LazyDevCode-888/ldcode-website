@@ -1,0 +1,92 @@
+[
+  {
+    "id": "web-development",
+    "title": "Custom Web Architecture",
+    "subtitle": "เว็บแอปพลิเคชันและเว็บไซต์องค์กรระดับ High-Performance",
+    "icon": "Globe",
+    "summary": "ออกแบบและพัฒนาด้วย Next.js, React, TypeScript และ SSR เพื่อความเร็วระดับมิลลิวินาที รองรับ SEO 100% และ UX/UI ระดับโลก",
+    "features": [
+      "Next.js App Router & Server Side Rendering (SSR)",
+      "Tailwind CSS & Responsive Mobile-First Design",
+      "Headless CMS (Sanity, Strapi) & Custom Admin Panel",
+      "SEO Optimization & Core Web Vitals 95+"
+    ],
+    "deliverables": ["Full Source Code", "CI/CD Pipeline", "Production Deployment", "1-Year Tech Support"],
+    "popular": true
+  },
+  {
+    "id": "mobile-development",
+    "title": "Cross-Platform Mobile Apps",
+    "subtitle": "แอปพลิเคชันมือถือ iOS & Android ด้วย React Native / Flutter",
+    "icon": "Smartphone",
+    "summary": "สร้างสรรค์โมบายแอปที่ตอบสนองลื่นไหล มีระบบ Push Notifications, Offline Storage, Payment Gateway และ Biometric Auth",
+    "features": [
+      "React Native / Flutter Native Engine",
+      "iOS App Store & Android Play Store Deployment",
+      "Push Notification & Real-time WebSockets",
+      "Biometric Authentication & Secure Storage"
+    ],
+    "deliverables": ["iOS & Android Build", "App Store Publishing", "API Documentation", "Source Code"],
+    "popular": false
+  },
+  {
+    "id": "cloud-devops",
+    "title": "Cloud Infrastructure & DevOps",
+    "subtitle": "ระบบ Cloud Scaling, Docker, Kubernetes & AWS Automation",
+    "icon": "Cloud",
+    "summary": "วางโครงสร้างพื้นฐานระบบ Cloud Server ปลอดภัย รองรับ Auto-scaling ทราฟฟิกสูง พร้อมระบบ CI/CD และ Monitoring 24/7",
+    "features": [
+      "AWS / GCP / Vercel Managed Infrastructure",
+      "Docker Containerization & Kubernetes Cluster",
+      "Zero-Downtime CI/CD Deployment Pipelines",
+      "Serverless Architecture & Database Replication"
+    ],
+    "deliverables": ["Terraform Scripts", "Infrastructure Diagram", "Monitoring Dashboard", "Security Audit"],
+    "popular": true
+  },
+  {
+    "id": "ai-solutions",
+    "title": "AI & Smart Automation",
+    "subtitle": "โซลูชัน AI, LLM Integration & Workflow Automation",
+    "icon": "Cpu",
+    "summary": "เชื่อมต่อ AI โมเดลระดับโลก เช่น OpenAI, Claude, Custom RAG Systems เพื่อเพิ่มประสิทธิภาพกระบวนการทำงานในองค์กร",
+    "features": [
+      "Custom RAG (Retrieval-Augmented Generation)",
+      "OpenAI / Anthropic API Integration",
+      "Automated Business Process Agents",
+      "Data Analytics & Custom Machine Learning Models"
+    ],
+    "deliverables": ["Custom AI Pipeline", "RAG Database Setup", "Staff Training", "API Endpoint"],
+    "popular": false
+  },
+  {
+    "id": "ui-ux-design",
+    "title": "UI/UX & Product Design",
+    "subtitle": "ออกแบบประสบการณ์ผู้ใช้ที่เรียบหรู น่าหลงใหล และใช้งานง่าย",
+    "icon": "Palette",
+    "summary": "ทำ Research, Wireframing, Figma Interactive Prototypes และ Design System ครบวงจรที่เปลี่ยนผู้เข้าชมเป็นลูกค้าจริง",
+    "features": [
+      "User Research & Journey Mapping",
+      "Figma Design Systems & Components Library",
+      "Interactive Micro-animations & Prototypes",
+      "Usability Testing & Accessibility (WCAG 2.1)"
+    ],
+    "deliverables": ["Figma Source Files", "Design Tokens Export", "Design Guideline UI Kit", "Prototype Links"],
+    "popular": false
+  },
+  {
+    "id": "enterprise-software",
+    "title": "Enterprise Microservices",
+    "subtitle": "สถาปัตยกรรม Microservices & REST/GraphQL APIs",
+    "icon": "Server",
+    "summary": "สร้างแบ็กเอนด์ประสิทธิภาพสูงด้วย Node.js, Go, PostgreSQL, Redis ที่ทนทานต่อโหลดสูงและรองรับข้อมูลมหาศาล",
+    "features": [
+      "Go / Node.js High-Performance Microservices",
+      "PostgreSQL, Redis & MongoDB Database Cluster",
+      "GraphQL & OpenAPI (Swagger) Documentation",
+      "OAuth2, JWT & RBAC Enterprise Security"
+    ],
+    "deliverables": ["API Service Codebase", "Postman Collection", "DB Migration Scripts", "Load Testing Report"],
+    "popular": false
+  }
+]

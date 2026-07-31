@@ -1,10 +1,19 @@
+import HeroSection from '@/components/home/HeroSection'
+import ServicePreview from '@/components/home/ServicePreview'
+import ProjectShowcase from '@/components/home/ProjectShowcase'
+import TechMarquee from '@/components/home/TechMarquee'
+import TestimonialSlider from '@/components/home/TestimonialSlider'
+import CtaSection from '@/components/home/CtaSection'
 
-import React from 'react'
-
-const Page = () => {
+export default function HomePage() {
   return (
-    <div>page</div>
+    <>
+      <HeroSection />
+      <ServicePreview />
+      <ProjectShowcase />
+      <TechMarquee />
+      <TestimonialSlider />
+      <CtaSection />
+    </>
   )
 }
-
-export default Page

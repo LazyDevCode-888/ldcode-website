@@ -1,0 +1,67 @@
+{
+  "billingCycles": ["Monthly", "Annually"],
+  "discountAnnually": "Save 20%",
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter Launch",
+      "badge": "Standard Business",
+      "monthlyPrice": 39000,
+      "annualPrice": 31200,
+      "description": "เหมาะสำหรับธุรกิจเริ่มต้น สตาร์ทอัพ หรือ SMEs ที่ต้องการเว็บไซต์องค์กรดีไซน์เรียบหรู รองรับ Mobile & SEO 100%",
+      "popular": false,
+      "features": [
+        "Up to 5 Custom Pages (Home, About, Services, Contact, etc.)",
+        "Responsive Modern UI (Tailwind CSS & Animations)",
+        "Next.js SSR & Search Engine Optimization (SEO)",
+        "Fast Contact Form with Email Notification",
+        "SSL Certificate & Basic Security Setup",
+        "1-Month Maintenance & Tech Support"
+      ]
+    },
+    {
+      "id": "professional",
+      "name": "Professional Web Platform",
+      "badge": "Most Popular",
+      "monthlyPrice": 89000,
+      "annualPrice": 71200,
+      "description": "โซลูชันสำหรับธุรกิจที่เติบโต ต้องการเว็บแอปพลิเคชัน custom ฟีเจอร์ขั้นสูง ระบบสมาชิก Headless CMS และแดชบอร์ด",
+      "popular": true,
+      "features": [
+        "Up to 15 Custom Pages & Dynamic Sub-routes",
+        "Headless CMS Integration (Sanity / Strapi)",
+        "Custom Database & RESTful / GraphQL API",
+        "User Authentication & Role-Based Access Control",
+        "GSAP & Framer Motion Advanced Interactive Effects",
+        "Lenis Smooth Scroll & Custom UI Components",
+        "Full Analytics Dashboard & Conversion Tracking",
+        "3-Month Dedicated Maintenance & SLA Support"
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise Custom System",
+      "badge": "Custom Architecture",
+      "monthlyPrice": 189000,
+      "annualPrice": 151200,
+      "description": "สำหรับองค์กรขนาดใหญ่หรือแพลตฟอร์มการเงิน/อีคอมเมิร์ซที่ต้องการ Microservices, Multi-region Cloud, AI & 24/7 Support",
+      "popular": false,
+      "features": [
+        "Unlimited Custom Pages & Microservice Micro-frontends",
+        "Custom Go / Node.js High-Performance Microservices",
+        "AWS / GCP Managed Cloud Infrastructure + Auto Scaling",
+        "AI & LLM Integration (RAG, Chatbot, Smart Analytics)",
+        "Mobile App Support (React Native / iOS & Android)",
+        "Zero-Downtime CI/CD Automated Pipelines",
+        "PCI-DSS / HIPAA Security Standard Compliance",
+        "Dedicated Team & 24/7 Emergency Support SLA"
+      ]
+    }
+  ],
+  "addons": [
+    { "id": "seo-boost", "name": "Advanced Technical SEO Boost", "price": 15000 },
+    { "id": "ai-bot", "name": "Custom AI Customer Support Bot", "price": 35000 },
+    { "id": "mobile-app", "name": "Companion Mobile App Build", "price": 75000 },
+    { "id": "maintenance", "name": "Annual Maintenance & Server SLA", "price": 25000 }
+  ]
+}

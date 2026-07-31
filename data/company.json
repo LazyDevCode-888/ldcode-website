@@ -1,0 +1,25 @@
+{
+  "name": "LDCode",
+  "tagline": "Architecting Digital Excellence with Modern Tech Stack",
+  "description": "รับพัฒนาเว็บไซต์ แอปพลิเคชัน ระบบคลาวด์ และโซลูชันซอฟต์แวร์ระดับองค์กรด้วยเทคโนโลยีล้ำสมัย มุ่งเน้นดีไซน์ระดับพรีเมียม ประสิทธิภาพสูง และรองรับการเติบโตของธุรกิจแบบไร้ขีดจำกัด",
+  "founded": "2022",
+  "stats": [
+    { "label": "Projects Completed", "value": "120+" },
+    { "label": "Client Satisfaction", "value": "99.4%" },
+    { "label": "Expert Engineers", "value": "25+" },
+    { "label": "Uptime Guarantee", "value": "99.99%" }
+  ],
+  "contact": {
+    "email": "contact@ldcode.dev",
+    "phone": "+66 81 234 5678",
+    "line": "@ldcode",
+    "address": "88/19 Tower B, Sukhumvit Road, Khlong Toei, Bangkok 10110, Thailand",
+    "workingHours": "Mon - Fri: 09:00 - 18:00 (ICT)"
+  },
+  "socials": {
+    "github": "https://github.com",
+    "facebook": "https://facebook.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://twitter.com"
+  }
+}

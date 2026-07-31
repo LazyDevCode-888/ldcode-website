@@ -1,0 +1,57 @@
+{
+  "categories": [
+    {
+      "id": "frontend",
+      "name": "Frontend & UI",
+      "items": [
+        { "name": "Next.js", "icon": "/image/Next.js.png", "level": "Expert", "desc": "React Framework for Production, SSR, App Router" },
+        { "name": "React", "icon": "/image/React.png", "level": "Expert", "desc": "UI Component Library & Modern Hooks Architecture" },
+        { "name": "TypeScript", "icon": "/image/TypeScript.png", "level": "Expert", "desc": "Typed JavaScript for Safe Enterprise Codebases" },
+        { "name": "Tailwind CSS", "icon": "/image/Tailwind CSS.png", "level": "Expert", "desc": "Utility-First CSS Framework for Bespoke UI Design" },
+        { "name": "Vue.js", "icon": "/image/Vue.js.png", "level": "Proficient", "desc": "Progressive JavaScript Framework" },
+        { "name": "Angular", "icon": "/image/Angular.png", "level": "Proficient", "desc": "Cross-Platform Enterprise Framework" },
+        { "name": "HTML5", "icon": "/image/HTML5.png", "level": "Expert", "desc": "Semantic Web Standards & Accessibility" },
+        { "name": "CSS3", "icon": "/image/CSS3.png", "level": "Expert", "desc": "Modern Layouts, Flexbox, Grid & Animations" }
+      ]
+    },
+    {
+      "id": "backend",
+      "name": "Backend & Runtime",
+      "items": [
+        { "name": "Node.js", "icon": "/image/Node.js.png", "level": "Expert", "desc": "Scalable Asynchronous JavaScript Runtime" },
+        { "name": "Go (Golang)", "icon": "/image/Go.png", "level": "Expert", "desc": "High-Performance Concurrency & Microservices" },
+        { "name": "Express.js", "icon": "/image/Express.png", "level": "Expert", "desc": "Minimalist Web Framework for Node.js" },
+        { "name": "Bun", "icon": "/image/Bun.png", "level": "Expert", "desc": "Ultra-fast All-in-One JavaScript Runtime & Package Manager" },
+        { "name": "ElysiaJS", "icon": "/image/elysia-logo-png_seeklogo-580325.png", "level": "Expert", "desc": "Ergonomic Web Framework for Bun with End-to-End Type Safety" }
+      ]
+    },
+    {
+      "id": "database",
+      "name": "Databases & Storage",
+      "items": [
+        { "name": "PostgreSQL", "icon": "/image/PostgresSQL.png", "level": "Expert", "desc": "Advanced Open Source Relational Database" },
+        { "name": "MongoDB", "icon": "/image/MongoDB.png", "level": "Expert", "desc": "Flexible Document-Based NoSQL Database" },
+        { "name": "MySQL", "icon": "/image/MySQL.png", "level": "Expert", "desc": "Reliable Relational Database Management System" }
+      ]
+    },
+    {
+      "id": "devops-cloud",
+      "name": "DevOps & Cloud Infrastructure",
+      "items": [
+        { "name": "Docker", "icon": "/image/Docker.png", "level": "Expert", "desc": "Containerization Platform for Application Portability" },
+        { "name": "Vercel", "icon": "/image/Vercel.png", "level": "Expert", "desc": "Frontend Cloud & Serverless Deployment Platform" },
+        { "name": "Google Cloud", "icon": "/image/Google.png", "level": "Expert", "desc": "Global Scalable Cloud Infrastructure & AI APIs" },
+        { "name": "Netlify", "icon": "/image/Netlify.png", "level": "Proficient", "desc": "Automated Web Hosting & Serverless Functions" }
+      ]
+    },
+    {
+      "id": "tools-testing",
+      "name": "Tools & Workflow",
+      "items": [
+        { "name": "GitHub", "icon": "/image/GitHub.png", "level": "Expert", "desc": "Source Control, Actions CI/CD & Security Audits" },
+        { "name": "Postman", "icon": "/image/Postman.png", "level": "Expert", "desc": "API Platform for Building & Testing APIs" },
+        { "name": "VS Code", "icon": "/image/Visual Studio Code (VS Code).png", "level": "Expert", "desc": "Primary Development IDE & Debugging Environment" }
+      ]
+    }
+  ]
+}

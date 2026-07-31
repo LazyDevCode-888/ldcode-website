@@ -1,0 +1,116 @@
+[
+  {
+    "id": "fintech-core-platform",
+    "title": "AetherPay Digital Banking",
+    "subtitle": "Next-Gen Fintech Trading & Crypto Payment Portal",
+    "category": "Web",
+    "client": "Aether Financial Holdings",
+    "year": "2025",
+    "summary": "ระบบแพลตฟอร์มการเงินดิจิทัลที่มีความปลอดภัยสูง รองรับธุรกรรม real-time กว่า 50,000 req/sec พร้อม Dashboard วิเคราะห์สินทรัพย์แบบ 3D Vis",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    "gallery": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Go", "PostgreSQL", "Docker", "Redis"],
+    "stats": [
+      { "label": "Transaction Speed", "value": "< 12ms" },
+      { "label": "Active Users", "value": "250K+" },
+      { "label": "Security Score", "value": "99.9%" }
+    ],
+    "challenge": "ลูกค้าต้องการเปลี่ยนจากระบบ Legacy Monolith มาเป็น Microservices ที่ต้องประมวลผลข้อมูลการเงินปริมาณมากโดยไม่มี Downtime และรักษามาตรฐาน PCI-DSS",
+    "solution": "LDCode ได้วางโครงสร้างด้วย Go Microservices บน Docker Cluster ร่วมกับ Next.js 16 SSR และ Tailwind CSS สำหรับ Frontend UI ที่ตอบสนองทันที",
+    "featured": true
+  },
+  {
+    "id": "e-commerce-omnichannel",
+    "title": "LuxeStyle Fashion Hub",
+    "subtitle": "High-End E-Commerce Platform & Mobile App",
+    "category": "Mobile",
+    "client": "Luxe Group International",
+    "year": "2025",
+    "summary": "แพลตฟอร์มอีคอมเมิร์ซสินค้าหรูหราพร้อมระบบ AR Try-on บนมือถือ iOS และ Android เชื่อมโยงสต็อกหน้าร้านและออนไลน์แบบ Omni-channel",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+    "gallery": [
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "tech": ["React Native", "Next.js", "Node.js", "MongoDB", "Tailwind CSS", "Stripe"],
+    "stats": [
+      { "label": "Sales Lift", "value": "+185%" },
+      { "label": "App Store Rating", "value": "4.9/5" },
+      { "label": "Checkout Time", "value": "3 steps" }
+    ],
+    "challenge": "ระบบเดิมทำงานช้าในระหว่างช่วงจัดโปรโมชัน Flash Sale และแอปลูกค้าไม่สามารถซิงค์สต็อกกับระบบ POS 20 สาขาได้รวดเร็วพอ",
+    "solution": "ออกแบบสถาปัตยกรรม Event-Driven API พร้อมใช้งาน Redis Cache และคลาวด์ออโต้สเกล ทำให้รองรับผู้ซื้อพร้อมกันได้ 100,000+ คนโดยไม่สะดุด",
+    "featured": true
+  },
+  {
+    "id": "ai-medical-diagnostics",
+    "title": "MedAI Diagnostic Portal",
+    "subtitle": "AI-Powered Medical Imaging Analysis Platform",
+    "category": "AI",
+    "client": "Bangkok BioMed Tech",
+    "year": "2024",
+    "summary": "เว็บพอร์ตัลช่วยแพทย์วิเคราะห์ผล X-ray และ CT scan ด้วย AI อัลกอริทึม แม่นยำ 98.7% พร้อมระบบการจัดการประวัติผู้ป่วยอย่างปลอดภัย",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
+    "gallery": [
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "tech": ["Next.js", "Python", "Docker", "PostgreSQL", "Tailwind CSS", "OpenAI"],
+    "stats": [
+      { "label": "Diagnostic Speed", "value": "3 sec" },
+      { "label": "Accuracy Rate", "value": "98.7%" },
+      { "label": "Hospitals Using", "value": "18" }
+    ],
+    "challenge": "ความยุ่งยากในการประมวลผลไฟล์ภาพทางการแพทย์ขนาดยักษ์ DICOM ผ่านเว็บเบราว์เซอร์อย่างลื่นไหล และปฏิบัติตามกฎหมาย HIPAA",
+    "solution": "สร้าง WebGL GPU Rendering บน Web Browser ร่วมกับ AI Inference Microservice ที่มีความปลอดภัยระดับทหาร",
+    "featured": true
+  },
+  {
+    "id": "logistics-smart-fleet",
+    "title": "Vanguard Logistics Command",
+    "subtitle": "Real-time IoT Fleet Tracking & Route Optimization",
+    "category": "Cloud",
+    "client": "Vanguard Express Ltd.",
+    "year": "2024",
+    "summary": "ระบบศูนย์ควบคุมรถขนส่งสินค้า 1,500 คันทั่วประเทศ ด้วย GPS Real-time tracking, AI คำนวณเส้นทางประหยัดน้ำมัน และคลาวด์แดชบอร์ด",
+    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+    "gallery": [
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "tech": ["Next.js", "Go", "Docker", "PostgreSQL", "Google Cloud", "WebSockets"],
+    "stats": [
+      { "label": "Fuel Savings", "value": "-24%" },
+      { "label": "On-time Delivery", "value": "99.1%" },
+      { "label": "Active Vehicles", "value": "1,500+" }
+    ],
+    "challenge": "การรับส่งสัญญาณจากกล่อง IoT 1,500 คันตลอด 24 ชั่วโมงทำให้ฐานข้อมูลล้น และหน้าแสดงผลช้าเมื่อมีผู้ใช้งานพร้อมกันหลายแผนก",
+    "solution": "นำ Time-Series Database มาใช้ประมวลผลตำแหน่งรถพร้อมอัปเดต Map Dashboard ผ่าน WebSockets โดยไม่โหลดเซิร์ฟเวอร์หลัก",
+    "featured": false
+  },
+  {
+    "id": "property-metaverse-3d",
+    "title": "Nexus Estate Virtual Showcase",
+    "subtitle": "Interactive 3D Property Exploration Platform",
+    "category": "Web",
+    "client": "Nexus Prime Development",
+    "year": "2024",
+    "summary": "เว็บไซต์อสังหาริมทรัพย์ระดับพรีเมียม นำเสนอโครงการคอนโดมิเนียมหรูด้วย Interactive 3D Walkthrough และระบบจองห้องออนไลน์",
+    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
+    "gallery": [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "tech": ["Next.js", "Three.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
+    "stats": [
+      { "label": "Pre-sale Booking", "value": "100%" },
+      { "label": "Avg Time on Site", "value": "8.5 min" },
+      { "label": "International Leads", "value": "+320%" }
+    ],
+    "challenge": "การแสดงผลโมเดล 3D อาคารความละเอียดสูงบนโทรศัพท์มือถือเครื่องสเปกต่ำโดยไม่ทำให้เครื่องค้าง",
+    "solution": "ประยุกต์ใช้ Dynamic LOD (Level of Detail) และ Progressive Texture Stream Loader เพื่อให้โหลดเร็วภายใน 2 วินาทีบนทุกอุปกรณ์",
+    "featured": false
+  }
+]

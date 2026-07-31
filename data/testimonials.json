@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "name": "คุณสมเกียรติ ตั้งเจริญ",
+    "role": "CTO, Aether Financial",
+    "company": "Aether Financial",
+    "content": "LDCode ช่วยเปลี่ยนระบบการเงินของเราให้เป็น Next.js Microservices ภายในเวลาเพียง 3 เดือน ความเร็วและความประณีตของโค้ดเหนือความคาดหมายมากครับ",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    "id": "2",
+    "name": "คุณณิชาภา สุวรรณเวช",
+    "role": "Product Owner",
+    "company": "LuxeStyle Fashion Hub",
+    "content": "งานดีไซน์หรูหรา ธีมดาร์กโหมดและ Animation ลื่นไหลแบบ Lenis / GSAP ช่วยยกระดับแบรนด์สินค้าแฟชั่นของเราได้อย่างโดดเด่น ยอดขายพุ่งขึ้นเท่าตัว!",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
+  },
+  {
+    "id": "3",
+    "name": "คุณวิศรุต อัศวเมธา",
+    "role": "VP of Engineering",
+    "company": "Vanguard Express",
+    "content": "ทีม LDCode มีความเชี่ยวชาญด้าน DevOps และ Docker บน Cloud สูงมาก ส่งมอบงานตรงเวลาและซัพพอร์ตแก้ปัญหาได้ทันที 24 ชั่วโมง",
+    "rating": 5,
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop"
+  }
+]
