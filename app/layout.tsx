@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import SmoothScroll from '@/components/layout/SmoothScroll'
+import FloatingContact from '@/components/layout/FloatingContact'
 import JsonLd from '@/components/seo/JsonLd'
 import companyData from '@/data/company.json'
 import { LanguageProvider } from '@/lib/LanguageContext'
@@ -79,6 +80,7 @@ export default function RootLayout({
             <Navbar />
             <main className="flex-grow pt-20">{children}</main>
             <Footer />
+            <FloatingContact />
           </SmoothScroll>
         </LanguageProvider>
       </body>
