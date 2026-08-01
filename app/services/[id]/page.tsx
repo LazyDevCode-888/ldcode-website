@@ -12,6 +12,7 @@ import {
   Database,
   GraduationCap,
   Settings,
+  Wrench,
   CheckCircle,
   ArrowRight,
   Sparkles,
@@ -28,6 +29,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Database: <Database className="w-10 h-10 text-emerald-400" />,
   GraduationCap: <GraduationCap className="w-10 h-10 text-emerald-400" />,
   Settings: <Settings className="w-10 h-10 text-emerald-400" />,
+  Wrench: <Wrench className="w-10 h-10 text-emerald-400" />,
 }
 
 export default function ServiceDetailPage({ params }: { params: Promise<{ id: string }> }) {

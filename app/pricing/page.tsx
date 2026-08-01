@@ -7,7 +7,7 @@ import { Check, ArrowRight, Calculator, Info } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 import { motion } from 'framer-motion'
 
-type ServiceType = 'landing-page' | 'corporate-website' | 'web-application' | 'student-project' | 'wordpress-customization'
+type ServiceType = 'landing-page' | 'corporate-website' | 'web-application' | 'student-project' | 'wordpress-customization' | 'website-maintenance'
 
 export default function PricingPage() {
   const { t } = useLanguage()
@@ -37,6 +37,11 @@ export default function PricingPage() {
   const [wpScopeSize, setWpScopeSize] = useState<'S' | 'M' | 'L'>('S')
   const [wpThemeFix, setWpThemeFix] = useState<boolean>(false)
   const [wpPlugins, setWpPlugins] = useState<boolean>(false)
+
+  // Website Maintenance parameters
+  const [maintScopeSize, setMaintScopeSize] = useState<'S' | 'M' | 'L'>('S')
+  const [maintResponsive, setMaintResponsive] = useState<boolean>(false)
+  const [maintDbRefactor, setMaintDbRefactor] = useState<boolean>(false)
 
   // Calculate estimated price based on service type
   const calculateEstimate = () => {
@@ -74,6 +79,14 @@ export default function PricingPage() {
         else if (wpScopeSize === 'L') price += 3000
         if (wpThemeFix) price += 800
         if (wpPlugins) price += 500
+        return price
+      }
+      case 'website-maintenance': {
+        let price = 1000
+        if (maintScopeSize === 'M') price += 1500
+        else if (maintScopeSize === 'L') price += 4000
+        if (maintResponsive) price += 800
+        if (maintDbRefactor) price += 1000
         return price
       }
       default:
@@ -222,7 +235,7 @@ export default function PricingPage() {
 
           {/* Service Selector Tab */}
           <div className="flex flex-wrap gap-2 max-w-xl">
-            {(['landing-page', 'corporate-website', 'web-application', 'student-project', 'wordpress-customization'] as ServiceType[]).map((type) => (
+            {(['landing-page', 'corporate-website', 'web-application', 'student-project', 'wordpress-customization', 'website-maintenance'] as ServiceType[]).map((type) => (
               <button
                 key={type}
                 onClick={() => setServiceType(type)}
@@ -237,6 +250,7 @@ export default function PricingPage() {
                 {type === 'web-application' && 'Web Application'}
                 {type === 'student-project' && 'Student Project'}
                 {type === 'wordpress-customization' && 'WordPress Edit'}
+                {type === 'website-maintenance' && t('แก้ไขระบบเดิม', 'System Maintenance')}
               </button>
             ))}
           </div>
@@ -253,6 +267,7 @@ export default function PricingPage() {
                 {serviceType === 'web-application' && t('Web Application (เริ่มต้น ฿15,000): ระบบเว็บแอปพลิเคชันที่มีระบบหลังบ้านจัดการข้อมูลและฐานข้อมูลจริง (รายละเอียดตารางข้อมูล/Entities สามารถคุยตกลงขอบเขตงานเพิ่มเติมได้)', 'Web Application (Starts at ฿15,000): Full-stack web system backed with relational database models. Specific entities/data scopes can be discussed during consultation.')}
                 {serviceType === 'student-project' && t('Student Project (เริ่มต้น ฿2,500): ระบบพร้อมส่งอาจารย์ / นำเสนองาน (รายละเอียดขอบเขตงานและฟังก์ชันสามารถส่งโจทย์เพื่อประเมินได้)', 'Student Project (Starts at ฿2,500): Fast codebase built for coursework, graduation reviews, or hackathons. Details & specifications can be submitted for review.')}
                 {serviceType === 'wordpress-customization' && t('WordPress Customization (เริ่มต้น ฿1,000): งานปรับแต่งระบบเดิม แก้ไข Layout ติดตั้งปลั๊กอิน ราคาแปรผันตามสเกลปัญหาที่พบ', 'WordPress Customization (Starts at ฿1,000): Optimize layouts, configure plug-ins, or resolve issues. Quote adjusts per task severity.')}
+                {serviceType === 'website-maintenance' && t('Website Maintenance (เริ่มต้น ฿1,000): แก้ไขข้อผิดพลาด เพิ่มฟีเจอร์ ปรับปรุงประสิทธิภาพ หรือพัฒนาต่อยอดระบบเดิมโดยไม่ต้องเริ่มใหม่', 'Website Maintenance (Starts at ฿1,000): Fix bugs, add features, optimize performance, or scale up existing systems without rebuilding.')}
               </div>
             </div>
 
@@ -422,6 +437,57 @@ export default function PricingPage() {
                       className="w-4 h-4 rounded accent-emerald-400"
                     />
                     <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('ติดตั้ง ตั้งค่า Plugin เสริมฟังก์ชันใหม่ (เช่น ฟอร์มติดต่อ, SEO) (+฿500)', 'Install & configure security plugins or SEO engines extensions (+฿500)')}</span>
+                  </label>
+                </div>
+              </div>
+            )}
+
+            {serviceType === 'website-maintenance' && (
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <span className="text-xs font-semibold text-zinc-300 block mb-2">{t('ขนาดขอบเขตงานหรือความซับซ้อนของระบบเดิม:', 'Task Severity / System Complexity Scale:')}</span>
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { val: 'S', label: t('ขนาดเล็ก (S)', 'Small (S)'), note: t('แก้บั๊กจุดเดียว/แก้ข้อความ', 'Single bug fix/text edit') },
+                      { val: 'M', label: t('ขนาดกลาง (M)', 'Medium (M)'), note: t('เพิ่มหน้า/เพิ่มระบบย่อย (+฿1,500)', 'Extra page/sub-system (+฿1,500)') },
+                      { val: 'L', label: t('ขนาดใหญ่ (L)', 'Large (L)'), note: t('เพิ่มฟีเจอร์ซับซ้อน/เชื่อม API (+฿4,000)', 'Complex feature/API integration (+฿4,000)') }
+                    ].map((item) => (
+                      <button
+                        key={item.val}
+                        type="button"
+                        onClick={() => setMaintScopeSize(item.val as 'S' | 'M' | 'L')}
+                        className={`p-3 rounded-xl border text-center transition-all ${
+                          maintScopeSize === item.val
+                            ? 'bg-emerald-950/60 border-emerald-400 text-emerald-400'
+                            : 'bg-zinc-900 border-zinc-800 text-zinc-400 hover:text-zinc-200'
+                        }`}
+                      >
+                        <div className="text-xs font-bold">{item.label}</div>
+                        <div className="text-[10px] text-zinc-500 mt-1">{item.note}</div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3 pt-2">
+                  <label className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={maintResponsive}
+                      onChange={(e) => setMaintResponsive(e.target.checked)}
+                      className="w-4 h-4 rounded accent-emerald-400"
+                    />
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('แก้ไขปัญหา Responsive หน้าจอเพี้ยน (+฿800)', 'Fix broken responsiveness & layouts compatibility (+฿800)')}</span>
+                  </label>
+
+                  <label className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={maintDbRefactor}
+                      onChange={(e) => setMaintDbRefactor(e.target.checked)}
+                      className="w-4 h-4 rounded accent-emerald-400"
+                    />
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('ปรับปรุงฐานข้อมูล / แก้ไขโครงสร้าง Database (+฿1,000)', 'Refactor database schema / adjust database structure (+฿1,000)')}</span>
                   </label>
                 </div>
               </div>

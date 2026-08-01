@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import servicesData from '@/data/services.json'
-import { Globe, Building2, Database, GraduationCap, Settings, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { Globe, Building2, Database, GraduationCap, Settings, Wrench, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 import { motion } from 'framer-motion'
 
@@ -12,6 +12,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Database: <Database className="w-8 h-8 text-emerald-400" />,
   GraduationCap: <GraduationCap className="w-8 h-8 text-emerald-400" />,
   Settings: <Settings className="w-8 h-8 text-emerald-400" />,
+  Wrench: <Wrench className="w-8 h-8 text-emerald-400" />,
 }
 
 export default function ServicePreview() {

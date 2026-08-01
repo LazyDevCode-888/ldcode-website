@@ -183,6 +183,42 @@
           "en": "100% database & files backup guarantee"
         }
       ]
+    },
+    {
+      "id": "website-maintenance",
+      "name": "Website Maintenance",
+      "badge": {
+        "th": "แก้ไขและปรับปรุง",
+        "en": "Maintenance & Fixes"
+      },
+      "priceNum": 1000,
+      "description": {
+        "th": "แก้ไขข้อผิดพลาด เพิ่มฟีเจอร์ ปรับปรุงประสิทธิภาพ หรือพัฒนาต่อยอดระบบเดิมโดยไม่ต้องเริ่มใหม่",
+        "en": "Fix bugs, add features, optimize performance, or expand existing systems without rebuilding from scratch."
+      },
+      "popular": false,
+      "features": [
+        {
+          "th": "แก้ไข Bug & ปรับปรุงระบบเดิม",
+          "en": "Bug fixes & system improvements"
+        },
+        {
+          "th": "เพิ่มฟีเจอร์ใหม่ & เชื่อมต่อ API",
+          "en": "New features & API integrations"
+        },
+        {
+          "th": "ปรับปรุงหน้าตาเว็บ & Responsive",
+          "en": "UI/UX enhancements & responsive fixes"
+        },
+        {
+          "th": "วิเคราะห์โค้ดเดิม & ปรับโครงสร้าง",
+          "en": "Code auditing & refactoring"
+        },
+        {
+          "th": "ส่งมอบ Source Code ในส่วนที่พัฒนา",
+          "en": "Developed source code delivery"
+        }
+      ]
     }
   ]
 }

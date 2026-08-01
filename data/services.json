@@ -908,5 +908,199 @@
       "en": "Edits are applied on your current website directly, or we can setup a copy (Staging Site) to verify code updates before pushing live."
     },
     "popular": false
+  },
+  {
+    "id": "website-maintenance",
+    "title": {
+      "th": "รับแก้ไขเว็บไซต์ เพิ่มฟีเจอร์ แก้บั๊ก และพัฒนาระบบเดิม",
+      "en": "Website Maintenance, Bug Fixes & Feature Enhancements"
+    },
+    "subtitle": {
+      "th": "ปรับปรุงระบบเดิม แก้ไขปัญหา ต่อยอดระบบโดยไม่ต้องทำใหม่",
+      "en": "Optimize, debug, and expand existing systems without rebuilding from scratch"
+    },
+    "icon": "Wrench",
+    "summary": {
+      "th": "หากคุณมีเว็บไซต์หรือระบบอยู่แล้ว แต่ต้องการแก้ไขข้อผิดพลาด เพิ่มฟีเจอร์ ปรับปรุงประสิทธิภาพ หรือพัฒนาต่อยอด ผมพร้อมช่วยดูแลและพัฒนาระบบของคุณ โดยไม่จำเป็นต้องเริ่มสร้างใหม่ทั้งหมด ไม่ว่าจะเป็นเว็บไซต์บริษัท เว็บไซต์องค์กร ระบบจัดการภายใน หรือ Web Application",
+      "en": "If you have an existing website or system but need to fix bugs, add new features, improve performance, or scale up, I am here to help. No need to rebuild from scratch—whether it's a corporate site, internal system, or a custom Web Application."
+    },
+    "price": {
+      "th": "เริ่มต้น 1,000 บาท",
+      "en": "Starting at ฿1,000"
+    },
+    "priceNum": 1000,
+    "features": [
+      {
+        "th": "พัฒนาต่อยอดจากระบบเดิม ไม่จำเป็นต้องสร้างใหม่",
+        "en": "Develop on top of existing codebase without rebuilding"
+      },
+      {
+        "th": "วิเคราะห์ปัญหาและเสนอแนวทางแก้ไขที่เหมาะสม",
+        "en": "Analyze issues and suggest cost-effective solutions"
+      },
+      {
+        "th": "รองรับเว็บไซต์และระบบที่มีอยู่แล้วหลากหลายรูปแบบ",
+        "en": "Support wide range of existing websites and systems"
+      },
+      {
+        "th": "ปรับปรุงโครงสร้างระบบเดิมให้ดูแลและพัฒนาต่อได้ง่าย",
+        "en": "Refactor and structure code for easier future maintenance"
+      },
+      {
+        "th": "ส่งมอบ Source Code ในส่วนที่พัฒนาและปรับปรุงทั้งหมด",
+        "en": "Handover complete source code of the developed parts"
+      },
+      {
+        "th": "รองรับการเชื่อมต่อ API และบริการภายนอกต่าง ๆ",
+        "en": "Integrate with external APIs and third-party services"
+      },
+      {
+        "th": "ให้คำปรึกษาและประเมินงานอย่างละเอียดก่อนเริ่มพัฒนา",
+        "en": "Free consultation and project estimation before coding"
+      }
+    ],
+    "deliverables": [
+      {
+        "th": "ระบบหรือเว็บไซต์ที่ได้รับการแก้ไขและทดสอบเรียบร้อย",
+        "en": "Fully fixed, optimized, and tested website or system"
+      },
+      {
+        "th": "ฟังก์ชันเพิ่มเติมตามที่ตกลงและขอบเขตงาน",
+        "en": "Additional features as agreed in the project scope"
+      },
+      {
+        "th": "ปรับปรุงประสิทธิภาพและความเร็วของระบบเดิม",
+        "en": "Improved system performance and response times"
+      },
+      {
+        "th": "Source Code ทั้งหมดในส่วนของงานที่พัฒนา",
+        "en": "Full source code of the newly developed parts"
+      },
+      {
+        "th": "คำแนะนำในขั้นตอนการใช้งานฟังก์ชันใหม่",
+        "en": "User guidelines on how to operate new features"
+      },
+      {
+        "th": "คำแนะนำในการพัฒนาและขยายระบบต่อยอดในอนาคต",
+        "en": "Technical advice on future system expansion and roadmap"
+      }
+    ],
+    "suitableFor": [
+      {
+        "th": "เว็บไซต์บริษัท และ เว็บไซต์องค์กร",
+        "en": "Corporate and Organizational Websites"
+      },
+      {
+        "th": "Web Application และ Dashboard",
+        "en": "Web Applications and Dashboards"
+      },
+      {
+        "th": "ระบบจัดการข้อมูล และ ระบบภายในองค์กร",
+        "en": "Data Management and Internal Systems"
+      },
+      {
+        "th": "ระบบร้านค้าออนไลน์ (E-commerce)",
+        "en": "E-commerce and Online Stores"
+      },
+      {
+        "th": "ระบบสมาชิก และ ระบบจอง",
+        "en": "User Membership and Booking Systems"
+      },
+      {
+        "th": "ระบบคลังสินค้า (Inventory)",
+        "en": "Inventory and Warehouse Management"
+      },
+      {
+        "th": "ระบบ CRM และ ERP",
+        "en": "CRM and ERP Systems"
+      },
+      {
+        "th": "เว็บไซต์หรือระบบเดิมที่ต้องการพัฒนาต่อยอด",
+        "en": "Legacy systems and websites needing modernization"
+      }
+    ],
+    "steps": [
+      {
+        "th": "พูดคุยรายละเอียด: แจ้งรายละเอียดของระบบเดิม พร้อมอธิบายปัญหาหรือฟีเจอร์ที่ต้องการเพิ่มเติม",
+        "en": "Discuss Details: Share your current system details, explain the issues, or list requested features."
+      },
+      {
+        "th": "ตรวจสอบระบบ: วิเคราะห์โครงสร้างของระบบเดิม ประเมินระยะเวลา และเสนอราคาตามจริง",
+        "en": "System Audit: Analyze the existing codebase, estimate completion time, and provide a fair quote."
+      },
+      {
+        "th": "พัฒนาระบบ: ดำเนินการแก้ไขหรือเพิ่มฟีเจอร์ พร้อมอัปเดตความคืบหน้าการทำงานเป็นระยะ",
+        "en": "Development: Implement changes or add new features with regular progress updates."
+      },
+      {
+        "th": "ตรวจสอบและปรับแก้: ลูกค้าทำการทดสอบการทำงานของระบบ และแจ้งปรับแก้ตามขอบเขตงาน",
+        "en": "Testing & Revisions: Client tests the system and requests adjustments within the agreed scope."
+      },
+      {
+        "th": "ส่งมอบงาน: ส่งมอบระบบที่เสร็จสมบูรณ์ พร้อม Source Code และคำแนะนำการใช้งานอย่างละเอียด",
+        "en": "Project Handover: Deliver the finalized system along with source code and usage instructions."
+      }
+    ],
+    "notIncluded": [
+      {
+        "th": "ค่าบริการ Domain และ Hosting",
+        "en": "Domain registration or renewal fees"
+      },
+      {
+        "th": "ค่าบริการ Server หรือ VPS",
+        "en": "Hosting or VPS server lease costs"
+      },
+      {
+        "th": "ค่าบริการ Database หรือ Cloud Services",
+        "en": "Cloud database or storage service bills"
+      },
+      {
+        "th": "ค่าบริการ API ของผู้ให้บริการภายนอก",
+        "en": "Third-party API subscription fees"
+      },
+      {
+        "th": "การออกแบบ UI/UX ใหม่ทั้งหมดทั้งระบบ",
+        "en": "Full system UI/UX redesign from scratch"
+      },
+      {
+        "th": "การสร้างและพัฒนาระบบใหม่ทั้งหมดตั้งแต่เริ่มต้น",
+        "en": "Rebuilding the entire system from the ground up"
+      },
+      {
+        "th": "ฟังก์ชันนอกเหนือจากข้อตกลงและขอบเขตการประเมินราคา",
+        "en": "Additional features outside the agreed and estimated scope"
+      }
+    ],
+    "prepNeeded": [
+      {
+        "th": "ลิงก์เว็บไซต์หรือระบบในปัจจุบัน (ถ้ามี)",
+        "en": "Current website URL or system access link (if available)"
+      },
+      {
+        "th": "รายละเอียดความต้องการของฟีเจอร์หรือปัญหาที่พบ",
+        "en": "Detailed description of issues faced or features requested"
+      },
+      {
+        "th": "ภาพหน้าจอหรือวิดีโอแสดงจุดที่เป็นปัญหา (ถ้ามี)",
+        "en": "Screenshots or screen recordings of the bugs (if any)"
+      },
+      {
+        "th": "Source Code ของระบบเดิม (หากมีและสามารถส่งให้ได้)",
+        "en": "Existing source code (if available and accessible)"
+      },
+      {
+        "th": "สิทธิ์เข้าใช้งานระบบ โฮสติ้ง หรือเซิร์ฟเวอร์ (หากจำเป็นต้องใช้ในการตรวจสอบและทำงาน)",
+        "en": "Access credentials to the hosting/server/database (if required for auditing)"
+      },
+      {
+        "th": "ตัวอย่างเว็บไซต์หรือแนวทางการออกแบบที่ต้องการพัฒนาต่อยอด (ถ้ามี)",
+        "en": "Reference designs, Figma links, or system examples (if any)"
+      }
+    ],
+    "deployment": {
+      "th": "จะดำเนินการแก้ไขและทดสอบระบบบน Staging environment (ถ้ามี) หรืออัปเดตลงบนเซิร์ฟเวอร์เดิมของลูกค้าโดยตรงตามที่ตกลง พร้อมดูแลขั้นตอนการขึ้นระบบให้ทำงานได้อย่างราบรื่นและปลอดภัย เพื่อไม่ให้กระทบต่อการใช้งานจริงในปัจจุบันของลูกค้า",
+      "en": "Deployment can be executed on a staging environment first for testing, or directly applied to the client's production server as agreed. We ensure a safe deployment process to prevent downtime and keep current operations running smoothly."
+    },
+    "popular": false
   }
 ]
