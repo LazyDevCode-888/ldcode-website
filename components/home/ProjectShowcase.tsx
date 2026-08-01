@@ -28,7 +28,7 @@ export default function ProjectShowcase() {
             className="space-y-4"
           >
             <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-              {t('ผลงานเด่น', 'Selected Works')}
+              {t('โปรเจกต์', 'Selected Works')}
             </h2>
             <p className="text-3xl sm:text-5xl font-extrabold tracking-tight">
               {t('โครงการที่น่าสนใจ', 'Featured')} <span className="text-code">{t('ของเรา', 'Projects')}</span>
@@ -38,7 +38,7 @@ export default function ProjectShowcase() {
             href="/portfolio"
             className="inline-flex items-center gap-2 text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors"
           >
-            <span>{t('ดูผลงานทั้งหมด', 'View All Projects')}</span>
+            <span>{t('ดูโปรเจกต์ทั้งหมด', 'View All Projects')}</span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>

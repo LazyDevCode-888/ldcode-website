@@ -18,7 +18,7 @@ export default function Navbar() {
     { name: t('หน้าแรก', 'Home'), href: '/' },
     { name: t('เกี่ยวกับเรา', 'About'), href: '/about' },
     { name: t('บริการ', 'Services'), href: '/services' },
-    { name: t('ผลงาน', 'Portfolio'), href: '/portfolio' },
+    { name: t('โปรเจกต์', 'Portfolio'), href: '/portfolio' },
     { name: t('ราคา', 'Pricing'), href: '/pricing' },
     { name: t('เทคโนโลยี', 'Tech Stack'), href: '/tech-stack' },
     { name: t('ติดต่อเรา', 'Contact'), href: '/contact' },

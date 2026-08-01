@@ -55,12 +55,12 @@ export default function PortfolioPage() {
           Our Portfolio & Case Studies
         </h1>
         <p className="text-4xl sm:text-6xl font-extrabold tracking-tight">
-          {t('ผลงานและกรณีศึกษา', 'Architected for')}{' '}
+          {t('โปรเจกต์และกรณีศึกษา', 'Architected for')}{' '}
           <span className="text-code">{t('ความสำเร็จ', 'Impact')}</span>
         </p>
         <p className="max-w-2xl mx-auto text-zinc-400 text-base sm:text-lg">
           {t(
-            'ชมตัวอย่างผลงานการดีไซน์ พัฒนาเว็บไซต์ และระบบเว็บแอปพลิเคชันจากประสบการณ์จริง',
+            'ชมตัวอย่างโปรเจกต์การดีไซน์ พัฒนาเว็บไซต์ และระบบเว็บแอปพลิเคชันจากประสบการณ์จริง',
             'Explore our latest project handoffs, from bespoke responsive layout styles to complex cloud databases integration.'
           )}
         </p>

@@ -62,7 +62,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-emerald-400 transition-colors">{t('หน้าแรก', 'Home')}</Link></li>
               <li><Link href="/about" className="hover:text-emerald-400 transition-colors">{t('เกี่ยวกับเรา', 'About Us')}</Link></li>
               <li><Link href="/services" className="hover:text-emerald-400 transition-colors">{t('ขอบเขตบริการ', 'Services')}</Link></li>
-              <li><Link href="/portfolio" className="hover:text-emerald-400 transition-colors">{t('ผลงานเด่น', 'Portfolio')}</Link></li>
+              <li><Link href="/portfolio" className="hover:text-emerald-400 transition-colors">{t('โปรเจกต์', 'Portfolio')}</Link></li>
               <li><Link href="/pricing" className="hover:text-emerald-400 transition-colors">{t('ประเมินราคา', 'Pricing Plans')}</Link></li>
               <li><Link href="/tech-stack" className="hover:text-emerald-400 transition-colors">{t('เทคโนโลยี', 'Tech Stack')}</Link></li>
               <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">{t('ติดต่อเรา', 'Contact Us')}</Link></li>
