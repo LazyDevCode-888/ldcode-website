@@ -188,7 +188,7 @@ function ContactFormContent() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-zinc-400">{t('LINE Official Account', 'LINE Official')}</h3>
-                  <a href={`https://line.me/ti/p/~${companyData.contact.line.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-zinc-100 hover:text-emerald-400 transition-colors">
+                  <a href={`https://page.line.me/${companyData.contact.line.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-zinc-100 hover:text-emerald-400 transition-colors">
                     {companyData.contact.line}
                   </a>
                 </div>
@@ -227,7 +227,7 @@ function ContactFormContent() {
               <div className="grid grid-cols-1 gap-3">
                 {/* LINE Official */}
                 <a
-                  href={`https://line.me/ti/p/~${companyData.contact.line.replace('@', '')}`}
+                  href={`https://page.line.me/${companyData.contact.line.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-4 p-4 rounded-2xl bg-[#00B900]/10 border border-[#00B900]/30 hover:bg-[#00B900]/20 hover:border-[#00B900]/60 transition-all duration-300"

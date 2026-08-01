@@ -16,7 +16,7 @@ export default function FloatingContact() {
 
   if (!mounted) return null
 
-  const lineLink = `https://line.me/ti/p/~${companyData.contact.line.replace('@', '')}`
+  const lineLink = `https://page.line.me/${companyData.contact.line.replace('@', '')}`
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 select-none">
