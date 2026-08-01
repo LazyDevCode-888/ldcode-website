@@ -7,7 +7,7 @@ export default function JsonLd() {
     name: companyData.name,
     url: 'https://ldcode.dev',
     logo: 'https://ldcode.dev/image/LDCode_Logo.png',
-    description: companyData.description,
+    description: companyData.description.th,
     address: {
       '@type': 'PostalAddress',
       streetAddress: '88/19 Tower B, Sukhumvit Road',

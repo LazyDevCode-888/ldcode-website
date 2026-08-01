@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${project.title} - ${titleSub}`,
       description: desc,
-      images: [{ url: project.image }],
+      images: project.image ? [{ url: project.image }] : [],
     },
   }
 }
@@ -53,10 +53,12 @@ export default async function ProjectDetailPage({ params }: Props) {
     summary: typeof project.summary === 'string' ? { th: project.summary, en: project.summary } : project.summary,
     challenge: typeof project.challenge === 'string' ? { th: project.challenge, en: project.challenge } : project.challenge,
     solution: typeof project.solution === 'string' ? { th: project.solution, en: project.solution } : project.solution,
-    stats: project.stats.map(s => ({
+    stats: project.stats?.map(s => ({
       ...s,
       label: typeof s.label === 'string' ? { th: s.label, en: s.label } : s.label
-    }))
+    })) ?? [],
+    image: project.image,
+    gallery: project.gallery,
   }
 
   return <ProjectDetailClient project={typedProject} />

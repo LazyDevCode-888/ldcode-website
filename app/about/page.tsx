@@ -1,7 +1,5 @@
 'use client'
 
-import Image from 'next/image'
-import teamData from '@/data/team.json'
 import { Target, Eye, ShieldCheck, Zap, Award, HeartHandshake } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 import { motion } from 'framer-motion'
@@ -149,54 +147,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Developer Showcase */}
-      <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center space-y-4"
-        >
-          <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-            About the Developer
-          </h2>
-          <p className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-            {t('ผู้สร้างสรรค์ผลงาน', 'Meet the Developer')}
-          </p>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-center"
-        >
-          {teamData.map((member) => (
-            <div
-              key={member.id}
-              className="glass-card rounded-3xl overflow-hidden border border-emerald-500/20 glow-emerald-hover flex flex-col md:flex-row group max-w-2xl w-full"
-            >
-              <div className="relative h-64 md:h-auto md:w-64 shrink-0 overflow-hidden">
-                <Image
-                  src={member.avatar}
-                  alt={member.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-8 space-y-4 flex-grow flex flex-col justify-center">
-                <div>
-                  <h3 className="text-xl font-bold text-zinc-100">{member.name}</h3>
-                  <p className="text-xs font-semibold text-emerald-400 mt-1">{t(member.role)}</p>
-                </div>
-                <p className="text-sm text-zinc-400 leading-relaxed">{t(member.bio)}</p>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </section>
     </div>
   )
 }
