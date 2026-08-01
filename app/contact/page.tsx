@@ -141,14 +141,14 @@ export default function ContactPage() {
               </li>
 
               <li className="flex items-start gap-4">
-                <div className="p-3 rounded-2xl bg-[#00B900]/10 border border-[#00B900]/30 text-[#00B900] shrink-0">
+                <div className="p-3 rounded-2xl bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 shrink-0">
                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967 1.748-1.921 2.572-3.87 2.572-6.002z"/>
                   </svg>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase text-zinc-400">{t('LINE Official Account', 'LINE Official')}</h3>
-                  <a href={`https://line.me/ti/p/~${companyData.contact.line.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-zinc-100 hover:text-[#00B900] transition-colors">
+                  <a href={`https://line.me/ti/p/~${companyData.contact.line.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-zinc-100 hover:text-emerald-400 transition-colors">
                     {companyData.contact.line}
                   </a>
                 </div>
