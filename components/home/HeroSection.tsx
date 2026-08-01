@@ -175,6 +175,26 @@ export default function HeroSection() {
             <span>{t('สำรวจผลงานล่าสุด', 'Explore Portfolio')}</span>
           </Link>
         </motion.div>
+
+        {/* Stats Grid */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-16 max-w-4xl mx-auto w-full"
+        >
+          {companyData.stats.map((stat, idx) => (
+            <div
+              key={idx}
+              className="glass-card p-5 sm:p-6 rounded-2xl border border-emerald-500/10 bg-zinc-950/40 text-center hover:border-emerald-500/30 hover:bg-emerald-950/10 transition-all duration-300 group"
+            >
+              <div className="text-3xl sm:text-4xl font-extrabold text-emerald-400 font-mono tracking-tight mb-2 group-hover:scale-105 transition-transform duration-300">
+                {stat.value}
+              </div>
+              <div className="text-xs text-zinc-400 font-medium">
+                {t(stat.label)}
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   )

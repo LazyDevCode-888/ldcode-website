@@ -31,7 +31,7 @@ export default function ProjectShowcase() {
               {t('โปรเจกต์', 'Selected Works')}
             </h2>
             <p className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-              {t('โครงการที่น่าสนใจ', 'Featured')} <span className="text-code">{t('ของเรา', 'Projects')}</span>
+              {t('โปรเจกต์ที่น่าสนใจ', 'Featured')} <span className="text-code">{t('ของเรา', 'Projects')}</span>
             </p>
           </motion.div>
           <Link
@@ -122,6 +122,51 @@ export default function ProjectShowcase() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </motion.div>
+
+        {/* Project Metrics / Statistics */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 border-t border-zinc-800/80 pt-16"
+        >
+          {[
+            {
+              title: { th: "เว็บแอปพลิเคชัน & Dashboard", en: "Web Apps & Dashboards" },
+              count: "8+",
+              desc: { th: "ระบบหลังบ้าน ระบบจัดการข้อมูล ระบบจอง และ CRM/ERP", en: "Admin panels, databases, bookings, CRM/ERP" }
+            },
+            {
+              title: { th: "อีคอมเมิร์ซ & ร้านค้าออนไลน์", en: "E-Commerce & Retail" },
+              count: "4+",
+              desc: { th: "ระบบตะกร้าสินค้า ระบบชำระเงิน และการจัดการออเดอร์", en: "Cart systems, payments, order management" }
+            },
+            {
+              title: { th: "เว็บไซต์บริษัท & Landing Page", en: "Corporate & Landing Pages" },
+              count: "10+",
+              desc: { th: "เว็บแบรนดิ้ง แนะนำบริษัท โปรโมทสินค้า โหลดเร็วและทำ SEO", en: "Corporate portfolio, landing pages, high performance SEO" }
+            },
+            {
+              title: { th: "โมบายแอปพลิเคชัน & IoT", en: "Mobile Apps & IoT" },
+              count: "2+",
+              desc: { th: "แอปพลิเคชันมือถือ iOS/Android และระบบเชื่อมต่ออุปกรณ์", en: "Hybrid mobile apps and connected devices APIs" }
+            }
+          ].map((item, index) => (
+            <div 
+              key={index}
+              className="glass-card p-6 rounded-3xl border border-emerald-500/10 hover:border-emerald-500/20 bg-zinc-950/20 hover:bg-emerald-950/5 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div className="text-4xl font-extrabold text-emerald-400 font-mono tracking-tight mb-2">
+                  {item.count}
+                </div>
+                <h4 className="text-sm font-bold text-zinc-100 mb-2">{t(item.title)}</h4>
+                <p className="text-xs text-zinc-400 leading-relaxed">{t(item.desc)}</p>
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>

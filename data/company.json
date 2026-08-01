@@ -9,7 +9,36 @@
     "en": "Custom landing pages, corporate websites, and full-stack web applications built by a professional freelance developer. Fast load speed, responsive layouts, and ready to deploy."
   },
   "founded": "2024",
-  "stats": [],
+  "stats": [
+    {
+      "value": "27",
+      "label": {
+        "th": "โปรเจกต์ที่สำเร็จ",
+        "en": "Completed Projects"
+      }
+    },
+    {
+      "value": "99%",
+      "label": {
+        "th": "ความพึงพอใจจากลูกค้า",
+        "en": "Client Satisfaction"
+      }
+    },
+    {
+      "value": "3+",
+      "label": {
+        "th": "ปีประสบการณ์",
+        "en": "Years Experience"
+      }
+    },
+    {
+      "value": "100%",
+      "label": {
+        "th": "ส่งมอบตรงเวลา",
+        "en": "On-Time Delivery"
+      }
+    }
+  ],
   "contact": {
     "email": "ldcode.technologies@gmail.com",
     "phone": "062-220-6388",
