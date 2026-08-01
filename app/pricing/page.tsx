@@ -17,31 +17,24 @@ export default function PricingPage() {
 
   // Calculator Parameters
   // Landing Page parameters
-  const [lpSections, setLpSections] = useState<number>(3)
-  const [lpAnimation, setLpAnimation] = useState<boolean>(false)
-  const [lpExternal, setLpExternal] = useState<boolean>(false)
+  const [lpForms, setLpForms] = useState<boolean>(false)
+  const [lpExternalLine, setLpExternalLine] = useState<boolean>(false)
+  const [lpExternalChatbot, setLpExternalChatbot] = useState<boolean>(false)
 
   // Corporate Website parameters
   const [corpPages, setCorpPages] = useState<number>(3)
-  const [corpAnimation, setCorpAnimation] = useState<boolean>(false)
   const [corpForms, setCorpForms] = useState<boolean>(false)
-  const [corpMaps, setCorpMaps] = useState<boolean>(true)
+  const [corpExternalLine, setCorpExternalLine] = useState<boolean>(false)
+  const [corpExternalChatbot, setCorpExternalChatbot] = useState<boolean>(false)
 
   // Web App parameters
-  const [appEntities, setAppEntities] = useState<number>(5)
-  const [appDashboard, setAppDashboard] = useState<boolean>(true)
-  const [appAuth, setAppAuth] = useState<boolean>(true)
   const [appApis, setAppApis] = useState<boolean>(false)
 
   // Student Project parameters
-  const [studentPages, setStudentPages] = useState<number>(3)
-  const [studentDashboard, setStudentDashboard] = useState<boolean>(true)
-  const [studentAuth, setStudentAuth] = useState<boolean>(false)
   const [studentManual, setStudentManual] = useState<boolean>(false)
 
   // WordPress parameters
   const [wpScopeSize, setWpScopeSize] = useState<'S' | 'M' | 'L'>('S')
-  const [wpSpeed, setWpSpeed] = useState<boolean>(false)
   const [wpThemeFix, setWpThemeFix] = useState<boolean>(false)
   const [wpPlugins, setWpPlugins] = useState<boolean>(false)
 
@@ -50,32 +43,28 @@ export default function PricingPage() {
     switch (serviceType) {
       case 'landing-page': {
         let price = 1500
-        price += (lpSections - 3) * 300
-        if (lpAnimation) price += 500
-        if (lpExternal) price += 1000
+        if (lpForms) price += 300
+        if (lpExternalLine) price += 300
+        if (lpExternalChatbot) price += 300
         return price
       }
       case 'corporate-website': {
         let price = 4000
-        price += (corpPages - 3) * 800
-        if (corpAnimation) price += 1000
-        if (corpForms) price += 500
-        if (corpMaps) price += 500
+        if (corpPages > 5) {
+          price += (corpPages - 5) * 800
+        }
+        if (corpForms) price += 300
+        if (corpExternalLine) price += 300
+        if (corpExternalChatbot) price += 300
         return price
       }
       case 'web-application': {
         let price = 15000
-        price += (appEntities - 5) * 1500
-        if (appDashboard) price += 5000
-        if (appAuth) price += 3000
-        if (appApis) price += 4000
+        if (appApis) price += 2500
         return price
       }
       case 'student-project': {
         let price = 2500
-        price += (studentPages - 3) * 400
-        if (studentDashboard) price += 1000
-        if (studentAuth) price += 500
         if (studentManual) price += 500
         return price
       }
@@ -83,7 +72,6 @@ export default function PricingPage() {
         let price = 1000
         if (wpScopeSize === 'M') price += 1500
         else if (wpScopeSize === 'L') price += 3000
-        if (wpSpeed) price += 1000
         if (wpThemeFix) price += 800
         if (wpPlugins) price += 500
         return price
@@ -260,56 +248,45 @@ export default function PricingPage() {
             <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 flex items-start gap-3">
               <Info className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div className="text-xs text-zinc-400 leading-relaxed">
-                {serviceType === 'landing-page' && t('Landing Page (เริ่มต้น ฿1,500): เหมาะสำหรับหน้าแนะนำสินค้า แนะนำธุรกิจ หรือแสดงผลงานเบื้องต้น ราคาคำนวณตามจำนวน Section เพิ่มเติม ระบบอนิเมชั่น และการเชื่อมต่อภายนอก', 'Landing Page (Starts at ฿1,500): Best for product showcases or profile intros. Price scales on sections count, custom animations, and API integrations.')}
-                {serviceType === 'corporate-website' && t('Corporate Website (เริ่มต้น ฿4,000): เว็บไซต์บริษัท 3-5 หน้า ราคาจะขึ้นอยู่กับจำนวนหน้าเพิ่มเติม, การจัดทำฟอร์มติดต่อ, และระบบอนิเมชั่นการเปลี่ยนหน้า', 'Corporate Website (Starts at ฿4,000): Profile website for businesses (3-5 pages). Scaled based on extra pages, custom query forms, and page transition effects.')}
-                {serviceType === 'web-application' && t('Web Application (เริ่มต้น ฿15,000): ระบบเว็บแอปพลิเคชันที่มีระบบหลังบ้านจัดการข้อมูลและฐานข้อมูลจริง ราคาแปรผันตามความซับซ้อนของข้อมูล (Entities), แดชบอร์ด และสิทธิ์ผู้ใช้งาน', 'Web Application (Starts at ฿15,000): Full-stack web system backed with relational database models. Scales on data complexity (Entities), dashboard reports, and roles logic.')}
-                {serviceType === 'student-project' && t('Student Project (เริ่มต้น ฿2,500): ระบบพร้อมส่งอาจารย์ / นำเสนองาน ราคาคำนวณตามจำนวนหน้า, ระบบหลังบ้านสำหรับจัดการข้อมูลแบบ CRUD, และคู่มืออธิบายโค้ด', 'Student Project (Starts at ฿2,500): Fast codebase built for coursework, graduation reviews, or hackathons. Cost scales on page paths, CRUD requirements, and manuals.')}
-                {serviceType === 'wordpress-customization' && t('WordPress Customization (เริ่มต้น ฿1,000): งานปรับแต่งระบบเดิม แก้ไข Layout ติดตั้งปลั๊กอิน หรือสปีดความเร็วเว็บ ราคาแปรผันตามสเกลปัญหาที่พบ', 'WordPress Customization (Starts at ฿1,000): Optimize layouts, configure plug-ins, or resolve speed delays. Quote adjusts per task severity.')}
+                {serviceType === 'landing-page' && t('Landing Page (เริ่มต้น ฿1,500): เหมาะสำหรับหน้าแนะนำสินค้า แนะนำธุรกิจ หรือแสดงผลงานเบื้องต้น เว็บไซต์หน้าเดียวสมบูรณ์แบบพร้อมใช้งาน', 'Landing Page (Starts at ฿1,500): Best for product showcases or profile intros. Complete single-page website ready to deploy.')}
+                {serviceType === 'corporate-website' && t('Corporate Website (เริ่มต้น ฿4,000): เว็บไซต์บริษัท 3-5 หน้า (รวม 5 หน้าแรกราคาเท่าเดิม ฿4,000) หากเพิ่มเติมจาก 5 หน้า คิดเพิ่มหน้าละ ฿800', 'Corporate Website (Starts at ฿4,000): Profile website for businesses (Includes 3-5 pages for ฿4,000). Extra pages beyond 5 are ฿800 each.')}
+                {serviceType === 'web-application' && t('Web Application (เริ่มต้น ฿15,000): ระบบเว็บแอปพลิเคชันที่มีระบบหลังบ้านจัดการข้อมูลและฐานข้อมูลจริง (รายละเอียดตารางข้อมูล/Entities สามารถคุยตกลงขอบเขตงานเพิ่มเติมได้)', 'Web Application (Starts at ฿15,000): Full-stack web system backed with relational database models. Specific entities/data scopes can be discussed during consultation.')}
+                {serviceType === 'student-project' && t('Student Project (เริ่มต้น ฿2,500): ระบบพร้อมส่งอาจารย์ / นำเสนองาน (รายละเอียดขอบเขตงานและฟังก์ชันสามารถส่งโจทย์เพื่อประเมินได้)', 'Student Project (Starts at ฿2,500): Fast codebase built for coursework, graduation reviews, or hackathons. Details & specifications can be submitted for review.')}
+                {serviceType === 'wordpress-customization' && t('WordPress Customization (เริ่มต้น ฿1,000): งานปรับแต่งระบบเดิม แก้ไข Layout ติดตั้งปลั๊กอิน ราคาแปรผันตามสเกลปัญหาที่พบ', 'WordPress Customization (Starts at ฿1,000): Optimize layouts, configure plug-ins, or resolve issues. Quote adjusts per task severity.')}
               </div>
             </div>
 
-            {/* Config Fields based on selected ServiceType */}
             {serviceType === 'landing-page' && (
               <div className="space-y-6">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs font-semibold">
-                    <span className="text-zinc-300">{t('จำนวน Section ของเว็บ (เริ่มต้น 3 Section):', 'Number of Web Sections (Starts at 3):')}</span>
-                    <span className="text-emerald-400 font-bold">{lpSections} Sections</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={3}
-                    max={12}
-                    value={lpSections}
-                    onChange={(e) => setLpSections(Number(e.target.value))}
-                    className="w-full accent-emerald-400 bg-zinc-800 h-2 rounded-lg cursor-pointer"
-                  />
-                  <div className="text-[10px] text-zinc-500">{t('เพิ่มเติม Section ละ ฿300 (ฟรี 3 Section แรก)', 'Extra sections are ฿300 each (first 3 sections free)')}</div>
-                </div>
-
                 <div className="space-y-3">
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
-                      checked={lpAnimation}
-                      onChange={(e) => setLpAnimation(e.target.checked)}
+                      checked={lpForms}
+                      onChange={(e) => setLpForms(e.target.checked)}
                       className="w-4 h-4 rounded accent-emerald-400"
                     />
-                    <div>
-                      <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เพิ่มระบบอนิเมชั่น / เอฟเฟกต์การเลื่อนขยับ (+฿500)', 'Add scroll animations & movement effects (+฿500)')}</span>
-                    </div>
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เพิ่มระบบแบบฟอร์มติดต่อลูกค้าหลายส่วน (+฿300)', 'Add multi-section customer lead query forms (+฿300)')}</span>
                   </label>
 
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
-                      checked={lpExternal}
-                      onChange={(e) => setLpExternal(e.target.checked)}
+                      checked={lpExternalLine}
+                      onChange={(e) => setLpExternalLine(e.target.checked)}
                       className="w-4 h-4 rounded accent-emerald-400"
                     />
-                    <div>
-                      <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เชื่อมต่อบริการภายนอก เช่น Line Notify, Chat Bot (+฿1,000)', 'Connect third-party channels, e.g. Line Notify (+฿1,000)')}</span>
-                    </div>
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เชื่อมต่อบริการ Line Notify (+฿300)', 'Connect Line Notify (+฿300)')}</span>
+                  </label>
+
+                  <label className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={lpExternalChatbot}
+                      onChange={(e) => setLpExternalChatbot(e.target.checked)}
+                      className="w-4 h-4 rounded accent-emerald-400"
+                    />
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เชื่อมต่อบริการ Chat Bot (+฿300)', 'Connect Chat Bot (+฿300)')}</span>
                   </label>
                 </div>
               </div>
@@ -319,7 +296,7 @@ export default function PricingPage() {
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs font-semibold">
-                    <span className="text-zinc-300">{t('จำนวนหน้าเว็บไซต์ที่ต้องการ (เริ่มต้น 3 หน้า):', 'Requested Website Pages (Starts at 3):')}</span>
+                    <span className="text-zinc-300">{t('จำนวนหน้าเว็บไซต์ที่ต้องการ (รวมในราคาเริ่มต้น 3–5 หน้า):', 'Requested Website Pages (Includes 3–5 pages):')}</span>
                     <span className="text-emerald-400 font-bold">{corpPages} {t('หน้า', 'Pages')}</span>
                   </div>
                   <input
@@ -330,20 +307,10 @@ export default function PricingPage() {
                     onChange={(e) => setCorpPages(Number(e.target.value))}
                     className="w-full accent-emerald-400 bg-zinc-800 h-2 rounded-lg cursor-pointer"
                   />
-                  <div className="text-[10px] text-zinc-500">{t('เพิ่มเติมหน้าละ ฿800 (ฟรี 3 หน้าแรก)', 'Extra pages are ฿800 each (first 3 pages free)')}</div>
+                  <div className="text-[10px] text-zinc-500">{t('ฟรี 1–5 หน้าแรก (หากเกิน 5 หน้า คิดเพิ่มหน้าละ ฿800)', 'First 1–5 pages included in ฿4,000 baseline (Extra pages beyond 5 are ฿800 each)')}</div>
                 </div>
 
                 <div className="space-y-3">
-                  <label className="flex items-center gap-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={corpAnimation}
-                      onChange={(e) => setCorpAnimation(e.target.checked)}
-                      className="w-4 h-4 rounded accent-emerald-400"
-                    />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('อนิเมชั่นระดับพรีเมียม / Interactive GSAP (+฿1,000)', 'Premium interaction effects / GSAP scroll trigger (+฿1,000)')}</span>
-                  </label>
-
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
@@ -351,17 +318,27 @@ export default function PricingPage() {
                       onChange={(e) => setCorpForms(e.target.checked)}
                       className="w-4 h-4 rounded accent-emerald-400"
                     />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เพิ่มระบบแบบฟอร์มติดต่อลูกค้าหลายส่วน (+฿500)', 'Add multi-section customer lead query forms (+฿500)')}</span>
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เพิ่มระบบแบบฟอร์มติดต่อลูกค้าหลายส่วน (+฿300)', 'Add multi-section customer lead query forms (+฿300)')}</span>
                   </label>
 
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
-                      checked={corpMaps}
-                      onChange={(e) => setCorpMaps(e.target.checked)}
+                      checked={corpExternalLine}
+                      onChange={(e) => setCorpExternalLine(e.target.checked)}
                       className="w-4 h-4 rounded accent-emerald-400"
                     />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เชื่อมต่อ Google Maps API และ Social Media (+฿500)', 'Google Maps API integration & Social panels (+฿500)')}</span>
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เชื่อมต่อบริการ Line Notify (+฿300)', 'Connect Line Notify (+฿300)')}</span>
+                  </label>
+
+                  <label className="flex items-center gap-3 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={corpExternalChatbot}
+                      onChange={(e) => setCorpExternalChatbot(e.target.checked)}
+                      className="w-4 h-4 rounded accent-emerald-400"
+                    />
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เชื่อมต่อบริการ Chat Bot (+฿300)', 'Connect Chat Bot (+฿300)')}</span>
                   </label>
                 </div>
               </div>
@@ -369,43 +346,7 @@ export default function PricingPage() {
 
             {serviceType === 'web-application' && (
               <div className="space-y-6">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs font-semibold">
-                    <span className="text-zinc-300">{t('จำนวนตารางข้อมูล / Entities ในฐานข้อมูล (เริ่มต้น 5):', 'Database Entities / Schema Tables (Starts at 5):')}</span>
-                    <span className="text-emerald-400 font-bold">{appEntities} Entities</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={5}
-                    max={25}
-                    value={appEntities}
-                    onChange={(e) => setAppEntities(Number(e.target.value))}
-                    className="w-full accent-emerald-400 bg-zinc-800 h-2 rounded-lg cursor-pointer"
-                  />
-                  <div className="text-[10px] text-zinc-500">{t('เพิ่มเติม Entity ละ ฿1,500 (รวมการจัดการ CRUD ใน Dashboard หลังบ้าน)', 'Extra Entities are ฿1,500 each (includes related panel CRUD integration)')}</div>
-                </div>
-
                 <div className="space-y-3">
-                  <label className="flex items-center gap-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={appDashboard}
-                      onChange={(e) => setAppDashboard(e.target.checked)}
-                      className="w-4 h-4 rounded accent-emerald-400"
-                    />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('ระบบ Admin Dashboard สรุปผลหลังบ้าน (+฿5,000)', 'Admin dashboard metrics panel backend (+฿5,000)')}</span>
-                  </label>
-
-                  <label className="flex items-center gap-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={appAuth}
-                      onChange={(e) => setAppAuth(e.target.checked)}
-                      className="w-4 h-4 rounded accent-emerald-400"
-                    />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('ระบบสมาชิก & กำหนดสิทธิ์การใช้งาน (Role-based Authorization) (+฿3,000)', 'Member accounts & Role-based authentication gateways (+฿3,000)')}</span>
-                  </label>
-
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
@@ -413,7 +354,7 @@ export default function PricingPage() {
                       onChange={(e) => setAppApis(e.target.checked)}
                       className="w-4 h-4 rounded accent-emerald-400"
                     />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เชื่อมต่อ API ภายนอก (ระบบชำระเงิน, SMS, Google Maps) (+฿4,000)', 'External API linkages (Stripe payment, SMS gateway, maps) (+฿4,000)')}</span>
+                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เชื่อมต่อ API ภายนอก (ระบบชำระเงิน, SMS, Google Maps) (+฿2,500)', 'External API linkages (Stripe payment, SMS gateway, maps) (+฿2,500)')}</span>
                   </label>
                 </div>
               </div>
@@ -421,43 +362,7 @@ export default function PricingPage() {
 
             {serviceType === 'student-project' && (
               <div className="space-y-6">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs font-semibold">
-                    <span className="text-zinc-300">{t('จำนวนหน้าการทำงานของระบบ (เริ่มต้น 3 หน้า):', 'Application Working Views (Starts at 3):')}</span>
-                    <span className="text-emerald-400 font-bold">{studentPages} {t('หน้า', 'Pages')}</span>
-                  </div>
-                  <input
-                    type="range"
-                    min={3}
-                    max={15}
-                    value={studentPages}
-                    onChange={(e) => setStudentPages(Number(e.target.value))}
-                    className="w-full accent-emerald-400 bg-zinc-800 h-2 rounded-lg cursor-pointer"
-                  />
-                  <div className="text-[10px] text-zinc-500">{t('เพิ่มเติมหน้าละ ฿400', 'Extra views are ฿400 each')}</div>
-                </div>
-
                 <div className="space-y-3">
-                  <label className="flex items-center gap-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={studentDashboard}
-                      onChange={(e) => setStudentDashboard(e.target.checked)}
-                      className="w-4 h-4 rounded accent-emerald-400"
-                    />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('ระบบแอดมินหลังบ้าน (Admin CRUD Panel) (+฿1,000)', 'Admin CRUD panel features interface (+฿1,000)')}</span>
-                  </label>
-
-                  <label className="flex items-center gap-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={studentAuth}
-                      onChange={(e) => setStudentAuth(e.target.checked)}
-                      className="w-4 h-4 rounded accent-emerald-400"
-                    />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('ระบบล็อกอินและลงทะเบียน (Login/Register Auth) (+฿500)', 'Login / signup session security handlers (+฿500)')}</span>
-                  </label>
-
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
@@ -483,6 +388,7 @@ export default function PricingPage() {
                     ].map((item) => (
                       <button
                         key={item.val}
+                        type="button"
                         onClick={() => setWpScopeSize(item.val as 'S' | 'M' | 'L')}
                         className={`p-3 rounded-xl border text-center transition-all ${
                           wpScopeSize === item.val
@@ -498,16 +404,6 @@ export default function PricingPage() {
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <label className="flex items-center gap-3 cursor-pointer group">
-                    <input
-                      type="checkbox"
-                      checked={wpSpeed}
-                      onChange={(e) => setWpSpeed(e.target.checked)}
-                      className="w-4 h-4 rounded accent-emerald-400"
-                    />
-                    <span className="text-xs sm:text-sm text-zinc-300 group-hover:text-emerald-300 transition-colors">{t('เพิ่มสปีดการโหลดและทำ PageSpeed Optimization (+฿1,000)', 'Improve caching & PageSpeed load scores optimization (+฿1,000)')}</span>
-                  </label>
-
                   <label className="flex items-center gap-3 cursor-pointer group">
                     <input
                       type="checkbox"
