@@ -6,8 +6,8 @@ export default function JsonLd() {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: companyData.name,
-      url: 'https://ldcode.dev',
-      logo: 'https://ldcode.dev/image/LDCode_Logo.png',
+      url: 'https://ldcode.tech',
+      logo: 'https://ldcode.tech/image/LDCode_Logo.png',
       description: companyData.description.th,
       address: {
         '@type': 'PostalAddress',
@@ -33,10 +33,10 @@ export default function JsonLd() {
       '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
       name: companyData.name,
-      image: 'https://ldcode.dev/image/LDCode_Logo.png',
+      image: 'https://ldcode.tech/image/LDCode_Logo.png',
       priceRange: '฿฿',
       telephone: companyData.contact.phone,
-      url: 'https://ldcode.dev',
+      url: 'https://ldcode.tech',
       address: {
         '@type': 'PostalAddress',
         streetAddress: '88/19 Tower B, Sukhumvit Road',

@@ -4,7 +4,7 @@ import projectsData from '@/data/projects.json'
 import blogData from '@/data/blog.json'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ldcode.dev'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ldcode.tech'
 
   // 1. Static routes
   const staticRoutes = [

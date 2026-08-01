@@ -16,7 +16,7 @@ const notoColorFont = Noto_Sans_Thai({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ldcode.dev'),
+  metadataBase: new URL('https://ldcode.tech'),
   title: {
     default: 'LDCode - Custom Web & Mobile Architecture | Premium Digital Solutions',
     template: '%s | LDCode Technology',
@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     'AI RAG Integration',
     'TypeScript Custom Software',
   ],
-  authors: [{ name: 'LDCode Team', url: 'https://ldcode.dev' }],
+  authors: [{ name: 'LDCode Team', url: 'https://ldcode.tech' }],
   creator: 'LDCode Tech',
   openGraph: {
     type: 'website',
     locale: 'th_TH',
-    url: 'https://ldcode.dev',
+    url: 'https://ldcode.tech',
     title: 'LDCode - Architecting Digital Excellence with Modern Tech Stack',
     description: companyData.description.th,
     siteName: 'LDCode',
