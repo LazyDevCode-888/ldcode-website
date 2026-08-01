@@ -1,14 +1,17 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import companyData from '@/data/company.json'
 import faqsData from '@/data/faqs.json'
 import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Clock, ExternalLink } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 import { motion } from 'framer-motion'
 
-export default function ContactPage() {
+function ContactFormContent() {
   const { t } = useLanguage()
+  const searchParams = useSearchParams()
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,6 +29,43 @@ export default function ContactPage() {
 
   const [isServiceOpen, setIsServiceOpen] = useState(false)
   const [isBudgetOpen, setIsBudgetOpen] = useState(false)
+
+  useEffect(() => {
+    const serviceParam = searchParams.get('service')
+    const estimateParam = searchParams.get('estimate')
+
+    let mappedService = formData.service
+    let mappedBudget = formData.budget
+    let mappedMessage = formData.message
+
+    if (serviceParam) {
+      if (serviceParam === 'landing-page') mappedService = 'Landing Page'
+      else if (serviceParam === 'corporate-website') mappedService = 'Corporate Web'
+      else if (serviceParam === 'web-application') mappedService = 'Web App'
+      else if (serviceParam === 'student-project') mappedService = 'Student Project'
+      else if (serviceParam === 'wordpress-customization') mappedService = 'WordPress Optimize'
+      else if (serviceParam === 'website-maintenance') mappedService = 'Website Maintenance'
+    }
+
+    if (estimateParam) {
+      const estNum = Number(estimateParam)
+      if (estNum > 0) {
+        if (estNum < 5000) mappedBudget = '< ฿5k'
+        else if (estNum >= 5000 && estNum < 15000) mappedBudget = '฿5k - ฿15k'
+        else if (estNum >= 15000 && estNum <= 50000) mappedBudget = '฿15k - ฿50k'
+        else if (estNum > 50000) mappedBudget = '> ฿50k'
+        
+        mappedMessage = `[ประเมินราคาร่างเริ่มต้นจากหน้าเว็บ: ฿${estNum.toLocaleString()}]\n`
+      }
+    }
+
+    setFormData((prev) => ({
+      ...prev,
+      service: mappedService,
+      budget: mappedBudget,
+      message: mappedMessage,
+    }))
+  }, [searchParams])
 
   useEffect(() => {
     const handleGlobalClick = () => {
@@ -368,6 +408,7 @@ export default function ContactPage() {
                           {formData.service === 'Web App' && 'Full-Stack Web Application'}
                           {formData.service === 'Student Project' && 'Student Project Support'}
                           {formData.service === 'WordPress Optimize' && 'WordPress Customization'}
+                          {formData.service === 'Website Maintenance' && 'Website Maintenance & Fixes'}
                         </span>
                         <ChevronDown className={`w-4 h-4 text-zinc-400 transition-transform ${isServiceOpen ? 'rotate-180' : ''}`} />
                       </button>
@@ -380,6 +421,7 @@ export default function ContactPage() {
                             { value: 'Web App', label: 'Full-Stack Web Application' },
                             { value: 'Student Project', label: 'Student Project Support' },
                             { value: 'WordPress Optimize', label: 'WordPress Customization' },
+                            { value: 'Website Maintenance', label: 'Website Maintenance & Fixes' },
                           ].map((opt) => (
                             <button
                               key={opt.value}
@@ -525,5 +567,17 @@ export default function ContactPage() {
         </div>
       </motion.div>
     </div>
+  )
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense fallback={
+      <div className="py-32 text-center text-zinc-400 animate-pulse">
+        Loading Contact Form...
+      </div>
+    }>
+      <ContactFormContent />
+    </Suspense>
   )
 }

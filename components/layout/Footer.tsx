@@ -65,6 +65,7 @@ export default function Footer() {
               <li><Link href="/portfolio" className="hover:text-emerald-400 transition-colors">{t('โปรเจกต์', 'Portfolio')}</Link></li>
               <li><Link href="/pricing" className="hover:text-emerald-400 transition-colors">{t('ประเมินราคา', 'Pricing Plans')}</Link></li>
               <li><Link href="/tech-stack" className="hover:text-emerald-400 transition-colors">{t('เทคโนโลยี', 'Tech Stack')}</Link></li>
+              <li><Link href="/blog" className="hover:text-emerald-400 transition-colors">{t('บทความ', 'Blog')}</Link></li>
               <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">{t('ติดต่อเรา', 'Contact Us')}</Link></li>
             </ul>
           </div>
@@ -78,6 +79,7 @@ export default function Footer() {
               <li><Link href="/services#web-application" className="hover:text-emerald-400 transition-colors">{t('ทำ Web Application', 'Web Applications')}</Link></li>
               <li><Link href="/services#student-project" className="hover:text-emerald-400 transition-colors">{t('ทำโปรเจกต์นักศึกษา', 'Student Project')}</Link></li>
               <li><Link href="/services#wordpress-customization" className="hover:text-emerald-400 transition-colors">{t('แก้ไข WordPress', 'WordPress Edits')}</Link></li>
+              <li><Link href="/services#website-maintenance" className="hover:text-emerald-400 transition-colors">{t('แก้ไขและปรับปรุงระบบเดิม', 'System Maintenance')}</Link></li>
             </ul>
           </div>
 

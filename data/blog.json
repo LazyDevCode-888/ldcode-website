@@ -1,0 +1,71 @@
+[
+  {
+    "id": "boost-nextjs-speed-seo",
+    "title": {
+      "th": "5 วิธีเพิ่มความเร็วให้กับเว็บไซต์ Next.js เพื่อเพิ่มประสิทธิภาพ SEO",
+      "en": "5 Best Practices to Boost Next.js PageSpeed & Maximize SEO Rankings"
+    },
+    "excerpt": {
+      "th": "แนะนำเทคนิคเด็ดในการปรับจูนเว็บ Next.js ให้โหลดเร็วระดับเสี้ยววินาที เพื่อสร้างประสบการณ์ใช้งานที่ยอดเยี่ยมและดันอันดับ Google ให้พุ่งทะยาน",
+      "en": "Unlock sub-second loading times on your Next.js application to improve user experience, reduce bounce rates, and rank on top page of Google."
+    },
+    "date": "2026-08-01",
+    "author": "LDCode Engineering",
+    "readTime": {
+      "th": "อ่าน 5 นาที",
+      "en": "5 min read"
+    },
+    "tags": ["Next.js", "SEO", "Performance"],
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+    "content": {
+      "th": "ความเร็วในการโหลดหน้าเว็บเป็นหนึ่งในปัจจัยที่สำคัญที่สุดสำหรับการจัดอันดับ SEO ของ Google และความพึงพอใจของผู้ชม\n\nนี่คือ 5 เทคนิคสำคัญในการปรับจูนประสิทธิภาพ Next.js ของคุณ:\n\n### 1. นำระบบ Image Optimization มาใช้จริง\nหลีกเลี่ยงการใช้แท็ก `<img>` แบบมาตรฐานในจุดที่ไม่จำเป็น แต่ควรปรับมาใช้ Component `<Image />` จาก `next/image` ซึ่งช่วยบีบอัดไฟล์ภาพให้เป็นสกุลยุคใหม่อย่าง WebP/AVIF และทำ Lazy loading ให้อัตโนมัติ\n\n### 2. ทำ Pre-rendering หน้าเว็บให้เหมาะสม\nวิเคราะห์และเลือกใช้งาน Static Generation (SSG) หรือ Incremental Static Regeneration (ISR) สำหรับหน้าที่ข้อมูลไม่เปลี่ยนบ่อย เพื่อให้เซิร์ฟเวอร์เรนเดอร์หน้าเว็บเป็น HTML รอไว้ตั้งแต่เริ่มแรก ทำให้การเข้าชมรวดเร็วทันใจ\n\n### 3. โหลดฟอนต์ผ่าน Next.js Font Module\nการใช้ `next/font` ช่วยให้สามารถดึงข้อมูลฟอนต์ Google Fonts มาโฮสต์ไว้บนโดเมนตัวเองในตอนคอมไพล์ ป้องกันการเกิด Layout Shift (CLS) และช่วยลดภาระการร้องขอไฟล์ฟอนต์จากภายนอก\n\n### 4. ยุบขนาด Bundles ด้วย Dynamic Imports\nสำหรับ Component ขนาดใหญ่ที่มีการใช้งานเฉพาะจุด (เช่น Charts หรือ Modal) แนะนำให้โหลดด้วย `dynamic()` จาก `next/dynamic` เพื่อแยกสคริปต์ออกจาก Code Bundle หลักของหน้าแรก ช่วยลดระยะเวลาดาวน์โหลด JavaScript เริ่มแรกลงได้มาก\n\n### 5. ตั้งค่า Caching Headers บนเซิร์ฟเวอร์\nการกำหนด cache control headers สำหรับไฟล์สแตติกและ assets ช่วยให้เว็บเบราว์เซอร์ไม่ต้องดาวน์โหลดไฟล์ซ้ำเมื่อมีการเปลี่ยนหน้า เพิ่มความต่อเนื่องในการใช้งานให้กับผู้เข้าชม",
+      "en": "Loading speed is a fundamental ranking factor for Google SEO and client conversion rates.\n\nHere are 5 core practices to optimize your Next.js project:\n\n### 1. Leverage next/image for Optimization\nAvoid raw `<img>` HTML tags. Always use Next.js `<Image />` component. It automatically resizes, compresses to modern WebP/AVIF formats, and lazy-loads images below the fold.\n\n### 2. Maximize Static Generation (SSG/ISR)\nPre-render pages to static HTML during build-time using `generateStaticParams()` or ISR. Serving static HTML from a CDN is incomparably faster than rendering on every server request.\n\n### 3. Use next/font for Google Fonts\nImport fonts using `next/font` to host font files locally at compile time. This eliminates external network requests and prevents Layout Shifts (CLS).\n\n### 4. Implement Dynamic Imports for Heavy Components\nWrap heavy components (like 3D viewers or chart libraries) in dynamic imports: `const Chart = dynamic(() => import('./Chart'))`. This prevents loading heavy bundles during initial paint.\n\n### 5. Set Strong Cache-Control Headers\nConfiguring aggressive browser caching for static bundles ensures returning visitors experience instant loading times on repeat visits."
+    }
+  },
+  {
+    "id": "web-security-xss-clickjacking",
+    "title": {
+      "th": "คู่มือการป้องกันเว็บไซต์จากการถูกโจมตีแบบ Clickjacking และ XSS",
+      "en": "A Comprehensive Guide to Securing Next.js Websites Against XSS & Clickjacking"
+    },
+    "excerpt": {
+      "th": "เรียนรู้วิธีการกำหนดค่าความปลอดภัย HTTP Headers บน Next.js และระบบหลังบ้านเพื่อบล็อกช่องโหว่ความปลอดภัยที่แฮกเกอร์มักใช้อย่างได้ผล",
+      "en": "Learn how to configure robust security HTTP headers in Next.js applications to safeguard client data and prevent malicious injection."
+    },
+    "date": "2026-07-28",
+    "author": "LDCode Security Team",
+    "readTime": {
+      "th": "อ่าน 4 นาที",
+      "en": "4 min read"
+    },
+    "tags": ["Security", "Web Dev", "Headers"],
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18d5?q=80&w=1200&auto=format&fit=crop",
+    "content": {
+      "th": "ความปลอดภัยของเว็บไซต์ไม่ใช่สิ่งที่เป็นตัวเลือกอีกต่อไป โดยเฉพาะระบบที่ต้องรับส่งข้อมูลส่วนบุคคลของลูกค้า\n\nบทความนี้จะแนะนำสแต็ก Headers ป้องกันภัยเบื้องต้นที่คุณสามารถทำได้ใน Next.js:\n\n### 1. ป้องกันภัย Clickjacking ด้วย X-Frame-Options\nแฮกเกอร์อาจซ่อนหน้าเว็บของคุณไว้ใน iframe โปร่งใสเพื่อดักคลิกปุ่มการทำธุรกรรม (Clickjacking) เราสามารถป้องกันได้โดยการส่งเฮดเดอร์ `X-Frame-Options: DENY` ซึ่งบอกบราวเซอร์ว่าห้ามดึงหน้าเว็บไปแสดงใน iframe เด็ดขาด\n\n### 2. ป้องกัน XSS ด้วย Content Security Policy (CSP)\nCross-Site Scripting (XSS) เกิดจากการแฝงโค้ดอันตรายในเว็บไซต์ การสร้างนโยบาย CSP ช่วยจำกัดสิทธิ์ของเบราว์เซอร์ให้ประมวลผลเฉพาะสคริปต์ที่มาจากโดเมนที่เชื่อถือได้เท่านั้น\n\n### 3. บังคับการส่งผ่าน HTTPS ตลอดกาล (HSTS)\nด้วยการเปิดใช้งานเฮดเดอร์ `Strict-Transport-Security` บราวเซอร์จะจำว่าต้องเข้าชมเว็บนี้ผ่านโปรโตคอล HTTPS เสมอ ป้องกันการโดนดักจับข้อมูลระหว่างทางผ่านการเชื่อมต่อแบบ HTTP ปกติ\n\n### 4. ป้องกัน MIME Sniffing ด้วย nosniff\nกำหนดค่า `X-Content-Type-Options: nosniff` เพื่อสั่งให้บราวเซอร์ประมวลผลไฟล์ตาม Content-Type ที่ส่งมาจากเซิร์ฟเวอร์ตรง ๆ ป้องกันการหลอกให้รันไฟล์สคริปต์ที่ปลอมแปลงมาในรูปของรูปภาพหรือข้อความ",
+      "en": "Web security is paramount when launching business portals or handling private client databases.\n\nHere are crucial configurations to protect your portal:\n\n### 1. Block Clickjacking with X-Frame-Options\nMalicious websites can embed your site in an invisible iframe to hijack user clicks. Prevent this by serving `X-Frame-Options: DENY` or `SAMEORIGIN` to forbid unauthorized nesting.\n\n### 2. Defend Against XSS via Content Security Policy (CSP)\nCSP instructs browsers which scripts, stylesheets, and assets are allowed to execute. Restricting source domains prevents malicious external scripts from running on your user's viewport.\n\n### 3. Force Secure Links with HSTS\nAdd `Strict-Transport-Security (HSTS)` headers to guarantee that browsers connect only using HTTPS, preventing downgrading to insecure HTTP protocols.\n\n### 4. Prevent File Spoofing with X-Content-Type-Options\nSetting `X-Content-Type-Options: nosniff` stops modern web browsers from executing files masquerading as images, mitigating MIME-sniffing exploits."
+    }
+  },
+  {
+    "id": "single-page-application-benefits",
+    "title": {
+      "th": "ทำไมธุรกิจยุคใหม่ควรเลือกพัฒนาเว็บแอปพลิเคชันแบบ Single Page Application (SPA)",
+      "en": "Why Modern Businesses Choose Single Page Application (SPA) Architectures"
+    },
+    "excerpt": {
+      "th": "วิเคราะห์ข้อดีของการทำเว็บแอปในสไตล์ SPA ที่โดดเด่นเรื่องการสลับหน้าลื่นไหลไม่สะดุด ส่งมอบประสบการณ์การทำงานได้ดีเยี่ยมไม่ต่างจากแอปบนมือถือ",
+      "en": "Explore the structural benefits of Single Page Applications (SPAs) that offer instantaneous page transitions and app-like user experiences."
+    },
+    "date": "2026-07-15",
+    "author": "LDCode Product Dev",
+    "readTime": {
+      "th": "อ่าน 3 นาที",
+      "en": "3 min read"
+    },
+    "tags": ["Web App", "UI UX", "Business"],
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    "content": {
+      "th": "ในการสร้างเว็บแอปพลิเคชันหรือแดชบอร์ดจัดการข้อมูลภายใน ประสบการณ์ของผู้ใช้งานเป็นกุญแจสำคัญในการเพิ่มความคุ้มค่าของการลงทุน (ROI)\n\n### SPA คืออะไร?\nSingle Page Application (SPA) คือเว็บแอปพลิเคชันที่โหลดหน้าเว็บหลักเพียงครั้งเดียว และใช้วิธีอัปเดตข้อมูลเฉพาะส่วนผ่าน API เมื่อมีการคลิกเปลี่ยนหน้า แทนการดาวน์โหลดทั้งเว็บใหม่ ทำให้การสลับหน้าแสดงผลเป็นไปอย่างลื่นไหลไม่มีหน้าจอกะพริบขาว\n\n### ทำไมธุรกิจถึงเลือกใช้ SPA?\n1. **สลับหน้าได้อย่างรวดเร็ว**: ผู้ใช้ไม่ต้องนั่งรอหน้าเว็บโหลดใหม่ ช่วยให้การป้อนข้อมูล การตรวจสอบสต็อก หรือการเรียกดูรายงานทำได้อย่างรวดเร็ว\n2. **ความรู้สึกคล้ายใช้งานโมบายแอป**: การเปลี่ยนหน้าที่มีอนิเมชันที่สวยงาม (Micro-animations) ทำให้ระบบภายในองค์กรดูทันสมัยและน่าใช้งานมากขึ้น\n3. **แยกส่วนพัฒนาได้ง่าย**: โครงสร้างแบบ SPA รองรับการทำ API หลังบ้านแยกขาดจากสถาปัตยกรรมหน้าบ้าน ทำให้ทีมพัฒนางานหน้าบ้านและหลังบ้านทำงานขนานกันได้ง่าย\n4. **ประหยัด Bandwidth ของเซิร์ฟเวอร์**: เพราะเซิร์ฟเวอร์ไม่ต้องส่งหน้า HTML ใหม่ทั้งหมดทุกครั้ง ส่งเฉพาะข้อมูล JSON เล็ก ๆ ทำให้ประหยัดค่าใช้จ่าย Hosting ขึ้นอย่างมาก",
+      "en": "For modern business software, user efficiency directly maps to employee productivity and customer conversion.\n\n### What is a Single Page Application (SPA)?\nSPAs load the entire application frame once and dynamically re-render sections when switching routes via client APIs, avoiding reloading the entire page layout.\n\n### Core Benefits for Businesses:\n1. **Zero Layout Flicker**: Fluid, instantaneous page transitions that make web software feel like native desktop programs.\n2. **Reduced Server Bandwidth**: SPAs request only raw data payloads (JSON) after the initial load, dramatically reducing server costs.\n3. **Decoupled Architecture**: Front-end interfaces are cleanly separated from API backends, allowing faster engineering cycles.\n4. **Seamless Micro-Animations**: Enables smooth transitions and interactive dashboard charts rendering without interruption."
+    }
+  }
+]
