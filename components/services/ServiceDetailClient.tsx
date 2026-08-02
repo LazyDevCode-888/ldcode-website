@@ -91,7 +91,7 @@ export default function ServiceDetailClient({
           </div>
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-1">
-              LDCode Services
+              {t('บริการจาก LDCode', 'LDCode Services')}
             </p>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-zinc-100 leading-tight">
               {t(service.title)}

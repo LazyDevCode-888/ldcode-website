@@ -105,7 +105,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>© {new Date().getFullYear()} {companyData.name} Co., Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {companyData.name} Co., Ltd. {t('สงวนลิขสิทธิ์ทั้งหมด', 'All rights reserved.')}</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-zinc-300 transition-colors">{t('นโยบายความเป็นส่วนตัว', 'Privacy Policy')}</a>
             <a href="#" className="hover:text-zinc-300 transition-colors">{t('เงื่อนไขการใช้บริการ', 'Terms of Service')}</a>

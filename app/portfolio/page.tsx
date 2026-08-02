@@ -52,7 +52,7 @@ export default function PortfolioPage() {
         className="text-center space-y-4"
       >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-          Our Portfolio & Case Studies
+          {t('ผลงานและกรณีศึกษาของเรา', 'Our Portfolio & Case Studies')}
         </h1>
         <p className="text-4xl sm:text-6xl font-extrabold tracking-tight">
           {t('โปรเจกต์และกรณีศึกษา', 'Architected for')}{' '}

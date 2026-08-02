@@ -179,7 +179,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
         <div className="glass-card p-8 rounded-3xl border border-emerald-500/20 space-y-4 bg-emerald-950/20">
           <h2 className="text-xl font-bold text-zinc-100 flex items-center gap-2">
             <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-            <span>LDCode Architecture &amp; Solution</span>
+            <span>{t('แนวทางการพัฒนาและสถาปัตยกรรมระบบ', 'LDCode Architecture & Solution')}</span>
           </h2>
           <p className="text-sm text-zinc-300 leading-relaxed">
             {t(project.solution)}

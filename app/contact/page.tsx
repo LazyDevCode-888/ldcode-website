@@ -130,7 +130,7 @@ function ContactFormContent() {
         className="text-center space-y-4"
       >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-          Get In Touch
+          {t('ติดต่อเรา', 'Get In Touch')}
         </h1>
         <p className="text-4xl sm:text-6xl font-extrabold tracking-tight">
           {t('เริ่มพัฒนาโครงการ', 'Start Your Digital')}{' '}
@@ -410,12 +410,12 @@ function ContactFormContent() {
                         }`}
                       >
                         <span>
-                          {formData.service === 'Landing Page' && 'Landing Page Development'}
-                          {formData.service === 'Corporate Web' && 'Corporate Website Development'}
-                          {formData.service === 'Web App' && 'Full-Stack Web Application'}
-                          {formData.service === 'Student Project' && 'Student Project Support'}
-                          {formData.service === 'WordPress Optimize' && 'WordPress Customization'}
-                          {formData.service === 'Website Maintenance' && 'Website Maintenance & Fixes'}
+                          {formData.service === 'Landing Page' && t('รับทำเว็บไซต์หน้าเดียว (Landing Page)', 'Landing Page Development')}
+                          {formData.service === 'Corporate Web' && t('รับทำเว็บไซต์บริษัท / องค์กร', 'Corporate Website Development')}
+                          {formData.service === 'Web App' && t('รับทำ Web Application', 'Full-Stack Web Application')}
+                          {formData.service === 'Student Project' && t('รับทำโปรเจกต์นักศึกษา / โปรเจกต์จบ', 'Student Project Support')}
+                          {formData.service === 'WordPress Optimize' && t('แก้ไข ปรับแต่ง WordPress', 'WordPress Customization')}
+                          {formData.service === 'Website Maintenance' && t('แก้ไขและปรับปรุงระบบเดิม', 'Website Maintenance & Fixes')}
                         </span>
                         <ChevronDown className={`w-4 h-4 text-zinc-400 transition-transform ${isServiceOpen ? 'rotate-180' : ''}`} />
                       </button>
@@ -423,12 +423,12 @@ function ContactFormContent() {
                       {isServiceOpen && (
                         <div className="absolute z-50 mt-2 w-full glass-card bg-zinc-950/95 border border-emerald-500/20 rounded-xl overflow-hidden shadow-2xl py-1">
                           {[
-                            { value: 'Landing Page', label: 'Landing Page Development' },
-                            { value: 'Corporate Web', label: 'Corporate Website Development' },
-                            { value: 'Web App', label: 'Full-Stack Web Application' },
-                            { value: 'Student Project', label: 'Student Project Support' },
-                            { value: 'WordPress Optimize', label: 'WordPress Customization' },
-                            { value: 'Website Maintenance', label: 'Website Maintenance & Fixes' },
+                            { value: 'Landing Page', label: t('รับทำเว็บไซต์หน้าเดียว (Landing Page)', 'Landing Page Development') },
+                            { value: 'Corporate Web', label: t('รับทำเว็บไซต์บริษัท / องค์กร', 'Corporate Website Development') },
+                            { value: 'Web App', label: t('รับทำ Web Application', 'Full-Stack Web Application') },
+                            { value: 'Student Project', label: t('รับทำโปรเจกต์นักศึกษา / โปรเจกต์จบ', 'Student Project Support') },
+                            { value: 'WordPress Optimize', label: t('แก้ไข ปรับแต่ง WordPress', 'WordPress Customization') },
+                            { value: 'Website Maintenance', label: t('แก้ไขและปรับปรุงระบบเดิม', 'Website Maintenance & Fixes') },
                           ].map((opt) => (
                             <button
                               key={opt.value}
@@ -550,7 +550,7 @@ function ContactFormContent() {
       >
         <div className="text-center space-y-3">
           <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-            Frequently Asked Questions
+            {t('คำถามที่พบบ่อย (FAQs)', 'Frequently Asked Questions')}
           </h2>
           <p className="text-3xl font-extrabold text-zinc-100">
             {t('คำถามที่พบบ่อย (FAQs)', 'Frequently Asked')} <span className="text-code">{t('', 'Questions')}</span>

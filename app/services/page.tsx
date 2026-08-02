@@ -39,7 +39,7 @@ export default function ServicesPage() {
         className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center space-y-6"
       >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-          Our Capabilities &amp; Scope
+          {t('ขอบเขตและความสามารถของเรา', 'Our Capabilities & Scope')}
         </h1>
         <p className="text-4xl sm:text-6xl font-extrabold tracking-tight">
           {t('รายการ', 'Our')}{' '}

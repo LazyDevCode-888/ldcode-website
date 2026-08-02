@@ -6,7 +6,10 @@
   "plans": [
     {
       "id": "landing-page",
-      "name": "Landing Page",
+      "name": {
+        "th": "รับทำเว็บไซต์หน้าเดียว (Landing Page)",
+        "en": "Landing Page"
+      },
       "badge": {
         "th": "เริ่มต้นธุรกิจ",
         "en": "Startup Launch"
@@ -42,7 +45,10 @@
     },
     {
       "id": "corporate-website",
-      "name": "Corporate Website",
+      "name": {
+        "th": "รับทำเว็บไซต์บริษัท / องค์กร",
+        "en": "Corporate Website"
+      },
       "badge": {
         "th": "สร้างความน่าเชื่อถือ",
         "en": "Business Authority"
@@ -78,7 +84,10 @@
     },
     {
       "id": "web-application",
-      "name": "Web Application",
+      "name": {
+        "th": "รับพัฒนา Web Application",
+        "en": "Web Application"
+      },
       "badge": {
         "th": "คุ้มค่าสำหรับธุรกิจ",
         "en": "Enterprise Scale"
@@ -114,7 +123,10 @@
     },
     {
       "id": "student-project",
-      "name": "Student Project",
+      "name": {
+        "th": "รับทำโปรเจกต์นักศึกษา / โปรเจกต์จบ",
+        "en": "Student Project"
+      },
       "badge": {
         "th": "สำหรับนักศึกษา",
         "en": "Student Special"
@@ -150,7 +162,10 @@
     },
     {
       "id": "wordpress-customization",
-      "name": "WordPress Edit",
+      "name": {
+        "th": "รับแก้ไข ปรับแต่ง WordPress",
+        "en": "WordPress Edit"
+      },
       "badge": {
         "th": "ปรับแต่งจากเว็บเดิม",
         "en": "Optimizations"
@@ -186,7 +201,10 @@
     },
     {
       "id": "website-maintenance",
-      "name": "Website Maintenance",
+      "name": {
+        "th": "รับแก้ไขและปรับปรุงระบบเดิม",
+        "en": "Website Maintenance"
+      },
       "badge": {
         "th": "แก้ไขและปรับปรุง",
         "en": "Maintenance & Fixes"

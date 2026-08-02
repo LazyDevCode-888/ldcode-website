@@ -105,7 +105,7 @@ export default function PricingPage() {
         className="text-center space-y-4"
       >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-          Budget-friendly Pricing Plans
+          {t('แพ็กเกจราคาสุดคุ้มค่า', 'Budget-friendly Pricing Plans')}
         </h1>
         <p className="text-4xl sm:text-6xl font-extrabold tracking-tight">
           {t('อัตราค่าบริการและ', 'Pricing Rates &')}{' '}
@@ -117,8 +117,10 @@ export default function PricingPage() {
             'Affordable starting rates for every project type. Transparent estimation with zero hidden fees. Adjust parameters below to get instant quotes.'
           )}
         </p>
-        <div className="pt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
-          <span>{t('สัญญาการรับประกันดูแลระบบและการดูแลความปลอดภัยเบื้องต้นรวมในราคาทุกชิ้นงาน', 'Support warranty and security monitoring are standard inclusions in all work')}</span>
+        <div className="pt-4 flex justify-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-bold text-center">
+            <span>{t('สัญญาการรับประกันดูแลระบบและการดูแลความปลอดภัยเบื้องต้นรวมในราคาทุกชิ้นงาน', 'Support warranty and security monitoring are standard inclusions in all work')}</span>
+          </div>
         </div>
       </motion.div>
 
@@ -174,7 +176,7 @@ export default function PricingPage() {
 
               <div className="space-y-6 mt-2">
                 <div>
-                  <h3 className="text-2xl font-bold text-zinc-100">{plan.name}</h3>
+                  <h3 className="text-2xl font-bold text-zinc-100">{t(plan.name)}</h3>
                   <p className="text-xs text-zinc-400 mt-2 leading-relaxed h-12">{t(plan.description)}</p>
                 </div>
 
@@ -245,12 +247,12 @@ export default function PricingPage() {
                     : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:text-zinc-200'
                 }`}
               >
-                {type === 'landing-page' && 'Landing Page'}
-                {type === 'corporate-website' && t('Corporate (3-5 หน้า)', 'Corporate (3-5 Pages)')}
-                {type === 'web-application' && 'Web Application'}
-                {type === 'student-project' && 'Student Project'}
-                {type === 'wordpress-customization' && 'WordPress Edit'}
-                {type === 'website-maintenance' && t('แก้ไขระบบเดิม', 'System Maintenance')}
+                {type === 'landing-page' && t('รับทำเว็บไซต์หน้าเดียว (Landing Page)', 'Landing Page')}
+                {type === 'corporate-website' && t('รับทำเว็บไซต์บริษัท / องค์กร', 'Corporate Website')}
+                {type === 'web-application' && t('รับทำ Web Application', 'Web Application')}
+                {type === 'student-project' && t('รับทำโปรเจกต์นักศึกษา', 'Student Project')}
+                {type === 'wordpress-customization' && t('รับแก้ไข ปรับแต่ง WordPress', 'WordPress Edit')}
+                {type === 'website-maintenance' && t('รับแก้ไขและปรับปรุงระบบเดิม', 'System Maintenance')}
               </button>
             ))}
           </div>
@@ -262,12 +264,12 @@ export default function PricingPage() {
             <div className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80 flex items-start gap-3">
               <Info className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div className="text-xs text-zinc-400 leading-relaxed">
-                {serviceType === 'landing-page' && t('Landing Page (เริ่มต้น ฿1,500): เหมาะสำหรับหน้าแนะนำสินค้า แนะนำธุรกิจ หรือแสดงผลงานเบื้องต้น เว็บไซต์หน้าเดียวสมบูรณ์แบบพร้อมใช้งาน', 'Landing Page (Starts at ฿1,500): Best for product showcases or profile intros. Complete single-page website ready to deploy.')}
-                {serviceType === 'corporate-website' && t('Corporate Website (เริ่มต้น ฿4,000): เว็บไซต์บริษัท 3-5 หน้า (รวม 5 หน้าแรกราคาเท่าเดิม ฿4,000) หากเพิ่มเติมจาก 5 หน้า คิดเพิ่มหน้าละ ฿800', 'Corporate Website (Starts at ฿4,000): Profile website for businesses (Includes 3-5 pages for ฿4,000). Extra pages beyond 5 are ฿800 each.')}
-                {serviceType === 'web-application' && t('Web Application (เริ่มต้น ฿15,000): ระบบเว็บแอปพลิเคชันที่มีระบบหลังบ้านจัดการข้อมูลและฐานข้อมูลจริง (รายละเอียดตารางข้อมูล/Entities สามารถคุยตกลงขอบเขตงานเพิ่มเติมได้)', 'Web Application (Starts at ฿15,000): Full-stack web system backed with relational database models. Specific entities/data scopes can be discussed during consultation.')}
-                {serviceType === 'student-project' && t('Student Project (เริ่มต้น ฿1,000): ระบบพร้อมส่งอาจารย์ / นำเสนองาน (รายละเอียดขอบเขตงานและฟังก์ชันสามารถส่งโจทย์เพื่อประเมินได้)', 'Student Project (Starts at ฿1,000): Fast codebase built for coursework, graduation reviews, or hackathons. Details & specifications can be submitted for review.')}
-                {serviceType === 'wordpress-customization' && t('WordPress Customization (เริ่มต้น ฿1,000): งานปรับแต่งระบบเดิม แก้ไข Layout ติดตั้งปลั๊กอิน ราคาแปรผันตามสเกลปัญหาที่พบ', 'WordPress Customization (Starts at ฿1,000): Optimize layouts, configure plug-ins, or resolve issues. Quote adjusts per task severity.')}
-                {serviceType === 'website-maintenance' && t('Website Maintenance (เริ่มต้น ฿1,000): แก้ไขข้อผิดพลาด เพิ่มฟีเจอร์ ปรับปรุงประสิทธิภาพ หรือพัฒนาต่อยอดระบบเดิมโดยไม่ต้องเริ่มใหม่', 'Website Maintenance (Starts at ฿1,000): Fix bugs, add features, optimize performance, or scale up existing systems without rebuilding.')}
+                {serviceType === 'landing-page' && t('รับทำเว็บไซต์หน้าเดียว / Landing Page (เริ่มต้น ฿1,500): เหมาะสำหรับหน้าแนะนำสินค้า แนะนำธุรกิจ หรือแสดงผลงานเบื้องต้น เว็บไซต์หน้าเดียวสมบูรณ์แบบพร้อมใช้งาน', 'Landing Page (Starts at ฿1,500): Best for product showcases or profile intros. Complete single-page website ready to deploy.')}
+                {serviceType === 'corporate-website' && t('รับทำเว็บไซต์บริษัท / องค์กร (เริ่มต้น ฿4,000): เว็บไซต์บริษัท 3-5 หน้า (รวม 5 หน้าแรกราคาเท่าเดิม ฿4,000) หากเพิ่มเติมจาก 5 หน้า คิดเพิ่มหน้าละ ฿800', 'Corporate Website (Starts at ฿4,000): Profile website for businesses (Includes 3-5 pages for ฿4,000). Extra pages beyond 5 are ฿800 each.')}
+                {serviceType === 'web-application' && t('รับทำ Web Application (เริ่มต้น ฿15,000): ระบบเว็บแอปพลิเคชันที่มีระบบหลังบ้านจัดการข้อมูลและฐานข้อมูลจริง (รายละเอียดตารางข้อมูล/Entities สามารถคุยตกลงขอบเขตงานเพิ่มเติมได้)', 'Web Application (Starts at ฿15,000): Full-stack web system backed with relational database models. Specific entities/data scopes can be discussed during consultation.')}
+                {serviceType === 'student-project' && t('รับทำโปรเจกต์นักศึกษา / โปรเจกต์จบ (เริ่มต้น ฿1,000): ระบบพร้อมส่งอาจารย์ / นำเสนองาน (รายละเอียดขอบเขตงานและฟังก์ชันสามารถส่งโจทย์เพื่อประเมินได้)', 'Student Project (Starts at ฿1,000): Fast codebase built for coursework, graduation reviews, or hackathons. Details & specifications can be submitted for review.')}
+                {serviceType === 'wordpress-customization' && t('รับแก้ไข ปรับแต่ง WordPress (เริ่มต้น ฿1,000): งานปรับแต่งระบบเดิม แก้ไข Layout ติดตั้งปลั๊กอิน ราคาแปรผันตามสเกลปัญหาที่พบ', 'WordPress Customization (Starts at ฿1,000): Optimize layouts, configure plug-ins, or resolve issues. Quote adjusts per task severity.')}
+                {serviceType === 'website-maintenance' && t('รับแก้ไขและปรับปรุงระบบเดิม (เริ่มต้น ฿1,000): แก้ไขข้อผิดพลาด เพิ่มฟีเจอร์ ปรับปรุงประสิทธิภาพ หรือพัฒนาต่อยอดระบบเดิมโดยไม่ต้องเริ่มใหม่', 'Website Maintenance (Starts at ฿1,000): Fix bugs, add features, optimize performance, or scale up existing systems without rebuilding.')}
               </div>
             </div>
 

@@ -41,7 +41,7 @@ export default function AboutPage() {
         className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center space-y-6"
       >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-          About LDCode
+          {t('เกี่ยวกับ LDCode', 'About LDCode')}
         </h1>
         <p className="text-4xl sm:text-6xl font-extrabold tracking-tight">
           {t('ผู้นำด้านการพัฒนา', 'Pioneering the Next Era of')} <br className="hidden sm:inline" />
@@ -101,7 +101,7 @@ export default function AboutPage() {
             className="text-center space-y-4"
           >
             <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-              Guiding Principles
+              {t('หลักการทำงานของเรา', 'Guiding Principles')}
             </h2>
             <p className="text-3xl sm:text-4xl font-extrabold tracking-tight">
               {t('คุณค่าหลัก', 'Our Core')} <span className="text-code">{t('ในการทำงาน', 'Values')}</span>

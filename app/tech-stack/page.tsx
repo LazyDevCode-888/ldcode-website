@@ -28,7 +28,7 @@ export default function TechStackPage() {
         className="text-center space-y-4"
       >
         <h1 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-          Technology Infrastructure
+          {t('โครงสร้างเทคโนโลยี', 'Technology Infrastructure')}
         </h1>
         <p className="text-4xl sm:text-6xl font-extrabold tracking-tight">
           {t('เทคโนโลยีที่เรา', 'Our Tech')}{' '}
