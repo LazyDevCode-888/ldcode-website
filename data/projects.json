@@ -227,5 +227,75 @@
       "en": "Developed a Full-Stack platform using Next.js & JavaScript for an intuitive frontend, paired with ElysiaJS on Bun for a high-performance backend connected to PostgreSQL via Prisma ORM. Implemented JWT & bcryptjs for auth, rate-limiting for abuse prevention, chart.js for real-time sales dashboards, and Excel export for store owner reporting."
     },
     "featured": true
+  },
+  {
+    "id": "cartzy",
+    "title": "Cartzy",
+    "subtitle": {
+      "th": "แอปพลิเคชันมือถือค้นหาร้านค้าและโปรโมชันผ่าน GPS แบบเรียลไทม์",
+      "en": "Mobile App for Real-Time Store Discovery & Promotions via GPS"
+    },
+    "category": {
+      "th": "โมบายแอปพลิเคชัน",
+      "en": "Mobile Application"
+    },
+    "client": "LDCode Showcase",
+    "year": "2025",
+    "summary": {
+      "th": "Cartzy คือแอปพลิเคชันมือถือ Cross-Platform สร้างด้วย React Native & Expo ที่ช่วยให้ผู้ใช้ค้นหาร้านค้าใกล้เคียง ดูโปรโมชัน ติดตามร้านโปรด และรับการแจ้งเตือนแบบเรียลไทม์ผ่าน GPS",
+      "en": "Cartzy is a Cross-Platform mobile app built with React Native & Expo that lets users discover nearby stores, browse promotions, follow favorite shops, and receive real-time GPS-based notifications."
+    },
+    "image": "/Cartzy-MobileApp/images/01.jpg",
+    "gallery": [
+      "/Cartzy-MobileApp/images/01.jpg",
+      "/Cartzy-MobileApp/images/02.jpg",
+      "/Cartzy-MobileApp/images/03.jpg",
+      "/Cartzy-MobileApp/images/04.jpg",
+      "/Cartzy-MobileApp/images/05.jpg"
+    ],
+    "tech": [
+      "React Native",
+      "Tailwind CSS",
+      "Expo",
+      "Google Maps API",
+      "Bun",
+      "ElysiaJS",
+      "Prisma ORM",
+      "PostgreSQL",
+      "JWT",
+      "bcryptjs"
+    ],
+    "stats": [
+      {
+        "label": {
+          "th": "แพลตฟอร์ม",
+          "en": "Platform"
+        },
+        "value": "iOS & Android"
+      },
+      {
+        "label": {
+          "th": "ระบบแผนที่",
+          "en": "Map Integration"
+        },
+        "value": "Google Maps API"
+      },
+      {
+        "label": {
+          "th": "การรักษาความปลอดภัย",
+          "en": "Security"
+        },
+        "value": "JWT & bcryptjs"
+      }
+    ],
+    "challenge": {
+      "th": "การพัฒนาแอปมือถือที่แสดงตำแหน่งร้านค้าและโปรโมชันแบบเรียลไทม์ผ่าน GPS ต้องการประสิทธิภาพสูง ระบบแจ้งเตือนที่ตอบสนองทันที และประสบการณ์การใช้งานที่ลื่นไหลบนทั้ง iOS และ Android",
+      "en": "Building a real-time GPS store discovery app requires high performance, instant push notifications, smooth map interactions, and a seamless cross-platform experience across both iOS and Android."
+    },
+    "solution": {
+      "th": "พัฒนาด้วย React Native & Expo เพื่อรองรับ iOS และ Android จากโค้ดชุดเดียว ใช้ Google Maps API สำหรับระบุตำแหน่งเรียลไทม์ เชื่อมต่อ Backend ElysiaJS บน Bun ประสิทธิภาพสูง และ PostgreSQL ผ่าน Prisma ORM พร้อมระบบ Authentication ด้วย JWT & bcryptjs",
+      "en": "Built with React Native & Expo for true cross-platform coverage from a single codebase. Integrated Google Maps API for real-time GPS positioning, backed by a high-performance ElysiaJS on Bun backend with PostgreSQL via Prisma ORM and secure JWT & bcryptjs authentication."
+    },
+    "featured": true
   }
 ]
