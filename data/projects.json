@@ -149,5 +149,83 @@
       "en": "Built a Full-Stack system using Next.js & TypeScript for an intuitive frontend, powered by ElysiaJS on Bun for a high-performance backend, connected to PostgreSQL via Prisma ORM. Integrated Leaflet for interactive map pinning, react-webcam for live photo capture, JWT & Bcryptjs for secure authentication, and a comprehensive area-based analytics dashboard."
     },
     "featured": true
+  },
+  {
+    "id": "ezy-ecommerce",
+    "title": "Ezy E-Commerce",
+    "subtitle": {
+      "th": "ระบบซื้อขายออนไลน์ครบวงจร พร้อม Dashboard สรุปยอดขาย และระบบจัดการร้านค้า",
+      "en": "Full-Featured E-Commerce Platform with Sales Dashboard & Store Management"
+    },
+    "category": {
+      "th": "อีคอมเมิร์ซ & ร้านค้าออนไลน์",
+      "en": "E-Commerce & Online Retail"
+    },
+    "client": "LDCode Showcase",
+    "year": "2025",
+    "summary": {
+      "th": "Ezy E-Commerce คือแพลตฟอร์มซื้อขายออนไลน์ครบวงจร ประกอบด้วยระบบสมาชิก ตะกร้าสินค้า ระบบสต็อก ระบบคืนเงิน ระบบโปรโมชัน Dashboard สรุปยอดขาย และการส่งออกรายงาน Excel พร้อม Rate Limiting เพื่อความปลอดภัย",
+      "en": "Ezy E-Commerce is a full-featured online retail platform with membership, cart, stock management, refund system, promotions, a sales dashboard, and Excel report export — secured with rate limiting."
+    },
+    "image": "/e-commerce/images/01.png",
+    "gallery": [
+      "/e-commerce/images/01.png",
+      "/e-commerce/images/02.png",
+      "/e-commerce/images/03.png",
+      "/e-commerce/images/04.png",
+      "/e-commerce/images/05.png",
+      "/e-commerce/images/06.png",
+      "/e-commerce/images/07.png",
+      "/e-commerce/images/08.png"
+    ],
+    "tech": [
+      "JavaScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Bun",
+      "ElysiaJS",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Axios",
+      "sweetalert2",
+      "JWT",
+      "bcryptjs",
+      "react-icons",
+      "react-select",
+      "chart.js",
+      "rate-limit"
+    ],
+    "stats": [
+      {
+        "label": {
+          "th": "ฟีเจอร์หลัก",
+          "en": "Core Features"
+        },
+        "value": "8 ระบบ"
+      },
+      {
+        "label": {
+          "th": "รายงาน",
+          "en": "Reporting"
+        },
+        "value": "Excel Export"
+      },
+      {
+        "label": {
+          "th": "การรักษาความปลอดภัย",
+          "en": "Security"
+        },
+        "value": "JWT & Rate Limit"
+      }
+    ],
+    "challenge": {
+      "th": "การพัฒนาแพลตฟอร์ม E-Commerce ที่รองรับทั้งฝั่งลูกค้าและผู้ดูแลระบบต้องการความครบถ้วนของฟีเจอร์ ตั้งแต่ตะกร้าสินค้า การชำระเงิน ระบบคืนเงิน ไปจนถึง Dashboard วิเคราะห์ยอดขายแบบ Real-time และการส่งออกรายงาน Excel สำหรับเจ้าของร้าน",
+      "en": "Building a comprehensive E-Commerce platform for both customers and admins requires covering the entire retail lifecycle — from cart and checkout to refunds, stock control, promotional campaigns, real-time sales analytics, and Excel-based reporting for store owners."
+    },
+    "solution": {
+      "th": "พัฒนา Full-Stack ด้วย Next.js และ JavaScript ฝั่ง Frontend ที่ใช้งานง่าย ร่วมกับ ElysiaJS บน Bun สำหรับ Backend ประสิทธิภาพสูง เชื่อมต่อ PostgreSQL ผ่าน Prisma ORM ระบบ Authentication ด้วย JWT & bcryptjs Rate Limiting ป้องกัน Abuse พร้อม chart.js สำหรับ Dashboard วิเคราะห์ยอดขาย และส่งออกรายงาน Excel ให้เจ้าของร้านใช้งานได้ทันที",
+      "en": "Developed a Full-Stack platform using Next.js & JavaScript for an intuitive frontend, paired with ElysiaJS on Bun for a high-performance backend connected to PostgreSQL via Prisma ORM. Implemented JWT & bcryptjs for auth, rate-limiting for abuse prevention, chart.js for real-time sales dashboards, and Excel export for store owner reporting."
+    },
+    "featured": true
   }
 ]
