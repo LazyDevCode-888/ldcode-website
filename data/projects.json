@@ -158,8 +158,8 @@
       "en": "Full-Featured E-Commerce Platform with Sales Dashboard & Store Management"
     },
     "category": {
-      "th": "อีคอมเมิร์ซ & ร้านค้าออนไลน์",
-      "en": "E-Commerce & Online Retail"
+      "th": "อีคอมเมิร์ซ & เว็บแอปพลิเคชัน",
+      "en": "E-Commerce & Web App"
     },
     "client": "LDCode Showcase",
     "year": "2025",
@@ -249,9 +249,7 @@
     "gallery": [
       "/Cartzy-MobileApp/images/01.jpg",
       "/Cartzy-MobileApp/images/02.jpg",
-      "/Cartzy-MobileApp/images/03.jpg",
-      "/Cartzy-MobileApp/images/04.jpg",
-      "/Cartzy-MobileApp/images/05.jpg"
+      "/Cartzy-MobileApp/images/03.jpg"
     ],
     "tech": [
       "React Native",
