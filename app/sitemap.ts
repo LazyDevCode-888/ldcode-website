@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next'
 import servicesData from '@/data/services.json'
 import projectsData from '@/data/projects.json'
-import blogData from '@/data/blog.json'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ldcode.tech'
@@ -15,7 +14,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/services',
     '/tech-stack',
     '/portfolio',
-    '/blog',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -39,13 +37,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // 4. Dynamic Blog Posts
-  const blogs = blogData.map((post) => ({
-    url: `${baseUrl}/blog/${post.id}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
-
-  return [...staticRoutes, ...services, ...projects, ...blogs]
+  return [...staticRoutes, ...services, ...projects]
 }
