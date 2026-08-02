@@ -1,8 +1,7 @@
 'use client'
 
-import { useState, useEffect, useRef, Suspense } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
-import ReCAPTCHA from 'react-google-recaptcha'
 import companyData from '@/data/company.json'
 import faqsData from '@/data/faqs.json'
 import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Clock, ExternalLink, ShieldCheck } from 'lucide-react'
@@ -12,7 +11,6 @@ import { motion } from 'framer-motion'
 function ContactFormContent() {
   const { t } = useLanguage()
   const searchParams = useSearchParams()
-  const recaptchaRef = useRef<ReCAPTCHA>(null)
 
   const [formData, setFormData] = useState({
     name: '',
@@ -22,9 +20,9 @@ function ContactFormContent() {
     service: 'Landing Page',
     budget: '< ฿5k',
     message: '',
+    botcheck: '', // Honeypot field for free spam protection
   })
 
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
@@ -83,11 +81,8 @@ function ContactFormContent() {
     e.preventDefault()
     setSubmitError(null)
 
-    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-
-    // If recaptcha key exists but user hasn't completed it
-    if (recaptchaSiteKey && !recaptchaToken) {
-      setSubmitError(t('กรุณายืนยันตัวตนผ่าน reCAPTCHA ก่อนส่งข้อมูล', 'Please verify that you are not a robot via reCAPTCHA.'))
+    // Honeypot check: If bot filled hidden input, silently ignore
+    if (formData.botcheck) {
       return
     }
 
@@ -107,7 +102,6 @@ function ContactFormContent() {
           access_key: accessKey,
           subject: `New LDCode Web Inquiry from ${formData.name}`,
           from_name: "LDCode Website Form",
-          'g-recaptcha-response': recaptchaToken || undefined,
           ...formData,
         }),
       })
@@ -517,18 +511,14 @@ function ContactFormContent() {
                   />
                 </div>
 
-                {/* reCAPTCHA widget (only rendered if site key exists) */}
-                {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
-                  <div className="flex flex-col items-center justify-center pt-2">
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      theme="dark"
-                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                      onChange={(token) => setRecaptchaToken(token)}
-                      onExpired={() => setRecaptchaToken(null)}
-                    />
-                  </div>
-                )}
+                {/* Web3Forms Free Spam Protection (Honeypot) - Hidden from humans, traps bots */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  style={{ display: 'none' }}
+                  onChange={(e) => setFormData({ ...formData, botcheck: e.target.checked ? 'true' : '' })}
+                />
 
                 {submitError && (
                   <p className="text-sm font-semibold text-red-500 text-center py-2 bg-red-950/20 border border-red-500/30 rounded-xl">
