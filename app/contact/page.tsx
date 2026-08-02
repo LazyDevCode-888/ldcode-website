@@ -1,16 +1,18 @@
 'use client'
 
-import { useState, useEffect, Suspense } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import ReCAPTCHA from 'react-google-recaptcha'
 import companyData from '@/data/company.json'
 import faqsData from '@/data/faqs.json'
-import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Clock, ExternalLink } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Clock, ExternalLink, ShieldCheck } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 import { motion } from 'framer-motion'
 
 function ContactFormContent() {
   const { t } = useLanguage()
   const searchParams = useSearchParams()
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
 
   const [formData, setFormData] = useState({
     name: '',
@@ -22,6 +24,7 @@ function ContactFormContent() {
     message: '',
   })
 
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
@@ -78,10 +81,19 @@ function ContactFormContent() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     setSubmitError(null)
 
-    // คีย์สำหรับส่งเมล (ผู้ใช้นำไปสมัครฟรีและใส่ตรงนี้ได้เลย)
+    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
+    // If recaptcha key exists but user hasn't completed it
+    if (recaptchaSiteKey && !recaptchaToken) {
+      setSubmitError(t('กรุณายืนยันตัวตนผ่าน reCAPTCHA ก่อนส่งข้อมูล', 'Please verify that you are not a robot via reCAPTCHA.'))
+      return
+    }
+
+    setIsSubmitting(true)
+
+    // คีย์สำหรับส่งเมล
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "e4c6c09b-1d7d-419b-abfc-f8cb5f87b8d0" 
 
     try {
@@ -95,6 +107,7 @@ function ContactFormContent() {
           access_key: accessKey,
           subject: `New LDCode Web Inquiry from ${formData.name}`,
           from_name: "LDCode Website Form",
+          'g-recaptcha-response': recaptchaToken || undefined,
           ...formData,
         }),
       })
@@ -503,6 +516,19 @@ function ContactFormContent() {
                     className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-emerald-400 transition-colors"
                   />
                 </div>
+
+                {/* reCAPTCHA widget (only rendered if site key exists) */}
+                {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+                  <div className="flex flex-col items-center justify-center pt-2">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      theme="dark"
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                      onChange={(token) => setRecaptchaToken(token)}
+                      onExpired={() => setRecaptchaToken(null)}
+                    />
+                  </div>
+                )}
 
                 {submitError && (
                   <p className="text-sm font-semibold text-red-500 text-center py-2 bg-red-950/20 border border-red-500/30 rounded-xl">
