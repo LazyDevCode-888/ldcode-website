@@ -69,7 +69,7 @@ export default function PricingPage() {
         return price
       }
       case 'student-project': {
-        let price = 2500
+        let price = 1000
         if (studentManual) price += 500
         return price
       }
@@ -265,7 +265,7 @@ export default function PricingPage() {
                 {serviceType === 'landing-page' && t('Landing Page (เริ่มต้น ฿1,500): เหมาะสำหรับหน้าแนะนำสินค้า แนะนำธุรกิจ หรือแสดงผลงานเบื้องต้น เว็บไซต์หน้าเดียวสมบูรณ์แบบพร้อมใช้งาน', 'Landing Page (Starts at ฿1,500): Best for product showcases or profile intros. Complete single-page website ready to deploy.')}
                 {serviceType === 'corporate-website' && t('Corporate Website (เริ่มต้น ฿4,000): เว็บไซต์บริษัท 3-5 หน้า (รวม 5 หน้าแรกราคาเท่าเดิม ฿4,000) หากเพิ่มเติมจาก 5 หน้า คิดเพิ่มหน้าละ ฿800', 'Corporate Website (Starts at ฿4,000): Profile website for businesses (Includes 3-5 pages for ฿4,000). Extra pages beyond 5 are ฿800 each.')}
                 {serviceType === 'web-application' && t('Web Application (เริ่มต้น ฿15,000): ระบบเว็บแอปพลิเคชันที่มีระบบหลังบ้านจัดการข้อมูลและฐานข้อมูลจริง (รายละเอียดตารางข้อมูล/Entities สามารถคุยตกลงขอบเขตงานเพิ่มเติมได้)', 'Web Application (Starts at ฿15,000): Full-stack web system backed with relational database models. Specific entities/data scopes can be discussed during consultation.')}
-                {serviceType === 'student-project' && t('Student Project (เริ่มต้น ฿2,500): ระบบพร้อมส่งอาจารย์ / นำเสนองาน (รายละเอียดขอบเขตงานและฟังก์ชันสามารถส่งโจทย์เพื่อประเมินได้)', 'Student Project (Starts at ฿2,500): Fast codebase built for coursework, graduation reviews, or hackathons. Details & specifications can be submitted for review.')}
+                {serviceType === 'student-project' && t('Student Project (เริ่มต้น ฿1,000): ระบบพร้อมส่งอาจารย์ / นำเสนองาน (รายละเอียดขอบเขตงานและฟังก์ชันสามารถส่งโจทย์เพื่อประเมินได้)', 'Student Project (Starts at ฿1,000): Fast codebase built for coursework, graduation reviews, or hackathons. Details & specifications can be submitted for review.')}
                 {serviceType === 'wordpress-customization' && t('WordPress Customization (เริ่มต้น ฿1,000): งานปรับแต่งระบบเดิม แก้ไข Layout ติดตั้งปลั๊กอิน ราคาแปรผันตามสเกลปัญหาที่พบ', 'WordPress Customization (Starts at ฿1,000): Optimize layouts, configure plug-ins, or resolve issues. Quote adjusts per task severity.')}
                 {serviceType === 'website-maintenance' && t('Website Maintenance (เริ่มต้น ฿1,000): แก้ไขข้อผิดพลาด เพิ่มฟีเจอร์ ปรับปรุงประสิทธิภาพ หรือพัฒนาต่อยอดระบบเดิมโดยไม่ต้องเริ่มใหม่', 'Website Maintenance (Starts at ฿1,000): Fix bugs, add features, optimize performance, or scale up existing systems without rebuilding.')}
               </div>

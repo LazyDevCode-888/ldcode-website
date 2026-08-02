@@ -581,10 +581,10 @@
       "en": "Development of course projects or senior graduation systems according to your topic. We write clean code to help you study and explain it confidently to professors."
     },
     "price": {
-      "th": "เริ่มต้น 2,500 บาท",
-      "en": "Starting at ฿2,500"
+      "th": "เริ่มต้น 1,000 บาท",
+      "en": "Starting at ฿1,000"
     },
-    "priceNum": 2500,
+    "priceNum": 1000,
     "features": [
       {
         "th": "พัฒนาตามหัวข้อและความต้องการของโปรเจกต์",
