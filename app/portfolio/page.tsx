@@ -14,21 +14,21 @@ export default function PortfolioPage() {
   const [searchQuery, setSearchQuery] = useState('')
 
   const categories = [
-    { id: 'All',        label: t('ทั้งหมด', 'All') },
-    { id: 'Web',        label: t('เว็บแอปพลิเคชัน', 'Web App') },
-    { id: 'Ecommerce',  label: t('อีคอมเมิร์ซ', 'E-Commerce') },
+    { id: 'All', label: t('ทั้งหมด', 'All') },
+    { id: 'Web', label: t('เว็บแอปพลิเคชัน', 'Web App') },
+    { id: 'Ecommerce', label: t('อีคอมเมิร์ซ', 'E-Commerce') },
     { id: 'Government', label: t('ระบบราชการ', 'Government') },
-    { id: 'Mobile',     label: t('มือถือ', 'Mobile') },
+    { id: 'Mobile', label: t('มือถือ', 'Mobile') },
   ]
 
   const filteredProjects = projectsData.filter((project) => {
     const categoryEn = project.category.en
     const matchesCategory =
       selectedCategory === 'All' ||
-      (selectedCategory === 'Web'        && categoryEn.includes('Web')) ||
-      (selectedCategory === 'Ecommerce'  && categoryEn.includes('E-Commerce')) ||
+      (selectedCategory === 'Web' && categoryEn.includes('Web')) ||
+      (selectedCategory === 'Ecommerce' && categoryEn.includes('E-Commerce')) ||
       (selectedCategory === 'Government' && categoryEn.includes('Government')) ||
-      (selectedCategory === 'Mobile'     && categoryEn.includes('Mobile'))
+      (selectedCategory === 'Mobile' && categoryEn.includes('Mobile'))
 
     const title = project.title.toLowerCase()
     const summary = t(project.summary).toLowerCase()
@@ -44,7 +44,7 @@ export default function PortfolioPage() {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
       {/* Header */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -74,11 +74,10 @@ export default function PortfolioPage() {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`relative px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
-                selectedCategory === cat.id
+              className={`relative px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${selectedCategory === cat.id
                   ? 'text-black font-bold'
                   : 'text-zinc-400 hover:text-emerald-400'
-              }`}
+                }`}
             >
               {selectedCategory === cat.id && (
                 <motion.span
@@ -106,7 +105,7 @@ export default function PortfolioPage() {
       </div>
 
       {/* Project Grid */}
-      <motion.div 
+      <motion.div
         layout
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
@@ -121,59 +120,59 @@ export default function PortfolioPage() {
               transition={{ duration: 0.4 }}
               className="group glass-card rounded-3xl overflow-hidden border border-emerald-500/20 glow-emerald-hover flex flex-col justify-between"
             >
-            <div>
-              {/* Image */}
-              <div className="relative h-60 w-full overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
-                    {t(project.category)}
-                  </span>
-                </div>
-              </div>
-
-              {/* Text */}
-              <div className="p-6 space-y-3">
-                <div className="text-xs text-emerald-400 font-semibold">
-                  {project.client} • {project.year}
-                </div>
-                <h2 className="text-xl font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">
-                  {project.title}
-                </h2>
-                <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
-                  {t(project.summary)}
-                </p>
-
-                {/* Tech tags */}
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {project.tech.slice(0, 4).map((tCode) => (
-                    <span
-                      key={tCode}
-                      className="px-2 py-0.5 rounded text-[10px] font-medium bg-zinc-900 text-zinc-300 border border-zinc-800"
-                    >
-                      {tCode}
+              <div>
+                {/* Image */}
+                <div className="relative h-60 w-full overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30">
+                      {t(project.category)}
                     </span>
-                  ))}
+                  </div>
+                </div>
+
+                {/* Text */}
+                <div className="p-6 space-y-3">
+                  <div className="text-xs text-emerald-400 font-semibold">
+                    {project.client} • {project.year}
+                  </div>
+                  <h2 className="text-xl font-bold text-zinc-100 group-hover:text-emerald-400 transition-colors">
+                    {project.title}
+                  </h2>
+                  <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">
+                    {t(project.summary)}
+                  </p>
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {project.tech.slice(0, 4).map((tCode) => (
+                      <span
+                        key={tCode}
+                        className="px-2 py-0.5 rounded text-[10px] font-medium bg-zinc-900 text-zinc-300 border border-zinc-800"
+                      >
+                        {tCode}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="p-6 pt-0">
-              <Link
-                href={`/portfolio/${project.id}`}
-                className="w-full inline-flex items-center justify-center gap-2 text-xs font-bold text-black bg-emerald-400 hover:bg-emerald-300 py-2.5 rounded-xl transition-colors shadow-md shadow-emerald-500/20"
-              >
-                <span>{t('อ่านกรณีศึกษาเพิ่มเติม', 'Read Full Case Study')}</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </motion.div>
-        ))}
+              <div className="p-6 pt-0">
+                <Link
+                  href={`/portfolio/${project.id}`}
+                  className="w-full inline-flex items-center justify-center gap-2 text-xs font-bold text-black bg-emerald-400 hover:bg-emerald-300 py-2.5 rounded-xl transition-colors shadow-md shadow-emerald-500/20"
+                >
+                  <span>{t('อ่านกรณีศึกษาเพิ่มเติม', 'Read Full Case Study')}</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
         </AnimatePresence>
       </motion.div>
 

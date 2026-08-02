@@ -245,11 +245,11 @@
       "th": "Cartzy คือแอปพลิเคชันมือถือ Cross-Platform สร้างด้วย React Native & Expo ที่ช่วยให้ผู้ใช้ค้นหาร้านค้าใกล้เคียง ดูโปรโมชัน ติดตามร้านโปรด และรับการแจ้งเตือนแบบเรียลไทม์ผ่าน GPS",
       "en": "Cartzy is a Cross-Platform mobile app built with React Native & Expo that lets users discover nearby stores, browse promotions, follow favorite shops, and receive real-time GPS-based notifications."
     },
-    "image": "/Cartzy-MobileApp/images/01.jpg",
+    "image": "/Cartzy-MobileApp/images/01.png",
     "gallery": [
-      "/Cartzy-MobileApp/images/01.jpg",
-      "/Cartzy-MobileApp/images/02.jpg",
-      "/Cartzy-MobileApp/images/03.jpg"
+      "/Cartzy-MobileApp/images/01.png",
+      "/Cartzy-MobileApp/images/02.png",
+      "/Cartzy-MobileApp/images/03.png"
     ],
     "tech": [
       "React Native",
