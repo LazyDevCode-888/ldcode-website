@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import pricingData from '@/data/pricing.json'
-import { Check, ArrowRight, Calculator, Info } from 'lucide-react'
+import { Check, ArrowRight, Calculator, Info, GraduationCap, ExternalLink } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 import { motion } from 'framer-motion'
 
@@ -545,6 +545,28 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
+
+      {/* Ecosystem Cross Promotion Banner */}
+      <div className="glass-card rounded-3xl p-6 sm:p-8 border border-emerald-500/20 text-center space-y-4 max-w-4xl mx-auto mt-12">
+        <h3 className="text-xl font-bold text-zinc-100">
+          {t('ต้องการประหยัดงบในการเริ่มต้นสร้างโปรเจกต์?', 'Looking for Cost-Effective Starter Solutions?')}
+        </h3>
+        <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed">
+          {t('เลือกซื้อซอร์สโค้ด Next.js, Golang API และเทมเพลตพร้อมใช้งานราคาประหยัดได้ที่ LDCode Hub',
+             'Browse affordable Next.js starter codes, Golang APIs, and ready-to-use templates at LDCode Hub.')}
+        </p>
+        <a
+          href="https://ldcode-hub.vercel.app/products"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold text-black bg-gradient-to-r from-emerald-400 to-emerald-300 hover:scale-105 transition-all shadow-md shadow-emerald-400/20"
+        >
+          <GraduationCap className="w-4 h-4 text-black" />
+          <span>{t('เลือกดูซอร์สโค้ดสำเร็จรูปที่ LDCode Hub', 'Browse Source Codes at LDCode Hub')}</span>
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      </div>
+
     </div>
   )
 }

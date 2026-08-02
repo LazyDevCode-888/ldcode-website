@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ArrowUpRight, Globe } from 'lucide-react'
+import { Menu, X, ArrowUpRight, Globe, GraduationCap } from 'lucide-react'
 import { useLanguage } from '@/lib/LanguageContext'
 import { motion } from 'framer-motion'
 
@@ -123,6 +123,17 @@ export default function Navbar() {
                 EN
               </button>
             </div>
+
+            {/* LDCode Hub Link */}
+            <a
+              href="https://ldcode-hub.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-emerald-400 glass-card border border-emerald-500/20 hover:border-emerald-400 transition-all hover:scale-105"
+            >
+              <GraduationCap className="w-3.5 h-3.5 text-emerald-400" />
+              <span>LDCode Hub</span>
+            </a>
 
             <Link
               href="/contact"

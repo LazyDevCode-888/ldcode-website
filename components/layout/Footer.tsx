@@ -67,6 +67,7 @@ export default function Footer() {
               <li><Link href="/pricing" className="hover:text-emerald-400 transition-colors">{t('ประเมินราคา', 'Pricing Plans')}</Link></li>
               <li><Link href="/tech-stack" className="hover:text-emerald-400 transition-colors">{t('เทคโนโลยี', 'Tech Stack')}</Link></li>
               <li><Link href="/contact" className="hover:text-emerald-400 transition-colors">{t('ติดต่อเรา', 'Contact Us')}</Link></li>
+              <li><a href="https://ldcode-hub.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-bold hover:underline transition-all">LDCode Hub (คอร์สเรียน & โค้ดฟรี)</a></li>
             </ul>
           </div>
 

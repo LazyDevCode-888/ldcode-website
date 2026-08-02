@@ -14,6 +14,7 @@ import {
   ArrowRight,
   HelpCircle,
   ChevronRight,
+  ExternalLink,
 } from 'lucide-react'
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -137,6 +138,34 @@ export default function ServicesPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+        </div>
+      </motion.section>
+
+      {/* Ecosystem Hub Banner */}
+      <motion.section
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
+        <div className="glass-card p-6 sm:p-8 rounded-3xl border border-emerald-500/20 text-center space-y-4">
+          <h3 className="text-xl font-bold text-zinc-100">
+            {t('ต้องการซื้อซอร์สโค้ดและเทมเพลตไปศึกษาหรือใช้งานเอง?', 'Looking for Starter Codes & Templates to Study or Deploy Yourself?')}
+          </h3>
+          <p className="max-w-xl mx-auto text-zinc-400 text-xs sm:text-sm leading-relaxed">
+            {t('เลือกชมคอร์สเรียนโปรแกรมมิ่ง ซอร์สโค้ด Next.js, Golang API และเทมเพลตพร้อมใช้งานได้ที่ LDCode Hub',
+               'Explore programming courses, Next.js starter codes, Golang APIs, and ready-to-use templates at LDCode Hub.')}
+          </p>
+          <a
+            href="https://ldcode-hub.vercel.app/products"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold text-black bg-gradient-to-r from-emerald-400 to-emerald-300 hover:scale-105 transition-all shadow-md shadow-emerald-400/20"
+          >
+            <span>{t('เลือกซื้อซอร์สโค้ดที่ LDCode Hub', 'Browse Source Code at LDCode Hub')}</span>
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </motion.section>
     </div>
