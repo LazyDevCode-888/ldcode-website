@@ -25,7 +25,7 @@ type ProjectDetailClientProps = {
 }
 
 function ImageSlider({ image, gallery, title }: { image: string; gallery?: string[]; title: string }) {
-  const slides = [image, ...(gallery ?? [])].filter(Boolean)
+  const slides = (gallery && gallery.length > 0) ? gallery : [image]
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(1)
 
