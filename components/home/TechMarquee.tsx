@@ -3,18 +3,21 @@
 import Link from 'next/link'
 import techData from '@/data/tech-stack.json'
 import { ArrowUpRight } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function TechMarquee() {
+  const { t } = useLanguage()
   const allTechs = techData.categories.flatMap((c) => c.items)
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-emerald-400">
-          Powered By Modern Stack
+          {t('ขับเคลื่อนด้วยเทคโนโลยีสมัยใหม่', 'Powered By Modern Stack')}
         </h2>
         <p className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-          Technologies We <span className="text-code">Master</span>
+          {t('เทคโนโลยีที่เรา', 'Technologies We')}{' '}
+          <span className="text-code">{t('เชี่ยวชาญ', 'Master')}</span>
         </p>
       </div>
 
@@ -46,7 +49,7 @@ export default function TechMarquee() {
           href="/tech-stack"
           className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-400 hover:text-emerald-400 transition-colors"
         >
-          <span>View All Core Technologies & Competencies</span>
+          <span>{t('ดูเทคโนโลยีและความสามารถทั้งหมด', 'View All Core Technologies & Competencies')}</span>
           <ArrowUpRight className="w-4 h-4" />
         </Link>
       </div>
@@ -64,3 +67,4 @@ export default function TechMarquee() {
     </section>
   )
 }
+
