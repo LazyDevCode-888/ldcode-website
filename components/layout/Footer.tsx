@@ -24,6 +24,7 @@ export default function Footer() {
                   src="/image/LDCode_Logo.png"
                   alt="LDCode Logo"
                   fill
+                  sizes="40px"
                   className="object-cover"
                 />
               </div>

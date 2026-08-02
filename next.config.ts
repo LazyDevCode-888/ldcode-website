@@ -11,6 +11,35 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/portfolio/fintech-core-platform',
+        destination: '/portfolio/notify-task',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/e-commerce-omnichannel',
+        destination: '/portfolio/notify-task',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/ai-medical-diagnostics',
+        destination: '/portfolio/notify-task',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/logistics-smart-fleet',
+        destination: '/portfolio/notify-task',
+        permanent: true,
+      },
+      {
+        source: '/portfolio/property-metaverse-3d',
+        destination: '/portfolio/notify-task',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

@@ -39,7 +39,7 @@ function ImageSlider({ image, gallery, title }: { image: string; gallery?: strin
   return (
     <div className="space-y-3">
       {/* Main Slide */}
-      <div className="relative h-72 sm:h-[460px] w-full rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl bg-zinc-950">
+      <div className="relative w-full rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl bg-zinc-950/80 backdrop-blur-sm">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={current}
@@ -48,13 +48,14 @@ function ImageSlider({ image, gallery, title }: { image: string; gallery?: strin
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -direction * 60 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0"
+            className="w-full flex items-center justify-center p-2 sm:p-4"
           >
             <Image
               src={slides[current]}
               alt={`${title} — ${current + 1}`}
-              fill
-              className="object-cover"
+              width={1600}
+              height={1000}
+              className="w-full h-auto max-h-[75vh] object-contain rounded-2xl shadow-lg"
               priority={current === 0}
             />
           </motion.div>

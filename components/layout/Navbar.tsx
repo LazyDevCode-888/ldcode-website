@@ -48,6 +48,7 @@ export default function Navbar() {
                 src="/image/LDCode_Logo.png"
                 alt="LDCode Logo"
                 fill
+                sizes="40px"
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>

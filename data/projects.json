@@ -1,191 +1,77 @@
 [
   {
-    "id": "fintech-core-platform",
-    "title": "AetherPay Digital Banking",
+    "id": "notify-task",
+    "title": "NotifyTask",
     "subtitle": {
-      "th": "ระบบธนาคารดิจิทัลและการชำระเงินคริปโตยุคใหม่",
-      "en": "Next-Gen Fintech Trading & Crypto Payment Portal"
+      "th": "ระบบจัดการงาน & แจ้งเตือนผ่าน LINE Official Account (Task Management & LINE Notification)",
+      "en": "Task Management & LINE Notification System"
     },
     "category": {
       "th": "เว็บแอปพลิเคชัน",
       "en": "Web App"
     },
-    "client": "Aether Financial Holdings",
+    "client": "LDCode Showcase",
     "year": "2025",
     "summary": {
-      "th": "ระบบแพลตฟอร์มการเงินดิจิทัลที่มีความปลอดภัยสูง รองรับธุรกรรม real-time กว่า 50,000 req/sec พร้อม Dashboard วิเคราะห์สินทรัพย์แบบ 3D Vis",
-      "en": "Highly secure digital finance platform supporting over 50,000 req/sec real-time transactions with a 3D asset analytics dashboard."
+      "th": "NotifyTask เป็นระบบจัดการงาน (Task Management) แบบ Full-Stack พร้อมระบบแจ้งเตือนภายในหน้าเว็บ (In-App) และระบบส่งข้อความแจ้งเตือนผ่าน LINE Official Account (Messaging API) เมื่อใกล้ถึงกำหนดส่ง หรือเมื่องานเกินกำหนดส่ง",
+      "en": "NotifyTask is a Full-Stack Task Management system with In-App notifications and automated LINE Official Account (Messaging API) alerts for upcoming and overdue tasks."
     },
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+    "image": "/Notify-Task/images/01.png",
     "gallery": [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+      "/Notify-Task/images/01.png",
+      "/Notify-Task/images/02.png",
+      "/Notify-Task/images/03.png",
+      "/Notify-Task/images/04.png",
+      "/Notify-Task/images/05.png",
+      "/Notify-Task/images/06.png"
     ],
-    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "Go", "PostgreSQL", "Docker", "Redis"],
+    "tech": [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide React",
+      "React Router DOM",
+      "Go (Golang) 1.21+",
+      "Fiber v2",
+      "PostgreSQL",
+      "GORM",
+      "JWT",
+      "bcrypt",
+      "LINE Messaging API",
+      "robfig/cron"
+    ],
     "stats": [
-      { "label": { "th": "ความเร็วธุรกรรม", "en": "Transaction Speed" }, "value": "< 12ms" },
-      { "label": { "th": "ผู้ใช้งานจริง", "en": "Active Users" }, "value": "250K+" },
-      { "label": { "th": "คะแนนความปลอดภัย", "en": "Security Score" }, "value": "99.9%" }
+      {
+        "label": {
+          "th": "ความถี่การตรวจสอบ Cron",
+          "en": "Cron Check Interval"
+        },
+        "value": "ทุก 1 นาที"
+      },
+      {
+        "label": {
+          "th": "การเชื่อมต่อแจ้งเตือน",
+          "en": "Notification Integration"
+        },
+        "value": "LINE & In-App"
+      },
+      {
+        "label": {
+          "th": "การรักษาความปลอดภัย",
+          "en": "Security"
+        },
+        "value": "JWT & bcrypt"
+      }
     ],
     "challenge": {
-      "th": "ลูกค้าต้องการเปลี่ยนจากระบบ Legacy Monolith มาเป็น Microservices ที่ต้องประมวลผลข้อมูลการเงินปริมาณมากโดยไม่มี Downtime และรักษามาตรฐาน PCI-DSS",
-      "en": "The client needed to migrate a legacy monolith architecture to Microservices to handle large-scale financial transactions with zero downtime under PCI-DSS standards."
+      "th": "การติดตามงานและป้องกันงานหลุดกำหนดส่ง (Deadline) ต้องการระบบแจ้งเตือนที่รวดเร็ว ตรงถึงมือผู้ใช้ผ่าน LINE Messaging API รวมถึงการจัดการ Task และแจ้งเตือนในระบบแบบ Real-time โดยไม่ส่งผลกระทบต่อประสิทธิภาพการทำงานของเซิร์ฟเวอร์",
+      "en": "Tracking deadlines effectively requires immediate notifications delivered straight to users via LINE Messaging API, along with real-time in-app task management without compromising server performance."
     },
     "solution": {
-      "th": "LDCode ได้วางโครงสร้างด้วย Go Microservices บน Docker Cluster ร่วมกับ Next.js 16 SSR และ Tailwind CSS สำหรับ Frontend UI ที่ตอบสนองทันที",
-      "en": "We structured the platform using Go microservices running on a Docker cluster, combined with Next.js SSR and Tailwind CSS to deliver an instantaneous frontend interface."
+      "th": "พัฒนาส่วนหน้าบ้านด้วย React 19, TypeScript, Vite และ Tailwind CSS เพื่อ UX/UI ที่ลื่นไหลและทันสมัย และพัฒนาหลังบ้านด้วย Go (Golang) + Fiber Framework ร่วมกับ GORM ORM และ PostgreSQL โดยใช้ robfig/cron ในการรันงานเบื้องหลังตรวจเช็คกำหนดส่งทุก 1 นาทีเพื่อส่งแจ้งเตือนผ่าน LINE Official Account อัตโนมัติ",
+      "en": "Developed a smooth modern frontend using React 19, TypeScript, Vite, and Tailwind CSS. Built a high-performance backend using Go (Golang) with Fiber Framework, GORM ORM, and PostgreSQL, leveraging robfig/cron to run background checks every 1 minute for automated LINE Messaging API notifications."
     },
     "featured": true
-  },
-  {
-    "id": "e-commerce-omnichannel",
-    "title": "LuxeStyle Fashion Hub",
-    "subtitle": {
-      "th": "แพลตฟอร์มอีคอมเมิร์ซและโมบายแอปพลิเคชันระดับไฮเอนด์",
-      "en": "High-End E-Commerce Platform & Mobile App"
-    },
-    "category": {
-      "th": "แอปพลิเคชันมือถือ",
-      "en": "Mobile App"
-    },
-    "client": "Luxe Group International",
-    "year": "2025",
-    "summary": {
-      "th": "แพลตฟอร์มอีคอมเมิร์ซสินค้าหรูหราพร้อมระบบ AR Try-on บนมือถือ iOS และ Android เชื่อมโยงสต็อกหน้าร้านและออนไลน์แบบ Omni-channel",
-      "en": "Luxury e-commerce platform with AR Try-on on iOS & Android, connecting retail POS inventory and online stock in real time."
-    },
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
-    "gallery": [
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop"
-    ],
-    "tech": ["React Native", "Next.js", "Node.js", "MongoDB", "Tailwind CSS", "Stripe"],
-    "stats": [
-      { "label": { "th": "ยอดขายเพิ่มขึ้น", "en": "Sales Lift" }, "value": "+185%" },
-      { "label": { "th": "รีวิวบน App Store", "en": "App Store Rating" }, "value": "4.9/5" },
-      { "label": { "th": "ขั้นตอนการชำระเงิน", "en": "Checkout Time" }, "value": "3 steps" }
-    ],
-    "challenge": {
-      "th": "ระบบเดิมทำงานช้าในระหว่างช่วงจัดโปรโมชัน Flash Sale และแอปลูกค้าไม่สามารถซิงค์สต็อกกับระบบ POS 20 สาขาได้รวดเร็วพอ",
-      "en": "The legacy system suffered from latency during high-traffic Flash Sales, and inventory failed to sync rapidly enough with POS databases across 20 retail stores."
-    },
-    "solution": {
-      "th": "ออกแบบสถาปัตยกรรม Event-Driven API พร้อมใช้งาน Redis Cache และคลาวด์ออโต้สเกล ทำให้รองรับผู้ซื้อพร้อมกันได้ 100,000+ คนโดยไม่สะดุด",
-      "en": "We implemented an event-driven API gateway integrated with Redis Cache and cloud auto-scaling, supporting over 100,000 concurrent shoppers smoothly."
-    },
-    "featured": true
-  },
-  {
-    "id": "ai-medical-diagnostics",
-    "title": "MedAI Diagnostic Portal",
-    "subtitle": {
-      "th": "แพลตฟอร์มวิเคราะห์ภาพถ่ายทางการแพทย์ด้วยปัญญาประดิษฐ์",
-      "en": "AI-Powered Medical Imaging Analysis Platform"
-    },
-    "category": {
-      "th": "ปัญญาประดิษฐ์",
-      "en": "AI Solutions"
-    },
-    "client": "Bangkok BioMed Tech",
-    "year": "2024",
-    "summary": {
-      "th": "เว็บพอร์ตัลช่วยแพทย์วิเคราะห์ผล X-ray และ CT scan ด้วย AI อัลกอริทึม แม่นยำ 98.7% พร้อมระบบการจัดการประวัติผู้ป่วยอย่างปลอดภัย",
-      "en": "Web portal assisting radiologists with X-ray and CT scan analysis using custom AI, reaching 98.7% accuracy alongside secure patient record storage."
-    },
-    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
-    "gallery": [
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1200&auto=format&fit=crop"
-    ],
-    "tech": ["Next.js", "Python", "Docker", "PostgreSQL", "Tailwind CSS", "OpenAI"],
-    "stats": [
-      { "label": { "th": "ความเร็วในการวิเคราะห์", "en": "Diagnostic Speed" }, "value": "3 sec" },
-      { "label": { "th": "ความแม่นยำ", "en": "Accuracy Rate" }, "value": "98.7%" },
-      { "label": { "th": "โรงพยาบาลที่ใช้งาน", "en": "Hospitals Using" }, "value": "18" }
-    ],
-    "challenge": {
-      "th": "ความยุ่งยากในการประมวลผลไฟล์ภาพทางการแพทย์ขนาดยักษ์ DICOM ผ่านเว็บเบราว์เซอร์อย่างลื่นไหล และปฏิบัติตามกฎหมาย HIPAA",
-      "en": "The difficulty of rendering massive medical DICOM image files fluidly on standard web browsers while remaining fully compliant with HIPAA regulations."
-    },
-    "solution": {
-      "th": "สร้าง WebGL GPU Rendering บน Web Browser ร่วมกับ AI Inference Microservice ที่มีความปลอดภัยระดับทหาร",
-      "en": "Built a WebGL GPU rendering container on the browser, coupled with a highly secure military-grade AI inference microservice pipeline."
-    },
-    "featured": true
-  },
-  {
-    "id": "logistics-smart-fleet",
-    "title": "Vanguard Logistics Command",
-    "subtitle": {
-      "th": "ระบบติดตามรถขนส่ง IoT และวิเคราะห์เส้นทางแบบ Real-time",
-      "en": "Real-time IoT Fleet Tracking & Route Optimization"
-    },
-    "category": {
-      "th": "ระบบคลาวด์",
-      "en": "Cloud Infrastructure"
-    },
-    "client": "Vanguard Express Ltd.",
-    "year": "2024",
-    "summary": {
-      "th": "ระบบศูนย์ควบคุมรถขนส่งสินค้า 1,500 คันทั่วประเทศ ด้วย GPS Real-time tracking, AI คำนวณเส้นทางประหยัดน้ำมัน และคลาวด์แดชบอร์ด",
-      "en": "Fleet control system overseeing 1,500 logistics vehicles nationwide. Powered by real-time GPS trackers, route optimization, and cloud dashboards."
-    },
-    "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
-    "gallery": [
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop"
-    ],
-    "tech": ["Next.js", "Go", "Docker", "PostgreSQL", "Google Cloud", "WebSockets"],
-    "stats": [
-      { "label": { "th": "ลดการใช้พลังงาน", "en": "Fuel Savings" }, "value": "-24%" },
-      { "label": { "th": "อัตราส่งของตรงเวลา", "en": "On-time Delivery" }, "value": "99.1%" },
-      { "label": { "th": "ยานพาหนะที่ระบบดูแล", "en": "Active Vehicles" }, "value": "1,500+" }
-    ],
-    "challenge": {
-      "th": "การรับส่งสัญญาณจากกล่อง IoT 1,500 คันตลอด 24 ชั่วโมงทำให้ฐานข้อมูลล้น และหน้าแสดงผลช้าเมื่อมีผู้ใช้งานพร้อมกันหลายแผนก",
-      "en": "Real-time IoT feeds from 1,500 trackers led to database bottlenecks and lag on the map dashboard when accessed concurrently."
-    },
-    "solution": {
-      "th": "นำ Time-Series Database มาใช้ประมวลผลตำแหน่งรถพร้อมอัปเดต Map Dashboard ผ่าน WebSockets โดยไม่โหลดเซิร์ฟเวอร์หลัก",
-      "en": "Implemented a time-series database to log GPS pings, streaming spatial updates to client browsers via WebSockets without overloading servers."
-    },
-    "featured": false
-  },
-  {
-    "id": "property-metaverse-3d",
-    "title": "Nexus Estate Virtual Showcase",
-    "subtitle": {
-      "th": "แพลตฟอร์มชมอสังหาริมทรัพย์แบบ Interactive 3D",
-      "en": "Interactive 3D Property Exploration Platform"
-    },
-    "category": {
-      "th": "เว็บแอปพลิเคชัน",
-      "en": "Web App"
-    },
-    "client": "Nexus Prime Development",
-    "year": "2024",
-    "summary": {
-      "th": "เว็บไซต์อสังหาริมทรัพย์ระดับพรีเมียม นำเสนอโครงการคอนโดมิเนียมหรูด้วย Interactive 3D Walkthrough และระบบจองห้องออนไลน์",
-      "en": "Premium real estate site featuring interactive 3D walks inside luxury condo units and real-time online unit reservation flows."
-    },
-    "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop",
-    "gallery": [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop"
-    ],
-    "tech": ["Next.js", "Three.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
-    "stats": [
-      { "label": { "th": "ยอดจองล่วงหน้า", "en": "Pre-sale Booking" }, "value": "100%" },
-      { "label": { "th": "เวลาเฉลี่ยบนเว็บ", "en": "Avg Time on Site" }, "value": "8.5 min" },
-      { "label": { "th": "ผู้สนใจต่างชาติ", "en": "International Leads" }, "value": "+320%" }
-    ],
-    "challenge": {
-      "th": "การแสดงผลโมเดล 3D อาคารความละเอียดสูงบนโทรศัพท์มือถือเครื่องสเปกต่ำโดยไม่ทำให้เครื่องค้าง",
-      "en": "Displaying high-polygon 3D architectural assets fluidly on low-end mobile devices without memory exhaustion or crash loops."
-    },
-    "solution": {
-      "th": "ประยุกต์ใช้ Dynamic LOD (Level of Detail) และ Progressive Texture Stream Loader เพื่อให้โหลดเร็วภายใน 2 วินาทีบนทุกอุปกรณ์",
-      "en": "Utilized Dynamic LOD (Level of Detail) rendering mesh logic and progressive texture loading streams, ensuring sub-2-second loading times."
-    },
-    "featured": false
   }
 ]
