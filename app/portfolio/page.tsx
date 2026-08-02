@@ -14,21 +14,21 @@ export default function PortfolioPage() {
   const [searchQuery, setSearchQuery] = useState('')
 
   const categories = [
-    { id: 'All', label: t('ทั้งหมด', 'All') },
-    { id: 'Web', label: t('เว็บแอป', 'Web') },
-    { id: 'Mobile', label: t('มือถือ', 'Mobile') },
-    { id: 'AI', label: 'AI' },
-    { id: 'Cloud', label: 'Cloud' },
+    { id: 'All',        label: t('ทั้งหมด', 'All') },
+    { id: 'Web',        label: t('เว็บแอปพลิเคชัน', 'Web App') },
+    { id: 'Ecommerce',  label: t('อีคอมเมิร์ซ', 'E-Commerce') },
+    { id: 'Government', label: t('ระบบราชการ', 'Government') },
+    { id: 'Mobile',     label: t('มือถือ', 'Mobile') },
   ]
 
   const filteredProjects = projectsData.filter((project) => {
     const categoryEn = project.category.en
     const matchesCategory =
       selectedCategory === 'All' ||
-      (selectedCategory === 'Web' && categoryEn.includes('Web')) ||
-      (selectedCategory === 'Mobile' && categoryEn.includes('Mobile')) ||
-      (selectedCategory === 'AI' && categoryEn.includes('AI')) ||
-      (selectedCategory === 'Cloud' && categoryEn.includes('Cloud'))
+      (selectedCategory === 'Web'        && categoryEn.includes('Web')) ||
+      (selectedCategory === 'Ecommerce'  && categoryEn.includes('E-Commerce')) ||
+      (selectedCategory === 'Government' && categoryEn.includes('Government')) ||
+      (selectedCategory === 'Mobile'     && categoryEn.includes('Mobile'))
 
     const title = project.title.toLowerCase()
     const summary = t(project.summary).toLowerCase()
