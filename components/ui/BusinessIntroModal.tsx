@@ -38,6 +38,47 @@ export default function BusinessIntroModal() {
     localStorage.setItem(INTRO_KEY, now.toString())
   }, [])
 
+  // Preload and play videos
+  useEffect(() => {
+    if (!mounted || !isVisible) return
+
+    // Pre-trigger play on all video refs so they load buffered frames into memory immediately
+    const v1 = videoRef1.current
+    const v2 = videoRef2.current
+    const v3 = videoRef3.current
+
+    if (v1) {
+      v1.currentTime = 0
+      v1.play().catch(() => {})
+    }
+    if (v2) {
+      v2.currentTime = 0
+      v2.play().catch(() => {})
+    }
+    if (v3) {
+      v3.currentTime = 0
+      v3.playbackRate = 0.85
+      v3.play().catch(() => {})
+    }
+  }, [mounted, isVisible])
+
+  // Handle video stage syncing on stage change
+  useEffect(() => {
+    if (!mounted || !isVisible) return
+
+    if (stage === 0 && videoRef1.current) {
+      videoRef1.current.currentTime = 0
+      videoRef1.current.play().catch(() => {})
+    } else if (stage === 1 && videoRef2.current) {
+      videoRef2.current.currentTime = 0
+      videoRef2.current.play().catch(() => {})
+    } else if (stage === 2 && videoRef3.current) {
+      videoRef3.current.currentTime = 0
+      videoRef3.current.playbackRate = 0.85
+      videoRef3.current.play().catch(() => {})
+    }
+  }, [stage, mounted, isVisible])
+
   // 22-second total duration playback (220ms * 100 steps = 22,000ms)
   useEffect(() => {
     if (!mounted || !isVisible) return
@@ -56,37 +97,18 @@ export default function BusinessIntroModal() {
     return () => clearInterval(interval)
   }, [mounted, isVisible])
 
-  // Timings across stages
+  // Timings across stages (Set Stage 1 / Video 2 duration to ~6.5 seconds)
   useEffect(() => {
-    if (progress > 73) {
+    if (progress > 76) {
       setStage(3)
-    } else if (progress > 46) {
+    } else if (progress > 51) {
       setStage(2)
-    } else if (progress > 23) {
-      setStage(1)
+    } else if (progress > 21) {
+      setStage(1) // Stage 1 / Video 2 now plays from progress 21 to 51 (30 steps = ~6.6 seconds)
     } else {
       setStage(0)
     }
   }, [progress])
-
-  // Play video smoothly and slow down video 3 playback rate
-  useEffect(() => {
-    if (!mounted || !isVisible) return
-
-    if (stage === 0 && videoRef1.current) {
-      videoRef1.current.currentTime = 0
-      videoRef1.current.playbackRate = 1.0
-      videoRef1.current.play().catch(() => {})
-    } else if (stage === 1 && videoRef2.current) {
-      videoRef2.current.currentTime = 0
-      videoRef2.current.playbackRate = 1.0
-      videoRef2.current.play().catch(() => {})
-    } else if (stage === 2 && videoRef3.current) {
-      videoRef3.current.currentTime = 0
-      videoRef3.current.playbackRate = 0.85 // Slow motion (85% speed)
-      videoRef3.current.play().catch(() => {})
-    }
-  }, [stage, mounted, isVisible])
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -109,90 +131,87 @@ export default function BusinessIntroModal() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: { duration: 1.5, ease: [0.16, 1, 0.3, 1] } }}
+        exit={{ opacity: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }}
         className="fixed inset-0 z-[99999] w-screen h-screen bg-black overflow-hidden select-none font-[family-name:var(--font-noto-thai)] text-white"
       >
-        {/* Fullscreen Video Player with Perfectly Timed Crossfades */}
+        {/* Fullscreen Video Player with Continuous Stacked Crossfades */}
         <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
-          <AnimatePresence mode="wait">
-            
-            {/* VIDEO ACT 1: 01.mp4 */}
-            {stage === 0 && (
-              <motion.div
-                key="vdo_stage_0"
-                initial={{ opacity: 0, scale: 1.06 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full relative"
-              >
-                <video
-                  ref={videoRef1}
-                  src="/Vdo/01.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover brightness-90 saturate-120"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
-              </motion.div>
-            )}
+          
+          {/* VIDEO ACT 1: 01.mp4 */}
+          <motion.div
+            animate={{ 
+              opacity: stage === 0 ? 1 : 0, 
+              scale: stage === 0 ? 1 : 1.04 
+            }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full absolute inset-0 pointer-events-none"
+          >
+            <video
+              ref={videoRef1}
+              src="/Vdo/01.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover brightness-90 saturate-120"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
+          </motion.div>
 
-            {/* VIDEO ACT 2: 02.mp4 */}
-            {stage === 1 && (
-              <motion.div
-                key="vdo_stage_1"
-                initial={{ opacity: 0, scale: 1.06 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full relative"
-              >
-                <video
-                  ref={videoRef2}
-                  src="/Vdo/02.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover brightness-90 saturate-120"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
-              </motion.div>
-            )}
+          {/* VIDEO ACT 2: 02.mp4 */}
+          <motion.div
+            animate={{ 
+              opacity: stage === 1 ? 1 : 0, 
+              scale: stage === 1 ? 1 : 1.04 
+            }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full absolute inset-0 pointer-events-none"
+          >
+            <video
+              ref={videoRef2}
+              src="/Vdo/02.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover brightness-90 saturate-120"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
+          </motion.div>
 
-            {/* VIDEO ACT 3: 03.mp4 */}
-            {stage === 2 && (
-              <motion.div
-                key="vdo_stage_2"
-                initial={{ opacity: 0, scale: 1.06 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full relative"
-              >
-                <video
-                  ref={videoRef3}
-                  src="/Vdo/03.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover brightness-90 saturate-120"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
-              </motion.div>
-            )}
+          {/* VIDEO ACT 3: 03.mp4 */}
+          <motion.div
+            animate={{ 
+              opacity: stage === 2 ? 1 : 0, 
+              scale: stage === 2 ? 1 : 1.04 
+            }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full h-full absolute inset-0 pointer-events-none"
+          >
+            <video
+              ref={videoRef3}
+              src="/Vdo/03.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover brightness-90 saturate-120"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
+          </motion.div>
 
-            {/* ACT 4: LOGO REVEAL & WELCOME MESSAGE */}
+          {/* ACT 4: LOGO REVEAL & WELCOME MESSAGE */}
+          <AnimatePresence>
             {stage === 3 && (
               <motion.div
                 key="vdo_stage_3"
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full relative bg-zinc-950 flex items-center justify-center overflow-hidden"
+                transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full h-full absolute inset-0 bg-zinc-950 flex items-center justify-center overflow-hidden z-20"
               >
                 {/* Background Ambient Glow */}
                 <motion.div
@@ -255,7 +274,7 @@ export default function BusinessIntroModal() {
 
         {/* Clean Subtitles Overlay */}
         {stage < 3 && (
-          <div className="relative z-30 w-full h-full flex flex-col justify-end pb-24 sm:pb-32 px-6 sm:px-16 max-w-5xl mx-auto font-[family-name:var(--font-noto-thai)]">
+          <div className="relative z-30 w-full h-full flex flex-col justify-end pb-24 sm:pb-32 px-6 sm:px-16 max-w-5xl mx-auto font-[family-name:var(--font-noto-thai)] pointer-events-none">
             <AnimatePresence mode="wait">
               {stage === 0 && (
                 <motion.div
@@ -319,3 +338,4 @@ export default function BusinessIntroModal() {
     </AnimatePresence>
   )
 }
+
