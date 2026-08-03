@@ -73,25 +73,30 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-NWJXWHFFKK'
+  const gaId = process.env.NEXT_PUBLIC_GA_ID
 
   return (
     <html lang="th" className={`dark scroll-smooth ${notoColorFont.variable}`}>
       <head>
         {/* Google Analytics Script */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gaId}');
-          `}
-        </Script>
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}');
+              `}
+            </Script>
+          </>
+        )}
       </head>
+
       <body className="bg-[#080c0a] text-zinc-100 antialiased selection:bg-emerald-400 selection:text-black min-h-screen flex flex-col">
         <LanguageProvider>
           <JsonLd />
