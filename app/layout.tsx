@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_Thai } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -72,6 +73,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-NWJXWHFFKK'
+
   return (
     <html lang="th" className={`dark scroll-smooth ${notoColorFont.variable}`}>
       <body className="bg-[#080c0a] text-zinc-100 antialiased selection:bg-emerald-400 selection:text-black min-h-screen flex flex-col">
@@ -85,7 +88,9 @@ export default function RootLayout({
             <FloatingContact />
           </SmoothScroll>
         </LanguageProvider>
+        <GoogleAnalytics gaId={gaId} />
       </body>
     </html>
   )
 }
+
