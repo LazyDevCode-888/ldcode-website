@@ -23,10 +23,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (storedLang === 'th' || storedLang === 'en') {
       setLanguageState(storedLang)
     } else {
-      const browserLang = navigator.language.split('-')[0]
-      if (browserLang === 'en' || browserLang === 'th') {
-        setLanguageState(browserLang as Language)
-      }
+      // Default to Thai ('th') for first-time site entry
+      setLanguageState('th')
+      localStorage.setItem('lang', 'th')
+      document.documentElement.lang = 'th'
     }
   }, [])
 

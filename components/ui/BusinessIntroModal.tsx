@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 export default function BusinessIntroModal() {
   const [mounted, setMounted] = useState(false)
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
   const [stage, setStage] = useState(0) // 0: 01.mp4, 1: 02.mp4, 2: 03.mp4, 3: Logo Reveal
   const [progress, setProgress] = useState(0)
   
@@ -17,7 +17,25 @@ export default function BusinessIntroModal() {
 
   useEffect(() => {
     setMounted(true)
+    
+    // Check 1-hour expiration logic with localStorage
+    const INTRO_KEY = 'ldcode_intro_timestamp'
+    const ONE_HOUR_MS = 60 * 60 * 1000 // 1 hour in milliseconds
+    const savedTimestamp = localStorage.getItem(INTRO_KEY)
+    const now = Date.now()
+
+    if (savedTimestamp) {
+      const elapsed = now - parseInt(savedTimestamp, 10)
+      if (elapsed < ONE_HOUR_MS) {
+        // Less than 1 hour has passed -> Hide intro
+        setIsVisible(false)
+        return
+      }
+    }
+
+    // First time entry or 1 hour expired -> Show intro & record timestamp
     setIsVisible(true)
+    localStorage.setItem(INTRO_KEY, now.toString())
   }, [])
 
   // 22-second total duration playback (220ms * 100 steps = 22,000ms)
@@ -38,8 +56,7 @@ export default function BusinessIntroModal() {
     return () => clearInterval(interval)
   }, [mounted, isVisible])
 
-  // Evenly balanced video durations with extended time specifically for Video Act 3 (03.mp4)
-  // Stage 0 (0-23% -> ~5.0s), Stage 1 (23-46% -> ~5.0s), Stage 2 (46-73% -> ~6.0s Extended!), Stage 3 (73-100% -> ~6.0s Logo Reveal)
+  // Timings across stages
   useEffect(() => {
     if (progress > 73) {
       setStage(3)
@@ -52,7 +69,7 @@ export default function BusinessIntroModal() {
     }
   }, [progress])
 
-  // Play video smoothly and slow down video 3 playback rate slightly for maximum smoothness
+  // Play video smoothly and slow down video 3 playback rate
   useEffect(() => {
     if (!mounted || !isVisible) return
 
@@ -66,7 +83,7 @@ export default function BusinessIntroModal() {
       videoRef2.current.play().catch(() => {})
     } else if (stage === 2 && videoRef3.current) {
       videoRef3.current.currentTime = 0
-      videoRef3.current.playbackRate = 0.85 // Slow motion playback (85% speed) for video 3
+      videoRef3.current.playbackRate = 0.85 // Slow motion (85% speed)
       videoRef3.current.play().catch(() => {})
     }
   }, [stage, mounted, isVisible])
@@ -145,7 +162,7 @@ export default function BusinessIntroModal() {
               </motion.div>
             )}
 
-            {/* VIDEO ACT 3: 03.mp4 (EXTENDED DISPLAY & SMOOTH 85% SPEED PLAYBACK) */}
+            {/* VIDEO ACT 3: 03.mp4 */}
             {stage === 2 && (
               <motion.div
                 key="vdo_stage_2"
