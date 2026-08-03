@@ -8,6 +8,7 @@ import FloatingContact from '@/components/layout/FloatingContact'
 import JsonLd from '@/components/seo/JsonLd'
 import companyData from '@/data/company.json'
 import { LanguageProvider } from '@/lib/LanguageContext'
+import BusinessIntroModal from '@/components/ui/BusinessIntroModal'
 
 const notoColorFont = Noto_Sans_Thai({
   subsets: ['thai', 'latin'],
@@ -76,6 +77,7 @@ export default function RootLayout({
       <body className="bg-[#080c0a] text-zinc-100 antialiased selection:bg-emerald-400 selection:text-black min-h-screen flex flex-col">
         <LanguageProvider>
           <JsonLd />
+          <BusinessIntroModal />
           <SmoothScroll>
             <Navbar />
             <main className="flex-grow pt-20">{children}</main>
